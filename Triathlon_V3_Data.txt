@@ -1,0 +1,17 @@
+﻿'Eindopdracht_Triathlon_V3.exe' (Win32): Loaded 'C:\Users\steyn\Documents\GitHub\Eindopdracht_Triathlon_V3\x64\Debug\Eindopdracht_Triathlon_V3.exe'. Symbols loaded.
+'Eindopdracht_Triathlon_V3.exe' (Win32): Loaded 'C:\Windows\System32\ntdll.dll'. 
+'Eindopdracht_Triathlon_V3.exe' (Win32): Loaded 'C:\Windows\System32\kernel32.dll'. 
+'Eindopdracht_Triathlon_V3.exe' (Win32): Loaded 'C:\Program Files\Norton\Suite\aswhook.dll'. 
+'Eindopdracht_Triathlon_V3.exe' (Win32): Loaded 'C:\Windows\System32\KernelBase.dll'. 
+'Eindopdracht_Triathlon_V3.exe' (Win32): Loaded 'C:\Windows\System32\apphelp.dll'. 
+'Eindopdracht_Triathlon_V3.exe' (Win32): Loaded 'C:\Windows\System32\msvcp140d.dll'. 
+'Eindopdracht_Triathlon_V3.exe' (Win32): Loaded 'C:\Windows\System32\vcruntime140d.dll'. 
+'Eindopdracht_Triathlon_V3.exe' (Win32): Loaded 'C:\Windows\System32\vcruntime140_1d.dll'. 
+'Eindopdracht_Triathlon_V3.exe' (Win32): Loaded 'C:\Windows\System32\ucrtbased.dll'. 
+The thread 0x1e94 has exited with code 0 (0x0).
+'Eindopdracht_Triathlon_V3.exe' (Win32): Loaded 'C:\Windows\System32\kernel.appcore.dll'. 
+'Eindopdracht_Triathlon_V3.exe' (Win32): Loaded 'C:\Windows\System32\msvcrt.dll'. 
+'Eindopdracht_Triathlon_V3.exe' (Win32): Loaded 'C:\Windows\System32\rpcrt4.dll'. 
+The thread 0x73b8 has exited with code 0 (0x0).
+The thread 0x7550 has exited with code 0 (0x0).
+The program '[12224] Eindopdracht_Triathlon_V3.exe' has exited with code 0 (0x0).

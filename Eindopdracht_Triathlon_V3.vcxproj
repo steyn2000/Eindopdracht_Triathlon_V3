@@ -127,7 +127,17 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Atleet.cpp" />
+    <ClCompile Include="Deelnemer.cpp" />
     <ClCompile Include="Eindopdracht_Triathlon_V3.cpp" />
+    <ClCompile Include="Licentie.cpp" />
+    <ClCompile Include="Wedstrijd.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Atleet.h" />
+    <ClInclude Include="Deelnemer.h" />
+    <ClInclude Include="Licentie.h" />
+    <ClInclude Include="Wedstrijd.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

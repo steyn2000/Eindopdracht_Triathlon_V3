@@ -18,5 +18,31 @@
     <ClCompile Include="Eindopdracht_Triathlon_V3.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="Atleet.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Deelnemer.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Licentie.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="Wedstrijd.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Atleet.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Deelnemer.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Licentie.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="Wedstrijd.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
