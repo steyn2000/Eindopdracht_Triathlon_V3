@@ -573,13 +573,29 @@ int main() {
                     }
                     else
                     {
+                        // Bepaal licentietype van de atleet
+                        string licentie_type = atleten[atleet_index].get_licentie().get_type();
+
                         // NK-licentiecontrole
                         if (wedstrijden[wedstrijd_index].get_is_nk())
                         {
-                            string licentie_type = atleten[atleet_index].get_licentie().get_type();
                             if (licentie_type != "Wedstrijdlicentie") {
                                 cout << "Deze wedstrijd is een NK, atleet heeft geen Wedstrijdlicentie.\n";
                                 cout << "Koppel eerst een Wedstrijdlicentie via optie 7 en probeer opnieuw.\n";
+                                continue; // ga terug naar het hoofdmenu (while-loop)
+                            }
+                        }
+
+        
+                        // Daglicentie alleen geldig op de dag van de wedstrijd
+                        if (licentie_type == "Daglicentie")
+                        {
+                            string licentie_datum = atleten[atleet_index].get_licentie().get_geldig_tot();
+                            string wedstrijd_datum = wedstrijden[wedstrijd_index].get_datum();
+                            if (licentie_datum != wedstrijd_datum)
+                            {
+                                cout << "Daglicentie is alleen geldig op de dag van de wedstrijd.\n";
+                                cout << "Inschrijving geweigerd.\n";
                                 continue; // ga terug naar het hoofdmenu (while-loop)
                             }
                         }
