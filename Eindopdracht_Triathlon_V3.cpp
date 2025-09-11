@@ -668,8 +668,19 @@ int main() {
 
                     int licentienummer;
                     string geldig_tot;
-                    cout << "Licentienummer: ";
-                    cin >> licentienummer;
+                    bool bestaat;
+                    do {
+                        bestaat = false;
+                        cout << "Licentienummer: ";
+                        cin >> licentienummer;
+                        for (size_t i = 0; i < atleten.size(); ++i) {
+                            if (i != (size_t)atleet_index && atleten[i].get_licentie().get_nummer() == licentienummer) {
+                                bestaat = true;
+                                cout << "Licentienummer bestaat al. Probeer opnieuw.\n";
+                                break;
+                            }
+                        }
+                    } while (bestaat);
                     cout << "Geldig tot (bv. 31-12-2024): ";
                     cin >> geldig_tot;
 
