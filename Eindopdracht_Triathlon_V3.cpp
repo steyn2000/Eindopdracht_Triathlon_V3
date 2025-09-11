@@ -240,7 +240,7 @@ int leeftijd_op_datum(const string& geboortedatum, const string& datum)
     return leeftijd;
 }
 
-// categorieën volgens jouw eisen
+// categorieÃ«n volgens jouw eisen
 string categorie_van_leeftijd(int leeftijd)
 {
     if (leeftijd < 13)
@@ -352,6 +352,14 @@ void toon_uitslag_van_wedstrijd(const vector<Wedstrijd>& wedstrijden)
 
     const Wedstrijd& wedstrijd = wedstrijden[wedstrijd_index];
     auto uitslag = wedstrijd.deelnemer_lijst_gesorteerd(); // gesorteerd op totale tijd
+
+    // deelnemers met een Trainingslicentie worden niet opgenomen in de uitslag
+    uitslag.erase(remove_if(uitslag.begin(), uitslag.end(),
+        [](const Deelnemer& d)
+        {
+            return d.get_atleet().get_licentie().get_type() == "Trainingslicentie";
+        }), uitslag.end());
+
     if (uitslag.empty())
     {
         cout << "Geen deelnemers voor deze wedstrijd.\n";
