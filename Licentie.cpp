@@ -32,6 +32,18 @@ const vector<DopingControle>& Licentie::get_doping_controles() const
     return doping_controles;
 }
 
+bool Licentie::is_dopingvrij() const
+{
+    for (const auto& controle : doping_controles)
+    {
+        if (controle.doping_geconstateerd)
+        {
+            return false;
+        }
+    }
+    return true;
+}
+
 void Licentie::set_nummer(int nummer)
 {
     licentie_nummer = nummer;
