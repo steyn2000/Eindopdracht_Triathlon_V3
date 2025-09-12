@@ -592,13 +592,38 @@ int main() {
                         {
                             string licentie_datum = atleten[atleet_index].get_licentie().get_geldig_tot();
                             string wedstrijd_datum = wedstrijden[wedstrijd_index].get_datum();
-                        if (licentie_datum != wedstrijd_datum)
-                        {
-                            cout << "Daglicentie is alleen geldig op de dag van de wedstrijd.\n";
-                            cout << "Inschrijving geweigerd.\n";
-                            continue; // ga terug naar het hoofdmenu (while-loop)
+                            if (licentie_datum != wedstrijd_datum)
+                            {
+                                cout << "Daglicentie is alleen geldig op de dag van de wedstrijd.\n";
+                                cout << "Inschrijving geweigerd.\n";
+                                continue; // ga terug naar het hoofdmenu (while-loop)
+                            }
                         }
-                    }
+
+                        // Controleer of licentie nog geldig is ten opzichte van wedstrijddatum
+                        {
+                            string licentie_geldig_tot = atleten[atleet_index].get_licentie().get_geldig_tot();
+                            string wedstrijd_datum = wedstrijden[wedstrijd_index].get_datum();
+
+                            int licentie_dag = get_dag(licentie_geldig_tot);
+                            int licentie_maand = get_maand(licentie_geldig_tot);
+                            int licentie_jaar = get_jaar(licentie_geldig_tot);
+                            int wedstrijd_dag = get_dag(wedstrijd_datum);
+                            int wedstrijd_maand = get_maand(wedstrijd_datum);
+                            int wedstrijd_jaar = get_jaar(wedstrijd_datum);
+
+                            bool licentie_verlopen =
+                                (licentie_jaar < wedstrijd_jaar) ||
+                                (licentie_jaar == wedstrijd_jaar &&
+                                    (licentie_maand < wedstrijd_maand ||
+                                        (licentie_maand == wedstrijd_maand && licentie_dag < wedstrijd_dag)));
+
+                            if (licentie_verlopen)
+                            {
+                                cout << "Licentie verlopen. Inschrijving geweigerd.\n";
+                                continue;
+                            }
+                        }
 
                     // Controleer op positieve dopingcontroles
                     if (!atleten[atleet_index].get_licentie().is_dopingvrij())
