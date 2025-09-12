@@ -360,6 +360,13 @@ void toon_uitslag_van_wedstrijd(const vector<Wedstrijd>& wedstrijden)
             return d.get_atleet().get_licentie().get_type() == "Trainingslicentie";
         }), uitslag.end());
 
+    // dopingpositieve atleten worden niet opgenomen in de uitslag
+    uitslag.erase(remove_if(uitslag.begin(), uitslag.end(),
+        [](const Deelnemer& d)
+        {
+            return !d.get_atleet().get_licentie().is_dopingvrij();
+        }), uitslag.end());
+
     if (uitslag.empty())
     {
         cout << "Geen deelnemers voor deze wedstrijd.\n";
