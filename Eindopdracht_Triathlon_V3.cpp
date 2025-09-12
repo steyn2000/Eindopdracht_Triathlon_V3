@@ -592,16 +592,23 @@ int main() {
                         {
                             string licentie_datum = atleten[atleet_index].get_licentie().get_geldig_tot();
                             string wedstrijd_datum = wedstrijden[wedstrijd_index].get_datum();
-                            if (licentie_datum != wedstrijd_datum)
-                            {
-                                cout << "Daglicentie is alleen geldig op de dag van de wedstrijd.\n";
-                                cout << "Inschrijving geweigerd.\n";
-                                continue; // ga terug naar het hoofdmenu (while-loop)
-                            }
+                        if (licentie_datum != wedstrijd_datum)
+                        {
+                            cout << "Daglicentie is alleen geldig op de dag van de wedstrijd.\n";
+                            cout << "Inschrijving geweigerd.\n";
+                            continue; // ga terug naar het hoofdmenu (while-loop)
                         }
+                    }
 
-                        int tijd_zwem, tijd_fiets, tijd_loop;
-                        cout << "Tijden in seconden.\n";
+                    // Controleer op positieve dopingcontroles
+                    if (!atleten[atleet_index].get_licentie().is_dopingvrij())
+                    {
+                        cout << "Atleet heeft een positieve dopingcontrole. Inschrijving geweigerd.\n";
+                        continue;
+                    }
+
+                    int tijd_zwem, tijd_fiets, tijd_loop;
+                    cout << "Tijden in seconden.\n";
                         cout << "Zwem: ";
                         cin >> tijd_zwem;
                         cout << "Fiets: ";

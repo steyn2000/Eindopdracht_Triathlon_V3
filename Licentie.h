@@ -31,6 +31,9 @@ public:
     string get_vereniging() const;
     const vector<DopingControle>& get_doping_controles() const;
 
+    // Dopingstatus
+    bool is_dopingvrij() const;
+
     //Setters
     void set_nummer(int nummer);
     void set_geldig_tot(const string& geldig_tot);
