@@ -168,6 +168,38 @@ void print_keuzemenu()
     cout << "10. Stoppen\n"; // De terminal bleef zwart, menu niet zichtbaar terwijl de code wel leek te werken
 }
 
+bool valide_datum(const std::string& datum)
+{
+    if (datum.size() != 10 || datum[2] != '-' || datum[5] != '-')
+        return false;
+    for (size_t i = 0; i < datum.size(); ++i)
+    {
+        if (i == 2 || i == 5)
+            continue;
+        char c = datum[i];
+        if (c < '0' || c > '9')
+            return false;
+    }
+    int dag = stoi(datum.substr(0, 2));
+    int maand = stoi(datum.substr(3, 2));
+    int jaar = stoi(datum.substr(6, 4));
+    if (jaar < 1900 || jaar > 2100)
+        return false;
+    if (maand < 1 || maand > 12)
+        return false;
+    int dagen_per_maand[] = { 31,28,31,30,31,30,31,31,30,31,30,31 };
+    int dagen = dagen_per_maand[maand - 1];
+    if (maand == 2)
+    {
+        bool leap = (jaar % 4 == 0 && (jaar % 100 != 0 || jaar % 400 == 0));
+        if (leap)
+            dagen = 29;
+    }
+    if (dag < 1 || dag > dagen)
+        return false;
+    return true;
+}
+
 // datum helpers voor "dd-mm-jjjj"
 static int get_dag(const string& datum)
 {
@@ -308,7 +340,12 @@ Atleet invoer_atleet()
 {
     string voornaam = lees_tekst("Voornaam: ");
     string achternaam = lees_tekst("Achternaam: ");
-    string geboortedatum = lees_tekst("Geboortedatum (dd-mm-jjjj): ");
+    string geboortedatum;
+    do {
+        geboortedatum = lees_tekst("Geboortedatum (dd-mm-jjjj): ");
+        if (!valide_datum(geboortedatum))
+            cout << "Ongeldige datum. Probeer opnieuw.\n";
+    } while (!valide_datum(geboortedatum));
     char geslacht = lees_tekst("Geslacht (M/V): ")[0];
 
     return Atleet(voornaam, achternaam, geboortedatum, geslacht);
@@ -508,7 +545,11 @@ int main() {
             string is_nk_keuze, wissels_keuze;
 
             naam = lees_tekst("Naam wedstrijd: ");
-            datum = lees_tekst("Datum (bv. 15-06-2024): ");
+            do {
+                datum = lees_tekst("Datum (bv. 15-06-2024): ");
+                if (!valide_datum(datum))
+                    cout << "Ongeldige datum. Probeer opnieuw.\n";
+            } while (!valide_datum(datum));
 
             is_nk_keuze = lees_tekst("Is NK? (ja/nee): ");
 
@@ -684,7 +725,11 @@ int main() {
                             }
                         }
                     } while (bestaat);
-                    geldig_tot = lees_tekst("Geldig tot (bv. 31-12-2024): ");
+                    do {
+                        geldig_tot = lees_tekst("Geldig tot (bv. 31-12-2024): ");
+                        if (!valide_datum(geldig_tot))
+                            cout << "Ongeldige datum. Probeer opnieuw.\n";
+                    } while (!valide_datum(geldig_tot));
 
                     string licentie_type = "Daglicentie";
                     string vereniging = "";
@@ -721,7 +766,12 @@ int main() {
                         cout << "Atleet heeft geen Wedstrijdlicentie.\n";
                     }
                     else {
-                        string controle_datum = lees_tekst("Datum (bv. 01-01-2024): ");
+                        string controle_datum;
+                        do {
+                            controle_datum = lees_tekst("Datum (bv. 01-01-2024): ");
+                            if (!valide_datum(controle_datum))
+                                cout << "Ongeldige datum. Probeer opnieuw.\n";
+                        } while (!valide_datum(controle_datum));
                         string antwoord = lees_tekst("Doping geconstateerd? (ja/nee): ");
                         bool doping_geconstateerd = (antwoord == "ja");
                         licentie.voeg_dopingcontrole_toe({ controle_datum, doping_geconstateerd });
