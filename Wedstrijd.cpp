@@ -3,8 +3,11 @@
 
 using namespace std;
 
-Wedstrijd::Wedstrijd(string wedstrijd_naam, string wedstrijd_datum, bool is_nk, bool heeft_wissels)
-    : naam(wedstrijd_naam), datum(wedstrijd_datum), is_nk(is_nk), met_wissels(heeft_wissels) {}
+Wedstrijd::Wedstrijd(string wedstrijd_naam, string wedstrijd_datum, bool is_nederlands_kampioenschap, bool heeft_wissels)
+    : naam(wedstrijd_naam),
+      datum(wedstrijd_datum),
+      is_nederlands_kampioenschap(is_nederlands_kampioenschap),
+      met_wissels(heeft_wissels) {}
 
 void Wedstrijd::voeg_deelnemer_toe(const Deelnemer& nieuwe_deelnemer)
 {
@@ -42,9 +45,9 @@ bool Wedstrijd::get_met_wissels() const
     return met_wissels;
 }
 
-bool Wedstrijd::get_is_nk() const
+bool Wedstrijd::get_is_nederlands_kampioenschap() const
 {
-    return is_nk;
+    return is_nederlands_kampioenschap;
 }
 
 vector<Deelnemer> Wedstrijd::deelnemer_lijst_gesorteerd() const

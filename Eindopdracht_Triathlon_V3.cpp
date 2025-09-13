@@ -50,7 +50,7 @@ void save_data()
     {
         bestand << wedstrijd.get_naam() << '\n'
             << wedstrijd.get_datum() << '\n'
-            << wedstrijd.get_is_nk() << '\n'
+            << wedstrijd.get_is_nederlands_kampioenschap() << '\n'
             << wedstrijd.get_met_wissels() << '\n';
 
         const auto& deelnemers = wedstrijd.get_deelnemers();
@@ -122,11 +122,11 @@ void load_data()
         string naam, datum;
         getline(in, naam);
         getline(in, datum);
-        int is_nk_int, met_wissels_int;
-        in >> is_nk_int >> met_wissels_int;
+        int is_nederlands_kampioenschap_int, met_wissels_int;
+        in >> is_nederlands_kampioenschap_int >> met_wissels_int;
         in.ignore(numeric_limits<streamsize>::max(), '\n');
 
-        Wedstrijd wedstrijd(naam, datum, is_nk_int != 0, met_wissels_int != 0);
+        Wedstrijd wedstrijd(naam, datum, is_nederlands_kampioenschap_int != 0, met_wissels_int != 0);
 
         size_t aantal_deelnemers;
         in >> aantal_deelnemers;
@@ -542,7 +542,7 @@ int main() {
         if (keuze == 1)
         {
             string naam, datum;
-            string is_nk_keuze, wissels_keuze;
+            string is_nederlands_kampioenschap_keuze, wissels_keuze;
 
             naam = lees_tekst("Naam wedstrijd: ");
             do {
@@ -551,15 +551,15 @@ int main() {
                     cout << "Ongeldige datum. Probeer opnieuw.\n";
             } while (!valide_datum(datum));
 
-            is_nk_keuze = lees_tekst("Is NK? (ja/nee): ");
+            is_nederlands_kampioenschap_keuze = lees_tekst("Is Nederlands Kampioenschap? (ja/nee): ");
 
             wissels_keuze = lees_tekst("Wisseltijden registreren? (ja/nee): ");
 
-            bool is_nk = (is_nk_keuze == "ja");
+            bool is_nederlands_kampioenschap = (is_nederlands_kampioenschap_keuze == "ja");
             bool heeft_wissels = (wissels_keuze == "ja");
 
             // nieuw object maken en toevoegen aan de vector
-            Wedstrijd nieuwe_wedstrijd(naam, datum, is_nk, heeft_wissels);
+            Wedstrijd nieuwe_wedstrijd(naam, datum, is_nederlands_kampioenschap, heeft_wissels);
             wedstrijden.push_back(nieuwe_wedstrijd);
 
             cout << "Wedstrijd aangemaakt met index ["
@@ -614,7 +614,7 @@ int main() {
                     string licentie_type = atleten[index_atleet].get_licentie().get_type();
 
                         // NK-licentiecontrole
-                        if (wedstrijden[wedstrijd_index].get_is_nk())
+                        if (wedstrijden[wedstrijd_index].get_is_nederlands_kampioenschap())
                         {
                             if (licentie_type != "Wedstrijdlicentie") {
                                 cout << "Deze wedstrijd is een NK, atleet heeft geen Wedstrijdlicentie.\n";
