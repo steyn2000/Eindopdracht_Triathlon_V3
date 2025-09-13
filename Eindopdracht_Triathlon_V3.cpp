@@ -268,11 +268,12 @@ int lees_int(const string& prompt)
 {
     while (true)
     {
-        string input;
-        cout << prompt;
-        cin >> input;
         try
         {
+            string input;
+            cout << prompt;
+            if (!(cin >> input))
+                throw runtime_error("fout");
             int value = stoi(input);
             if (value >= 0)
             {
@@ -281,10 +282,10 @@ int lees_int(const string& prompt)
         }
         catch (...)
         {
+            cout << "Ongeldige invoer. Voer een niet-negatief getal in.\n";
+            cin.clear();
+            cin.ignore(numeric_limits<streamsize>::max(), '\n');
         }
-        cout << "Ongeldige invoer. Voer een niet-negatief getal in.\n";
-        cin.clear();
-        cin.ignore(numeric_limits<streamsize>::max(), '\n');
     }
 }
 
@@ -297,6 +298,27 @@ int kies_index(int max_index, const string& prompt)
         return -1;
     }
     return index;
+}
+
+string lees_tekst(const string& prompt)
+{
+    while (true)
+    {
+        try
+        {
+            string input;
+            cout << prompt;
+            if (!(cin >> input))
+                throw runtime_error("fout");
+            return input;
+        }
+        catch (...)
+        {
+            cout << "Ongeldige invoer. Probeer opnieuw.\n";
+            cin.clear();
+            cin.ignore(numeric_limits<streamsize>::max(), '\n');
+        }
+    }
 }
 
 void lijst_atleten(const vector<Atleet>& lijst_atleten)
@@ -332,17 +354,10 @@ void lijst_wedstrijden(const vector<Wedstrijd>& lijst_wedstrijden)
 
 Atleet invoer_atleet()
 {
-    string voornaam, achternaam, geboortedatum;
-    char geslacht;
-
-    cout << "Voornaam: ";
-    cin >> voornaam;
-    cout << "Achternaam: ";
-    cin >> achternaam;
-    cout << "Geboortedatum (dd-mm-jjjj): ";
-    cin >> geboortedatum;
-    cout << "Geslacht (M/V): ";
-    cin >> geslacht;
+    string voornaam = lees_tekst("Voornaam: ");
+    string achternaam = lees_tekst("Achternaam: ");
+    string geboortedatum = lees_tekst("Geboortedatum (dd-mm-jjjj): ");
+    char geslacht = lees_tekst("Geslacht (M/V): ")[0];
 
     return Atleet(voornaam, achternaam, geboortedatum, geslacht);
 }
@@ -540,11 +555,9 @@ int main() {
             cout << "Datum (bv. 15-06-2024): ";
             getline(cin, datum);
 
-            cout << "Is NK? (ja/nee): ";
-            cin >> is_nk_keuze;
+            is_nk_keuze = lees_tekst("Is NK? (ja/nee): ");
 
-            cout << "Wisseltijden registreren? (ja/nee): ";
-            cin >> wissels_keuze;
+            wissels_keuze = lees_tekst("Wisseltijden registreren? (ja/nee): ");
 
             bool is_nk = (is_nk_keuze == "ja");
             bool heeft_wissels = (wissels_keuze == "ja");
@@ -733,15 +746,13 @@ int main() {
                             }
                         }
                     } while (bestaat);
-                    cout << "Geldig tot (bv. 31-12-2024): ";
-                    cin >> geldig_tot;
+                    geldig_tot = lees_tekst("Geldig tot (bv. 31-12-2024): ");
 
                     string licentie_type = "Daglicentie";
                     string vereniging = "";
                     if (keuze_licentie == 2) {
                         licentie_type = "Trainingslicentie";
-                        cout << "Vereniging: ";
-                        cin >> vereniging;
+                        vereniging = lees_tekst("Vereniging: ");
                     }
                     else if (keuze_licentie == 3) {
                         licentie_type = "Wedstrijdlicentie";
@@ -772,11 +783,8 @@ int main() {
                         cout << "Atleet heeft geen Wedstrijdlicentie.\n";
                     }
                     else {
-                        string controle_datum, antwoord;
-                        cout << "Datum (bv. 01-01-2024): ";
-                        cin >> controle_datum;
-                        cout << "Doping geconstateerd? (ja/nee): ";
-                        cin >> antwoord;
+                        string controle_datum = lees_tekst("Datum (bv. 01-01-2024): ");
+                        string antwoord = lees_tekst("Doping geconstateerd? (ja/nee): ");
                         bool doping_geconstateerd = (antwoord == "ja");
                         licentie.voeg_dopingcontrole_toe({ controle_datum, doping_geconstateerd });
                         cout << "Dopingcontrole toegevoegd.\n";
