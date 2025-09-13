@@ -44,6 +44,21 @@ bool Licentie::is_dopingvrij() const
     return true;
 }
 
+// Controleer of licentie geldig is op gegeven datum ("dd-mm-jjjj")
+bool Licentie::is_geldig_op(const string& datum) const
+{
+    if (geldig_tot.size() != 10 || datum.size() != 10)
+        return false; // ongeldige datumformaten
+
+    auto to_int = [](const string& d) {
+        return stoi(d.substr(6, 4) + d.substr(3, 2) + d.substr(0, 2));
+    };
+
+    int datum_int = to_int(datum);
+    int geldig_int = to_int(geldig_tot);
+    return datum_int <= geldig_int;
+}
+
 void Licentie::set_nummer(int nummer)
 {
     licentie_nummer = nummer;
