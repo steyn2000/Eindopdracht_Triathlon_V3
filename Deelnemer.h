@@ -7,7 +7,7 @@ using namespace std;
 class Deelnemer
 {
 private:
-    Atleet atleet;         // kopie van de atleet voor deze inschrijving
+    int index_atleet{ 0 }; // verwijzing naar atleet in globale atletenlijst
     int tijd_zwem{ 0 };      // in seconden
     int tijd_fiets{ 0 };     // in seconden
     int tijd_loop{ 0 };      // in seconden
@@ -19,8 +19,8 @@ private:
 public:
     // constructors
     Deelnemer() = default;
-    Deelnemer(const Atleet& atleet, int tijd_zwem, int tijd_fiets, int tijd_loop);
-    Deelnemer(const Atleet& atleet, int tijd_zwem, int tijd_fiets, int tijd_loop, int tijd_wissel1, int tijd_wissel2);
+    Deelnemer(int index_atleet, int tijd_zwem, int tijd_fiets, int tijd_loop);
+    Deelnemer(int index_atleet, int tijd_zwem, int tijd_fiets, int tijd_loop, int tijd_wissel1, int tijd_wissel2);
 
 
     // setters
@@ -32,6 +32,7 @@ public:
 
     // getters
     const Atleet& get_atleet() const;
+    int get_index_atleet() const;
     int  get_tijd_zwem() const;
     int  get_tijd_fiets() const;
     int  get_tijd_loop() const;
