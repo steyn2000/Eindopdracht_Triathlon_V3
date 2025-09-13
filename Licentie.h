@@ -34,6 +34,9 @@ public:
     // Dopingstatus
     bool is_dopingvrij() const;
 
+    // Geldigheid
+    bool is_geldig_op(const string& datum) const;
+
     //Setters
     void set_nummer(int nummer);
     void set_geldig_tot(const string& geldig_tot);
