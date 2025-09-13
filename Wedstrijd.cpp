@@ -52,11 +52,11 @@ bool Wedstrijd::get_is_nederlands_kampioenschap() const
 
 vector<Deelnemer> Wedstrijd::deelnemer_lijst_gesorteerd() const
 {
-    vector<Deelnemer> kopie = deelnemers; // kopie om het origineel niet te wijzigen
-    sort(kopie.begin(), kopie.end(),
+    vector<Deelnemer> gesorteerde_deelnemers = deelnemers; // kopie om het origineel niet te wijzigen
+    sort(gesorteerde_deelnemers.begin(), gesorteerde_deelnemers.end(),
         [](const Deelnemer& eerste, const Deelnemer& tweede)
         {
             return eerste.totale_tijd() < tweede.totale_tijd();
         });
-    return kopie;
+    return gesorteerde_deelnemers;
 }
