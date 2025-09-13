@@ -29,6 +29,17 @@ const vector<Deelnemer>& Wedstrijd::get_deelnemers() const
     return deelnemers;
 }
 
+vector<Deelnemer> Wedstrijd::deelnemer_lijst_gesorteerd() const
+{
+    vector<Deelnemer> gesorteerde_deelnemers = deelnemers; // kopie om het origineel niet te wijzigen
+    sort(gesorteerde_deelnemers.begin(), gesorteerde_deelnemers.end(),
+        [](const Deelnemer& eerste, const Deelnemer& tweede)
+        {
+            return eerste.totale_tijd() < tweede.totale_tijd();
+        });
+    return gesorteerde_deelnemers;
+}
+
 //getters
 string Wedstrijd::get_naam() const
 {
@@ -48,15 +59,4 @@ bool Wedstrijd::get_met_wissels() const
 bool Wedstrijd::get_is_nederlands_kampioenschap() const
 {
     return is_nederlands_kampioenschap;
-}
-
-vector<Deelnemer> Wedstrijd::deelnemer_lijst_gesorteerd() const
-{
-    vector<Deelnemer> gesorteerde_deelnemers = deelnemers; // kopie om het origineel niet te wijzigen
-    sort(gesorteerde_deelnemers.begin(), gesorteerde_deelnemers.end(),
-        [](const Deelnemer& eerste, const Deelnemer& tweede)
-        {
-            return eerste.totale_tijd() < tweede.totale_tijd();
-        });
-    return gesorteerde_deelnemers;
 }
