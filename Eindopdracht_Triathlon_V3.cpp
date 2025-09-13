@@ -308,7 +308,8 @@ string lees_tekst(const string& prompt)
         {
             string input;
             cout << prompt;
-            if (!(cin >> input))
+            cin.clear();
+            if (!getline(cin >> ws, input))
                 throw runtime_error("fout");
             return input;
         }
@@ -548,12 +549,8 @@ int main() {
             string naam, datum;
             string is_nk_keuze, wissels_keuze;
 
-            cout << "Naam wedstrijd: ";
-            cin.ignore(numeric_limits<streamsize>::max(), '\n');
-            getline(cin, naam);
-
-            cout << "Datum (bv. 15-06-2024): ";
-            getline(cin, datum);
+            naam = lees_tekst("Naam wedstrijd: ");
+            datum = lees_tekst("Datum (bv. 15-06-2024): ");
 
             is_nk_keuze = lees_tekst("Is NK? (ja/nee): ");
 
