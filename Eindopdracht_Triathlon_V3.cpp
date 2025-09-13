@@ -168,7 +168,7 @@ void print_keuzemenu()
     cout << "10. Stoppen\n"; // De terminal bleef zwart, menu niet zichtbaar terwijl de code wel leek te werken
 }
 
-bool valide_datum(const std::string& datum)
+bool valide_datum(const string& datum)
 {
     if (datum.size() != 10 || datum[2] != '-' || datum[5] != '-')
         return false;
