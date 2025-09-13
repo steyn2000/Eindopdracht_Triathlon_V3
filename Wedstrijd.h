@@ -11,7 +11,7 @@ private:
     string naam;
     string datum; // voor nu simpel als string "dd-mm-jjjj"
 
-    bool is_nk
+    bool is_nederlands_kampioenschap
     {
         false
     };
@@ -25,7 +25,7 @@ private:
 
 public:
     Wedstrijd() = default;
-    Wedstrijd(string wedstrijd_naam, string wedstrijd_datum, bool is_nk, bool heeft_wissels);
+    Wedstrijd(string wedstrijd_naam, string wedstrijd_datum, bool is_nederlands_kampioenschap, bool heeft_wissels);
 
     // basisacties
     void voeg_deelnemer_toe(const Deelnemer& nieuwe_deelnemer);
@@ -40,5 +40,5 @@ public:
     string get_naam() const;
     string get_datum() const;
     bool get_met_wissels() const;
-    bool get_is_nk() const;
+    bool get_is_nederlands_kampioenschap() const;
 };
