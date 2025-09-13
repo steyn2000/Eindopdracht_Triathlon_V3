@@ -50,13 +50,13 @@ bool Licentie::is_geldig_op(const string& datum) const
     if (geldig_tot.size() != 10 || datum.size() != 10)
         return false; // ongeldige datumformaten
 
-    auto to_int = [](const string& d) {
+    auto datum_naar_int = [](const string& d) {
         return stoi(d.substr(6, 4) + d.substr(3, 2) + d.substr(0, 2));
     };
 
-    int datum_int = to_int(datum);
-    int geldig_int = to_int(geldig_tot);
-    return datum_int <= geldig_int;
+    int datum_als_int = datum_naar_int(datum);
+    int geldig_tot_als_int = datum_naar_int(geldig_tot);
+    return datum_als_int <= geldig_tot_als_int;
 }
 
 void Licentie::set_nummer(int nummer)
