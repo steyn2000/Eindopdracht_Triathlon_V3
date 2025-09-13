@@ -1,8 +1,13 @@
 #include "Deelnemer.h"
+#include <vector>
+
+// Externe lijst met atleten (gedeeld tussen modules)
+using namespace std;
+extern vector<Atleet> atleten;
 
 // constructors
-Deelnemer::Deelnemer(const Atleet& atleet, int tijd_zwem, int tijd_fiets, int tijd_loop)
-    : atleet(atleet),
+Deelnemer::Deelnemer(int index_atleet, int tijd_zwem, int tijd_fiets, int tijd_loop)
+    : index_atleet(index_atleet),
     tijd_zwem(tijd_zwem),
     tijd_fiets(tijd_fiets),
     tijd_loop(tijd_loop),
@@ -11,8 +16,8 @@ Deelnemer::Deelnemer(const Atleet& atleet, int tijd_zwem, int tijd_fiets, int ti
     tijd_wissel1(0),
     tijd_wissel2(0) {}
 
-Deelnemer::Deelnemer(const Atleet& atleet, int tijd_zwem, int tijd_fiets, int tijd_loop, int tijd_wissel1, int tijd_wissel2)
-    : atleet(atleet),
+Deelnemer::Deelnemer(int index_atleet, int tijd_zwem, int tijd_fiets, int tijd_loop, int tijd_wissel1, int tijd_wissel2)
+    : index_atleet(index_atleet),
     tijd_zwem(tijd_zwem),
     tijd_fiets(tijd_fiets),
     tijd_loop(tijd_loop),
@@ -50,7 +55,12 @@ void Deelnemer::set_wisseltijd2(int nieuwe_tijd_wissel2)
 // getters
 const Atleet& Deelnemer::get_atleet() const
 {
-    return atleet;
+    return atleten[index_atleet];
+}
+
+int Deelnemer::get_index_atleet() const
+{
+    return index_atleet;
 }
 
 int Deelnemer::get_tijd_zwem() const

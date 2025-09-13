@@ -8,7 +8,12 @@ Wedstrijd::Wedstrijd(string wedstrijd_naam, string wedstrijd_datum, bool is_nk, 
 
 void Wedstrijd::voeg_deelnemer_toe(const Deelnemer& nieuwe_deelnemer)
 {
-    deelnemers.push_back(nieuwe_deelnemer);
+    auto bestaat = find_if(deelnemers.begin(), deelnemers.end(),
+        [&](const Deelnemer& bestaande) { return bestaande.get_index_atleet() == nieuwe_deelnemer.get_index_atleet(); });
+    if (bestaat == deelnemers.end())
+    {
+        deelnemers.push_back(nieuwe_deelnemer);
+    }
 }
 
 int Wedstrijd::aantal_deelnemers() const
