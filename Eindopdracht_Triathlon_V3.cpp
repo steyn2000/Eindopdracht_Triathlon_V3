@@ -77,7 +77,7 @@ void load_data()
     size_t aantal_atleten;
     if (!(in >> aantal_atleten)) return;
     in.ignore(numeric_limits<streamsize>::max(), '\n');
-    for (size_t i = 0; i < aantal_atleten; ++i)
+    for (size_t atleet_index = 0; atleet_index < aantal_atleten; ++atleet_index)
     {
         string voornaam, achternaam, geboortedatum;
         getline(in, voornaam);
@@ -99,7 +99,7 @@ void load_data()
         in >> aantal_dopingcontroles;
         in.ignore(numeric_limits<streamsize>::max(), '\n');
         Licentie licentie(licentienummer, licentie_geldig_tot, licentie_type, vereniging);
-        for (size_t i = 0; i < aantal_dopingcontroles; ++i)
+        for (size_t controle_index = 0; controle_index < aantal_dopingcontroles; ++controle_index)
         {
             string controle_datum;
             getline(in, controle_datum);
@@ -117,7 +117,7 @@ void load_data()
     size_t aantal_wedstrijden;
     in >> aantal_wedstrijden;
     in.ignore(numeric_limits<streamsize>::max(), '\n');
-    for (size_t i = 0; i < aantal_wedstrijden; ++i)
+    for (size_t wedstrijd_index = 0; wedstrijd_index < aantal_wedstrijden; ++wedstrijd_index)
     {
         string naam, datum;
         getline(in, naam);
@@ -131,7 +131,7 @@ void load_data()
         size_t aantal_deelnemers;
         in >> aantal_deelnemers;
         in.ignore(numeric_limits<streamsize>::max(), '\n');
-        for (size_t j = 0; j < aantal_deelnemers; ++j)
+        for (size_t deelnemer_index = 0; deelnemer_index < aantal_deelnemers; ++deelnemer_index)
         {
             int index_atleet;
             int tijd_zwem, tijd_fiets, tijd_loop, heeft_wissel1, tijd_wissel1, heeft_wissel2, tijd_wissel2;
@@ -172,11 +172,11 @@ bool valide_datum(const string& datum)
 {
     if (datum.size() != 10 || datum[2] != '-' || datum[5] != '-')
         return false;
-    for (size_t i = 0; i < datum.size(); ++i)
+    for (size_t datum_index = 0; datum_index < datum.size(); ++datum_index)
     {
-        if (i == 2 || i == 5)
+        if (datum_index == 2 || datum_index == 5)
             continue;
-        char c = datum[i];
+        char c = datum[datum_index];
         if (c < '0' || c > '9')
             return false;
     }
@@ -313,12 +313,12 @@ void lijst_atleten(const vector<Atleet>& lijst_atleten)
         return;
     }
 
-    for (size_t i = 0; i < lijst_atleten.size(); ++i)
+    for (size_t atleet_index = 0; atleet_index < lijst_atleten.size(); ++atleet_index)
     {
-        const Licentie& licentie = lijst_atleten[i].get_licentie();
-        cout << "[" << i << "] "
-            << lijst_atleten[i].get_voornaam() << " " << lijst_atleten[i].get_achternaam() << " | Geb.datum: " << lijst_atleten[i].get_geboortedatum() << " | Geslacht: "
-            << lijst_atleten[i].get_geslacht() << " | Licentie: " << licentie.get_type() << " (" << licentie.get_nummer() << ")\n";
+        const Licentie& licentie = lijst_atleten[atleet_index].get_licentie();
+        cout << "[" << atleet_index << "] "
+            << lijst_atleten[atleet_index].get_voornaam() << " " << lijst_atleten[atleet_index].get_achternaam() << " | Geb.datum: " << lijst_atleten[atleet_index].get_geboortedatum() << " | Geslacht: "
+            << lijst_atleten[atleet_index].get_geslacht() << " | Licentie: " << licentie.get_type() << " (" << licentie.get_nummer() << ")\n";
     }
 }
 
@@ -330,9 +330,9 @@ void lijst_wedstrijden(const vector<Wedstrijd>& lijst_wedstrijden)
         return;
     }
 
-    for (size_t i = 0; i < lijst_wedstrijden.size(); ++i)
+    for (size_t wedstrijd_index = 0; wedstrijd_index < lijst_wedstrijden.size(); ++wedstrijd_index)
     {
-        cout << "[" << i << "] " << lijst_wedstrijden[i].get_naam() << " (" << lijst_wedstrijden[i].get_datum() << ")\n";
+        cout << "[" << wedstrijd_index << "] " << lijst_wedstrijden[wedstrijd_index].get_naam() << " (" << lijst_wedstrijden[wedstrijd_index].get_datum() << ")\n";
     }
 }
 
@@ -429,16 +429,16 @@ void toon_uitslag_van_wedstrijd(const vector<Wedstrijd>& wedstrijden)
         cout << "----------  ";
     cout << "----------  ----------\n";
 
-    for (size_t i = 0; i < uitslag.size(); ++i)
+    for (size_t deelnemer_index = 0; deelnemer_index < uitslag.size(); ++deelnemer_index)
     {
-        const Deelnemer& deelnemer = uitslag[i];
+        const Deelnemer& deelnemer = uitslag[deelnemer_index];
         const Atleet& atleet = deelnemer.get_atleet();
         string naam = atleet.get_voornaam() + " " + atleet.get_achternaam();
 
         if (naam.size() > 23) naam = naam.substr(0, 23);
-        cout << (i + 1);
+        cout << (deelnemer_index + 1);
 
-        if (i + 1 < 10)
+        if (deelnemer_index + 1 < 10)
             cout << "   ";
 
         else
@@ -500,14 +500,14 @@ void toon_uitslag_van_wedstrijd(const vector<Wedstrijd>& wedstrijden)
             cout << "---------  ";
         cout << "---------  ---------\n";
 
-        for (size_t i = 0; i < categorie_deelnemers.size(); ++i) {
-            const Deelnemer& deelnemer = categorie_deelnemers[i];
+        for (size_t deelnemer_index = 0; deelnemer_index < categorie_deelnemers.size(); ++deelnemer_index) {
+            const Deelnemer& deelnemer = categorie_deelnemers[deelnemer_index];
             const Atleet& atleet = deelnemer.get_atleet();
             string naam = atleet.get_voornaam() + " " + atleet.get_achternaam();
             if (naam.size() > 32) naam = naam.substr(0, 32);
-            cout << (i + 1);
+            cout << (deelnemer_index + 1);
 
-            if (i + 1 < 10)
+            if (deelnemer_index + 1 < 10)
                 cout << "   ";
             else
                 cout << "  ";
@@ -717,8 +717,8 @@ int main() {
                     do {
                         bestaat = false;
                         licentienummer = lees_int("Licentienummer: ");
-                        for (size_t i = 0; i < atleten.size(); ++i) {
-                            if (i != (size_t)index_atleet && atleten[i].get_licentie().get_nummer() == licentienummer) {
+                          for (size_t atleet_index = 0; atleet_index < atleten.size(); ++atleet_index) {
+                              if (atleet_index != (size_t)index_atleet && atleten[atleet_index].get_licentie().get_nummer() == licentienummer) {
                                 bestaat = true;
                                 cout << "Licentienummer bestaat al. Probeer opnieuw.\n";
                                 break;
