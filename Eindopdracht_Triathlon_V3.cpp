@@ -264,11 +264,33 @@ string categorie_van(const Atleet& atleet, const string& wedstrijddatum)
     return categorie_van_leeftijd(leeftijd_op_datum(atleet.get_geboortedatum(), wedstrijddatum));
 }
 
+int lees_int(const string& prompt)
+{
+    while (true)
+    {
+        string input;
+        cout << prompt;
+        cin >> input;
+        try
+        {
+            int value = stoi(input);
+            if (value >= 0)
+            {
+                return value;
+            }
+        }
+        catch (...)
+        {
+        }
+        cout << "Ongeldige invoer. Voer een niet-negatief getal in.\n";
+        cin.clear();
+        cin.ignore(numeric_limits<streamsize>::max(), '\n');
+    }
+}
+
 int kies_index(int max_index, const string& prompt)
 {
-    int index;
-    cout << prompt;
-    cin >> index;
+    int index = lees_int(prompt);
 
     if (index < 0 || index >= max_index)
     {
@@ -503,8 +525,7 @@ int main() {
     while (doorgaan)
     {
         print_keuzemenu();
-        int keuze;
-        cin >> keuze;
+        int keuze = lees_int("Keuze: ");
 
 
         if (keuze == 1)
@@ -641,20 +662,15 @@ int main() {
 
                     int tijd_zwem, tijd_fiets, tijd_loop;
                     cout << "Tijden in seconden.\n";
-                        cout << "Zwem: ";
-                        cin >> tijd_zwem;
-                        cout << "Fiets: ";
-                        cin >> tijd_fiets;
-                        cout << "Loop: ";
-                        cin >> tijd_loop;
+                        tijd_zwem = lees_int("Zwem: ");
+                        tijd_fiets = lees_int("Fiets: ");
+                        tijd_loop = lees_int("Loop: ");
 
                         if (wedstrijden[wedstrijd_index].get_met_wissels())
                         {
                             int tijd_wissel1, tijd_wissel2;
-                            cout << "T1 (wissel zwemmen->fietsen, sec): ";
-                            cin >> tijd_wissel1;
-                            cout << "T2 (wissel fietsen->lopen, sec):   ";
-                            cin >> tijd_wissel2;
+                            tijd_wissel1 = lees_int("T1 (wissel zwemmen->fietsen, sec): ");
+                            tijd_wissel2 = lees_int("T2 (wissel fietsen->lopen, sec):   ");
 
                             Deelnemer deelnemer(atleten[atleet_index], tijd_zwem, tijd_fiets, tijd_loop, tijd_wissel1, tijd_wissel2);
                             wedstrijden[wedstrijd_index].voeg_deelnemer_toe(deelnemer);
@@ -701,17 +717,14 @@ int main() {
                     cout << "Ongeldige keuze.\n";
                 }
                 else {
-                    int keuze_licentie;
-                    cout << "Kies licentie (1 = Dag, 2 = Trainings, 3 = Wedstrijd): ";
-                    cin >> keuze_licentie;
+                    int keuze_licentie = lees_int("Kies licentie (1 = Dag, 2 = Trainings, 3 = Wedstrijd): ");
 
                     int licentienummer;
                     string geldig_tot;
                     bool bestaat;
                     do {
                         bestaat = false;
-                        cout << "Licentienummer: ";
-                        cin >> licentienummer;
+                        licentienummer = lees_int("Licentienummer: ");
                         for (size_t i = 0; i < atleten.size(); ++i) {
                             if (i != (size_t)atleet_index && atleten[i].get_licentie().get_nummer() == licentienummer) {
                                 bestaat = true;
