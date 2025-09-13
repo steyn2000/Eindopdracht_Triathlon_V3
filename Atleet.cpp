@@ -1,9 +1,10 @@
 #include "Atleet.h"
 
+// constructors
+Atleet::Atleet() : geslacht(' '), licentie(Licentie(0, "", "", "")) {}
+
 Atleet::Atleet(string voornaam, string achternaam, string geboortedatum, char geslacht)
     : voornaam(voornaam), achternaam(achternaam), geboortedatum(geboortedatum), geslacht(geslacht), licentie(Licentie(0, "", "", "")) {}
-
-Atleet::Atleet() : geslacht(' '), licentie(Licentie(0, "", "", "")) {}
 
 //Setters
 void Atleet::set_voornaam(string nieuwe_voornaam)

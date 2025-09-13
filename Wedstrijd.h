@@ -33,7 +33,6 @@ public:
     // simpele output (kan later klassement worden)
     int aantal_deelnemers() const;
     const vector<Deelnemer>& get_deelnemers() const;
-
     vector<Deelnemer> deelnemer_lijst_gesorteerd() const;
 
     //getters
