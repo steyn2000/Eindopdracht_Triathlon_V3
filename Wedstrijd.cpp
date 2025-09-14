@@ -1,6 +1,11 @@
 #include "Wedstrijd.h"
 #include <algorithm>
 
+/**
+ * @file Wedstrijd.cpp
+ * @brief Implementatie van de Wedstrijd klasse.
+ */
+
 using namespace std;
 
 Wedstrijd::Wedstrijd(string wedstrijd_naam, string wedstrijd_datum, bool is_nederlands_kampioenschap, bool heeft_wissels)

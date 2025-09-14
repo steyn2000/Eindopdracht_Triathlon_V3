@@ -1,5 +1,8 @@
-// Eindopdracht_Triathlon_V3.cpp : This file contains the 'main' function. Program execution begins and ends there.
-//
+/**
+ * @file Eindopdracht_Triathlon_V3.cpp
+ * @brief Hoofdbestand met de main-functie van het programma.
+ */
+
 #include <iostream>
 #include <string>
 #include <vector>

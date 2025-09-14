@@ -1,5 +1,10 @@
 #include "Atleet.h"
 
+/**
+ * @file Atleet.cpp
+ * @brief Implementatie van de Atleet klasse.
+ */
+
 // constructors
 Atleet::Atleet() : geslacht(' '), licentie(Licentie(0, "", "", "")) {}
 
