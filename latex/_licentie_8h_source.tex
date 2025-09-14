@@ -1,0 +1,55 @@
+\doxysection{Licentie.\+h}
+\hypertarget{_licentie_8h_source}{}\label{_licentie_8h_source}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <vector>}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{keyword}{using\ namespace\ }std;}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{keyword}{struct\ }\mbox{\hyperlink{struct_doping_controle}{DopingControle}}}
+\DoxyCodeLine{00008\ \{}
+\DoxyCodeLine{00009\ \ \ \ \ \textcolor{keywordtype}{string}\ datum;\ \ \ \ \ \ \ \ \ \ \ \ \ \ \ \textcolor{comment}{//\ datum\ van\ de\ controle}}
+\DoxyCodeLine{00010\ \ \ \ \ \textcolor{keywordtype}{bool}\ doping\_geconstateerd;\ \ \textcolor{comment}{//\ true\ als\ er\ doping\ is\ geconstateerd}}
+\DoxyCodeLine{00011\ \};}
+\DoxyCodeLine{00012\ }
+\DoxyCodeLine{00013\ \textcolor{keyword}{class\ }Licentie}
+\DoxyCodeLine{00014\ \{}
+\DoxyCodeLine{00015\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{keywordtype}{int}\ licentie\_nummer;}
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keywordtype}{string}\ geldig\_tot;\ \textcolor{comment}{//\ Datum\ voor\ waarop\ de\ licentie\ geldig\ is}}
+\DoxyCodeLine{00018\ \ \ \ \ \textcolor{keywordtype}{string}\ type;\ \textcolor{comment}{//\ Daglicentie/\ trainingslicentie\ of\ wedstrijdlicentie}}
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{keywordtype}{string}\ vereniging;\ \textcolor{comment}{//\ alleen\ relevant\ voor\ trainingslicentie}}
+\DoxyCodeLine{00020\ \ \ \ \ vector<DopingControle>\ doping\_controles;\ \textcolor{comment}{//\ alleen\ voor\ wedstrijdlicentie}}
+\DoxyCodeLine{00021\ }
+\DoxyCodeLine{00022\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{comment}{//Constructor}}
+\DoxyCodeLine{00024\ \ \ \ \ Licentie();}
+\DoxyCodeLine{00025\ \ \ \ \ Licentie(\textcolor{keywordtype}{int}\ nummer,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ geldig\_tot,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ type,\ \textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ vereniging\ =\ \textcolor{stringliteral}{"{}"{}});}
+\DoxyCodeLine{00026\ }
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{comment}{//Getters}}
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keywordtype}{int}\ get\_nummer()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keywordtype}{string}\ get\_geldig\_tot()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keywordtype}{string}\ get\_type()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keywordtype}{string}\ get\_vereniging()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keyword}{const}\ vector<DopingControle>\&\ get\_doping\_controles()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00033\ }
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{comment}{//\ Dopingstatus}}
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keywordtype}{bool}\ is\_dopingvrij()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00036\ }
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{comment}{//\ Geldigheid}}
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keywordtype}{bool}\ is\_geldig\_op(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ datum)\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00039\ }
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{comment}{//Setters}}
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keywordtype}{void}\ set\_nummer(\textcolor{keywordtype}{int}\ nummer);}
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keywordtype}{void}\ set\_geldig\_tot(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ geldig\_tot);}
+\DoxyCodeLine{00043\ \ \ \ \ \textcolor{keywordtype}{void}\ set\_type(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ nieuw\_type);}
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{keywordtype}{void}\ set\_vereniging(\textcolor{keyword}{const}\ \textcolor{keywordtype}{string}\&\ vereniging);}
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keywordtype}{void}\ voeg\_dopingcontrole\_toe(\textcolor{keyword}{const}\ \mbox{\hyperlink{struct_doping_controle}{DopingControle}}\&\ controle);}
+\DoxyCodeLine{00046\ }
+\DoxyCodeLine{00047\ \};}
+\DoxyCodeLine{00048\ }
+\DoxyCodeLine{00049\ }
+\DoxyCodeLine{00050\ }
+
+\end{DoxyCode}

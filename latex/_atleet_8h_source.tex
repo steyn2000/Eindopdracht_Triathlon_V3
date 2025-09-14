@@ -1,0 +1,39 @@
+\doxysection{Atleet.\+h}
+\hypertarget{_atleet_8h_source}{}\label{_atleet_8h_source}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}Licentie.h"{}}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{keyword}{using\ namespace\ }std;}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{keyword}{class\ }Atleet\ \{}
+\DoxyCodeLine{00008\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00009\ \ \ \ \ \textcolor{keywordtype}{string}\ voornaam;}
+\DoxyCodeLine{00010\ \ \ \ \ \textcolor{keywordtype}{string}\ achternaam;}
+\DoxyCodeLine{00011\ \ \ \ \ \textcolor{keywordtype}{string}\ geboortedatum;}
+\DoxyCodeLine{00012\ \ \ \ \ \textcolor{keywordtype}{char}\ geslacht;}
+\DoxyCodeLine{00013\ \ \ \ \ \mbox{\hyperlink{class_licentie}{Licentie}}\ licentie\{\ 0,\ \textcolor{stringliteral}{"{}"{}},\ \textcolor{stringliteral}{"{}"{}},\ \textcolor{stringliteral}{"{}"{}}\ \};\ \textcolor{comment}{//\ atleet\ start\ zonder\ ingevulde\ licentie}}
+\DoxyCodeLine{00014\ }
+\DoxyCodeLine{00015\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00016\ \ \ \ \ Atleet();}
+\DoxyCodeLine{00017\ \ \ \ \ Atleet(\textcolor{keywordtype}{string}\ voornaam,\ \textcolor{keywordtype}{string}\ achternaam,\ \textcolor{keywordtype}{string}\ geboortedatum,\ \textcolor{keywordtype}{char}\ geslacht);}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \ \ \ \ \textcolor{comment}{//setters}}
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{keywordtype}{void}\ set\_voornaam(\textcolor{keywordtype}{string}\ nieuwe\_voornaam);}
+\DoxyCodeLine{00021\ \ \ \ \ \textcolor{keywordtype}{void}\ set\_achternaam(\textcolor{keywordtype}{string}\ nieuwe\_achternaam);}
+\DoxyCodeLine{00022\ \ \ \ \ \textcolor{keywordtype}{void}\ set\_geboortedatum(\textcolor{keywordtype}{string}\ nieuwe\_geboortedatum);}
+\DoxyCodeLine{00023\ \ \ \ \ \textcolor{keywordtype}{void}\ set\_geslacht(\textcolor{keywordtype}{char}\ nieuw\_geslacht);}
+\DoxyCodeLine{00024\ \ \ \ \ \textcolor{keywordtype}{void}\ set\_licentie(\textcolor{keyword}{const}\ \mbox{\hyperlink{class_licentie}{Licentie}}\&\ nieuwe\_licentie);}
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{comment}{//getters}}
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keywordtype}{string}\ get\_voornaam()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keywordtype}{string}\ get\_achternaam()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keywordtype}{string}\ get\_geboortedatum()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keywordtype}{char}\ get\_geslacht()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00031\ \ \ \ \ \mbox{\hyperlink{class_licentie}{Licentie}}\ get\_licentie()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00032\ \ \ \ \ \mbox{\hyperlink{class_licentie}{Licentie}}\&\ get\_licentie\_ref();}
+\DoxyCodeLine{00033\ \};}
+\DoxyCodeLine{00034\ }
+
+\end{DoxyCode}

@@ -1,0 +1,52 @@
+\doxysection{Deelnemer.\+h}
+\hypertarget{_deelnemer_8h_source}{}\label{_deelnemer_8h_source}
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ "{}Atleet.h"{}}}
+\DoxyCodeLine{00004\ }
+\DoxyCodeLine{00005\ \textcolor{keyword}{using\ namespace\ }std;}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{keyword}{class\ }Deelnemer}
+\DoxyCodeLine{00008\ \{}
+\DoxyCodeLine{00009\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00010\ \ \ \ \ \textcolor{keywordtype}{int}\ index\_atleet\{\ 0\ \};\ \textcolor{comment}{//\ verwijzing\ naar\ atleet\ in\ globale\ atletenlijst}}
+\DoxyCodeLine{00011\ \ \ \ \ \textcolor{keywordtype}{int}\ tijd\_zwem\{\ 0\ \};\ \ \ \ \ \ \textcolor{comment}{//\ in\ seconden}}
+\DoxyCodeLine{00012\ \ \ \ \ \textcolor{keywordtype}{int}\ tijd\_fiets\{\ 0\ \};\ \ \ \ \ \textcolor{comment}{//\ in\ seconden}}
+\DoxyCodeLine{00013\ \ \ \ \ \textcolor{keywordtype}{int}\ tijd\_loop\{\ 0\ \};\ \ \ \ \ \ \textcolor{comment}{//\ in\ seconden}}
+\DoxyCodeLine{00014\ \ \ \ \ \textcolor{keywordtype}{bool}\ heeft\_wissel1\{\ \textcolor{keyword}{false}\ \};}
+\DoxyCodeLine{00015\ \ \ \ \ \textcolor{keywordtype}{bool}\ heeft\_wissel2\{\ \textcolor{keyword}{false}\ \};}
+\DoxyCodeLine{00016\ \ \ \ \ \textcolor{keywordtype}{int}\ tijd\_wissel1\{\ 0\ \};\ \ \ \textcolor{comment}{//\ optioneel\ (alleen\ gebruiken\ als\ heeft\_wissel1\ ==\ true)}}
+\DoxyCodeLine{00017\ \ \ \ \ \textcolor{keywordtype}{int}\ tijd\_wissel2\{\ 0\ \};\ \ \ \textcolor{comment}{//\ optioneel\ (alleen\ gebruiken\ als\ heeft\_wissel2\ ==\ true)}}
+\DoxyCodeLine{00018\ }
+\DoxyCodeLine{00019\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00020\ \ \ \ \ \textcolor{comment}{//\ constructors}}
+\DoxyCodeLine{00021\ \ \ \ \ Deelnemer()\ =\ \textcolor{keywordflow}{default};}
+\DoxyCodeLine{00022\ \ \ \ \ Deelnemer(\textcolor{keywordtype}{int}\ index\_atleet,\ \textcolor{keywordtype}{int}\ tijd\_zwem,\ \textcolor{keywordtype}{int}\ tijd\_fiets,\ \textcolor{keywordtype}{int}\ tijd\_loop);}
+\DoxyCodeLine{00023\ \ \ \ \ Deelnemer(\textcolor{keywordtype}{int}\ index\_atleet,\ \textcolor{keywordtype}{int}\ tijd\_zwem,\ \textcolor{keywordtype}{int}\ tijd\_fiets,\ \textcolor{keywordtype}{int}\ tijd\_loop,\ \textcolor{keywordtype}{int}\ tijd\_wissel1,\ \textcolor{keywordtype}{int}\ tijd\_wissel2);}
+\DoxyCodeLine{00024\ }
+\DoxyCodeLine{00025\ }
+\DoxyCodeLine{00026\ \ \ \ \ \textcolor{comment}{//\ setters}}
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keywordtype}{void}\ set\_tijd\_zwem(\textcolor{keywordtype}{int}\ nieuwe\_tijd\_zwem);}
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keywordtype}{void}\ set\_tijd\_fiets(\textcolor{keywordtype}{int}\ nieuwe\_tijd\_fiets);}
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keywordtype}{void}\ set\_tijd\_loop(\textcolor{keywordtype}{int}\ nieuwe\_tijd\_loop);}
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keywordtype}{void}\ set\_wisseltijd1(\textcolor{keywordtype}{int}\ tijd\_wissel1);\ \ \ \textcolor{comment}{//\ zet\ automatisch\ heeft\_wissel1\ =\ true}}
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keywordtype}{void}\ set\_wisseltijd2(\textcolor{keywordtype}{int}\ tijd\_wissel2);\ \ \ \textcolor{comment}{//\ zet\ automatisch\ heeft\_wissel2\ =\ true}}
+\DoxyCodeLine{00032\ }
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{comment}{//\ getters}}
+\DoxyCodeLine{00034\ \ \ \ \ \textcolor{keyword}{const}\ \mbox{\hyperlink{class_atleet}{Atleet}}\&\ get\_atleet()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keywordtype}{int}\ get\_index\_atleet()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keywordtype}{int}\ \ get\_tijd\_zwem()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00037\ \ \ \ \ \textcolor{keywordtype}{int}\ \ get\_tijd\_fiets()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keywordtype}{int}\ \ get\_tijd\_loop()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00039\ \ \ \ \ \textcolor{keywordtype}{bool}\ get\_heeft\_wissel1()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00040\ \ \ \ \ \textcolor{keywordtype}{bool}\ get\_heeft\_wissel2()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00041\ \ \ \ \ \textcolor{keywordtype}{int}\ \ get\_wisseltijd1()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00042\ \ \ \ \ \textcolor{keywordtype}{int}\ \ get\_wisseltijd2()\ \textcolor{keyword}{const};}
+\DoxyCodeLine{00043\ }
+\DoxyCodeLine{00044\ \ \ \ \ \textcolor{comment}{//\ berekening}}
+\DoxyCodeLine{00045\ \ \ \ \ \textcolor{keywordtype}{int}\ totale\_tijd()\ \textcolor{keyword}{const};\ \ \ \textcolor{comment}{//\ som\ van\ alle\ onderdelen\ (+\ wisseltijden\ als\ aanwezig)}}
+\DoxyCodeLine{00046\ \};}
+\DoxyCodeLine{00047\ }
+
+\end{DoxyCode}
