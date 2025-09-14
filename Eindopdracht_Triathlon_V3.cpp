@@ -180,9 +180,9 @@ bool valide_datum(const string& datum)
         if (c < '0' || c > '9')
             return false;
     }
-    int dag = stoi(datum.substr(0, 2));
-    int maand = stoi(datum.substr(3, 2));
-    int jaar = stoi(datum.substr(6, 4));
+    int dag = (datum[0] - '0') * 10 + (datum[1] - '0');
+    int maand = (datum[3] - '0') * 10 + (datum[4] - '0');
+    int jaar = (datum[6] - '0') * 1000 + (datum[7] - '0') * 100 + (datum[8] - '0') * 10 + (datum[9] - '0');
     if (jaar < 1900 || jaar > 2100)
         return false;
     if (maand < 1 || maand > 12)
@@ -203,15 +203,15 @@ bool valide_datum(const string& datum)
 // datum helpers voor "dd-mm-jjjj"
 static int get_dag(const string& datum)
 {
-    return stoi(datum.substr(0, 2));
+    return (datum[0] - '0') * 10 + (datum[1] - '0');
 }
 static int get_maand(const string& datum)
 {
-    return stoi(datum.substr(3, 2));
+    return (datum[3] - '0') * 10 + (datum[4] - '0');
 }
 static int get_jaar(const string& datum)
 {
-    return stoi(datum.substr(6, 4));
+    return (datum[6] - '0') * 1000 + (datum[7] - '0') * 100 + (datum[8] - '0') * 10 + (datum[9] - '0');
 }
 
 int leeftijd_op_datum(const string& geboortedatum, const string& datum)
