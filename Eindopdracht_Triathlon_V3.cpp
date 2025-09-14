@@ -304,23 +304,16 @@ int kies_index(int max_index, const string& prompt)
 
 string lees_tekst(const string& prompt)
 {
+    string input;
     while (true)
     {
-        try
-        {
-            string input;
-            cout << prompt;
-            cin.clear();
-            if (!getline(cin >> ws, input))
-                throw runtime_error("fout");
+        cout << prompt;
+        cin.clear();
+        if (getline(cin >> ws, input))
             return input;
-        }
-        catch (...)
-        {
-            cout << "Ongeldige invoer. Probeer opnieuw.\n";
-            cin.clear();
-            cin.ignore(numeric_limits<streamsize>::max(), '\n');
-        }
+        cout << "Ongeldige invoer. Probeer opnieuw.\n";
+        cin.clear();
+        cin.ignore(numeric_limits<streamsize>::max(), '\n');
     }
 }
 
