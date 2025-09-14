@@ -91,39 +91,104 @@ $(function(){initNavTree('class_licentie.html','','class_licentie-members'); });
   <div class="headertitle"><div class="title">Licentie Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>Klasse die een licentie voor een atleet voorstelt.  
+ <a href="#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="_licentie_8h_source.html">Licentie.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a6bffd46ee2a0ba55058c31f3789c8c75" id="r_a6bffd46ee2a0ba55058c31f3789c8c75"><td class="memItemLeft" align="right" valign="top"><a id="a6bffd46ee2a0ba55058c31f3789c8c75" name="a6bffd46ee2a0ba55058c31f3789c8c75"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>Licentie</b> (int nummer, const string &amp;geldig_tot, const string &amp;type, const string &amp;vereniging=&quot;&quot;)</td></tr>
+<tr class="memitem:aec3cba68b26bd36e09fa1f18f98d2162" id="r_aec3cba68b26bd36e09fa1f18f98d2162"><td class="memItemLeft" align="right" valign="top"><a id="aec3cba68b26bd36e09fa1f18f98d2162" name="aec3cba68b26bd36e09fa1f18f98d2162"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>Licentie</b> ()</td></tr>
+<tr class="memdesc:aec3cba68b26bd36e09fa1f18f98d2162"><td class="mdescLeft">&#160;</td><td class="mdescRight">Standaardconstructor. <br /></td></tr>
+<tr class="memitem:a6bffd46ee2a0ba55058c31f3789c8c75" id="r_a6bffd46ee2a0ba55058c31f3789c8c75"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a6bffd46ee2a0ba55058c31f3789c8c75">Licentie</a> (int nummer, const string &amp;geldig_tot, const string &amp;type, const string &amp;vereniging=&quot;&quot;)</td></tr>
+<tr class="memdesc:a6bffd46ee2a0ba55058c31f3789c8c75"><td class="mdescLeft">&#160;</td><td class="mdescRight">Maak een nieuwe licentie.  <br /></td></tr>
 <tr class="memitem:a31f86232e0e2f4563e5e1cfe55dfd8b2" id="r_a31f86232e0e2f4563e5e1cfe55dfd8b2"><td class="memItemLeft" align="right" valign="top"><a id="a31f86232e0e2f4563e5e1cfe55dfd8b2" name="a31f86232e0e2f4563e5e1cfe55dfd8b2"></a>
 int&#160;</td><td class="memItemRight" valign="bottom"><b>get_nummer</b> () const</td></tr>
+<tr class="memdesc:a31f86232e0e2f4563e5e1cfe55dfd8b2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Geeft het licentienummer terug. <br /></td></tr>
 <tr class="memitem:a85d2c2958e91775f2e5f031343af08d8" id="r_a85d2c2958e91775f2e5f031343af08d8"><td class="memItemLeft" align="right" valign="top"><a id="a85d2c2958e91775f2e5f031343af08d8" name="a85d2c2958e91775f2e5f031343af08d8"></a>
 string&#160;</td><td class="memItemRight" valign="bottom"><b>get_geldig_tot</b> () const</td></tr>
+<tr class="memdesc:a85d2c2958e91775f2e5f031343af08d8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Geeft de geldigheidsdatum terug. <br /></td></tr>
 <tr class="memitem:afaa063d74e4310f6cd3d09406a9a580d" id="r_afaa063d74e4310f6cd3d09406a9a580d"><td class="memItemLeft" align="right" valign="top"><a id="afaa063d74e4310f6cd3d09406a9a580d" name="afaa063d74e4310f6cd3d09406a9a580d"></a>
 string&#160;</td><td class="memItemRight" valign="bottom"><b>get_type</b> () const</td></tr>
+<tr class="memdesc:afaa063d74e4310f6cd3d09406a9a580d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Geeft het type licentie terug. <br /></td></tr>
 <tr class="memitem:afe477fa1c4ca5b2ffd6840aa3dea4a03" id="r_afe477fa1c4ca5b2ffd6840aa3dea4a03"><td class="memItemLeft" align="right" valign="top"><a id="afe477fa1c4ca5b2ffd6840aa3dea4a03" name="afe477fa1c4ca5b2ffd6840aa3dea4a03"></a>
 string&#160;</td><td class="memItemRight" valign="bottom"><b>get_vereniging</b> () const</td></tr>
+<tr class="memdesc:afe477fa1c4ca5b2ffd6840aa3dea4a03"><td class="mdescLeft">&#160;</td><td class="mdescRight">Geeft de vereniging terug. <br /></td></tr>
 <tr class="memitem:ade645e0a3417a3810668ebc02718b6d3" id="r_ade645e0a3417a3810668ebc02718b6d3"><td class="memItemLeft" align="right" valign="top"><a id="ade645e0a3417a3810668ebc02718b6d3" name="ade645e0a3417a3810668ebc02718b6d3"></a>
 const vector&lt; <a class="el" href="struct_doping_controle.html">DopingControle</a> &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>get_doping_controles</b> () const</td></tr>
+<tr class="memdesc:ade645e0a3417a3810668ebc02718b6d3"><td class="mdescLeft">&#160;</td><td class="mdescRight">Geeft de lijst met dopingcontroles terug. <br /></td></tr>
 <tr class="memitem:aa3cf1a0a908c6ff969855db1b02d5771" id="r_aa3cf1a0a908c6ff969855db1b02d5771"><td class="memItemLeft" align="right" valign="top"><a id="aa3cf1a0a908c6ff969855db1b02d5771" name="aa3cf1a0a908c6ff969855db1b02d5771"></a>
 bool&#160;</td><td class="memItemRight" valign="bottom"><b>is_dopingvrij</b> () const</td></tr>
+<tr class="memdesc:aa3cf1a0a908c6ff969855db1b02d5771"><td class="mdescLeft">&#160;</td><td class="mdescRight">Controleert of er nooit doping is gevonden. <br /></td></tr>
 <tr class="memitem:a85aaff1c469248bf2835bf677bae1581" id="r_a85aaff1c469248bf2835bf677bae1581"><td class="memItemLeft" align="right" valign="top"><a id="a85aaff1c469248bf2835bf677bae1581" name="a85aaff1c469248bf2835bf677bae1581"></a>
 bool&#160;</td><td class="memItemRight" valign="bottom"><b>is_geldig_op</b> (const string &amp;datum) const</td></tr>
+<tr class="memdesc:a85aaff1c469248bf2835bf677bae1581"><td class="mdescLeft">&#160;</td><td class="mdescRight">Controleert of de licentie geldig is op een datum. <br /></td></tr>
 <tr class="memitem:a17ac3d27c5fd286a0a315b45a395e444" id="r_a17ac3d27c5fd286a0a315b45a395e444"><td class="memItemLeft" align="right" valign="top"><a id="a17ac3d27c5fd286a0a315b45a395e444" name="a17ac3d27c5fd286a0a315b45a395e444"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>set_nummer</b> (int nummer)</td></tr>
+<tr class="memdesc:a17ac3d27c5fd286a0a315b45a395e444"><td class="mdescLeft">&#160;</td><td class="mdescRight">Zet het licentienummer. <br /></td></tr>
 <tr class="memitem:adef06ddd37228b5984c5ee7060ded0d7" id="r_adef06ddd37228b5984c5ee7060ded0d7"><td class="memItemLeft" align="right" valign="top"><a id="adef06ddd37228b5984c5ee7060ded0d7" name="adef06ddd37228b5984c5ee7060ded0d7"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>set_geldig_tot</b> (const string &amp;geldig_tot)</td></tr>
+<tr class="memdesc:adef06ddd37228b5984c5ee7060ded0d7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Zet de geldigheidsdatum. <br /></td></tr>
 <tr class="memitem:a61477df28937b1d53ad087e0bd26a3cd" id="r_a61477df28937b1d53ad087e0bd26a3cd"><td class="memItemLeft" align="right" valign="top"><a id="a61477df28937b1d53ad087e0bd26a3cd" name="a61477df28937b1d53ad087e0bd26a3cd"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>set_type</b> (const string &amp;nieuw_type)</td></tr>
+<tr class="memdesc:a61477df28937b1d53ad087e0bd26a3cd"><td class="mdescLeft">&#160;</td><td class="mdescRight">Zet het type licentie. <br /></td></tr>
 <tr class="memitem:afdafa55d63e94e1e52da59f42ba92244" id="r_afdafa55d63e94e1e52da59f42ba92244"><td class="memItemLeft" align="right" valign="top"><a id="afdafa55d63e94e1e52da59f42ba92244" name="afdafa55d63e94e1e52da59f42ba92244"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>set_vereniging</b> (const string &amp;vereniging)</td></tr>
+<tr class="memdesc:afdafa55d63e94e1e52da59f42ba92244"><td class="mdescLeft">&#160;</td><td class="mdescRight">Zet de vereniging. <br /></td></tr>
 <tr class="memitem:ac87a86e40581dc61b40bb51d9ff90252" id="r_ac87a86e40581dc61b40bb51d9ff90252"><td class="memItemLeft" align="right" valign="top"><a id="ac87a86e40581dc61b40bb51d9ff90252" name="ac87a86e40581dc61b40bb51d9ff90252"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>voeg_dopingcontrole_toe</b> (const <a class="el" href="struct_doping_controle.html">DopingControle</a> &amp;controle)</td></tr>
+<tr class="memdesc:ac87a86e40581dc61b40bb51d9ff90252"><td class="mdescLeft">&#160;</td><td class="mdescRight">Voeg een dopingcontrole toe. <br /></td></tr>
 </table>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Klasse die een licentie voor een atleet voorstelt. </p>
+</div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a6bffd46ee2a0ba55058c31f3789c8c75" name="a6bffd46ee2a0ba55058c31f3789c8c75"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6bffd46ee2a0ba55058c31f3789c8c75">&#9670;&#160;</a></span>Licentie()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Licentie::Licentie </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>nummer</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const string &amp;</td>          <td class="paramname"><span class="paramname"><em>geldig_tot</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const string &amp;</td>          <td class="paramname"><span class="paramname"><em>type</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const string &amp;</td>          <td class="paramname"><span class="paramname"><em>vereniging</em></span><span class="paramdefsep"> = </span><span class="paramdefval">&quot;&quot;</span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Maak een nieuwe licentie. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">nummer</td><td>Licentienummer. </td></tr>
+    <tr><td class="paramname">geldig_tot</td><td>Datum tot wanneer de licentie geldig is. </td></tr>
+    <tr><td class="paramname">type</td><td>Type licentie. </td></tr>
+    <tr><td class="paramname">vereniging</td><td>Optioneel: vereniging voor trainingslicentie. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li><a class="el" href="_licentie_8h_source.html">Licentie.h</a></li>
-<li><b>Licentie.cpp</b></li>
+<li><a class="el" href="_licentie_8cpp.html">Licentie.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

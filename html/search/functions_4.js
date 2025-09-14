@@ -1,0 +1,28 @@
+var searchData=
+[
+  ['get_5fachternaam_0',['get_achternaam',['../class_atleet.html#a236677ebb3d6a44d8497460cdad8c7cf',1,'Atleet']]],
+  ['get_5fatleet_1',['get_atleet',['../class_deelnemer.html#ade0c1d0ad5153000789c6a16fb03b4f8',1,'Deelnemer']]],
+  ['get_5fdatum_2',['get_datum',['../class_wedstrijd.html#ab4f132c8d2f006b82756314405f1a651',1,'Wedstrijd']]],
+  ['get_5fdeelnemers_3',['get_deelnemers',['../class_wedstrijd.html#a9379a6a52621cb6131ade23461cd03cf',1,'Wedstrijd']]],
+  ['get_5fdoping_5fcontroles_4',['get_doping_controles',['../class_licentie.html#ade645e0a3417a3810668ebc02718b6d3',1,'Licentie']]],
+  ['get_5fgeboortedatum_5',['get_geboortedatum',['../class_atleet.html#a3dfd5a91c69416a6ba659b4e358250d0',1,'Atleet']]],
+  ['get_5fgeldig_5ftot_6',['get_geldig_tot',['../class_licentie.html#a85d2c2958e91775f2e5f031343af08d8',1,'Licentie']]],
+  ['get_5fgeslacht_7',['get_geslacht',['../class_atleet.html#a7ae11405a6d8e93a52e8d2a5d83cb799',1,'Atleet']]],
+  ['get_5fheeft_5fwissel1_8',['get_heeft_wissel1',['../class_deelnemer.html#a62f2bf26ffbca604b3bef900b3cdd9b7',1,'Deelnemer']]],
+  ['get_5fheeft_5fwissel2_9',['get_heeft_wissel2',['../class_deelnemer.html#a8292f027fb97844a3d1125cc36c6ab4a',1,'Deelnemer']]],
+  ['get_5findex_5fatleet_10',['get_index_atleet',['../class_deelnemer.html#a937835114dd1d5503deb21ff85a1cd48',1,'Deelnemer']]],
+  ['get_5fis_5fnederlands_5fkampioenschap_11',['get_is_nederlands_kampioenschap',['../class_wedstrijd.html#a736ef6ba55e60c31ee315d444d28d158',1,'Wedstrijd']]],
+  ['get_5flicentie_12',['get_licentie',['../class_atleet.html#a21006ab6c400bfe64f8f9d3242474460',1,'Atleet']]],
+  ['get_5flicentie_5fref_13',['get_licentie_ref',['../class_atleet.html#a0873aecc86b702fd4c0aa5ae8587117f',1,'Atleet']]],
+  ['get_5fmet_5fwissels_14',['get_met_wissels',['../class_wedstrijd.html#a6afa20eabad8800cded73265e03dc11e',1,'Wedstrijd']]],
+  ['get_5fnaam_15',['get_naam',['../class_wedstrijd.html#a877b6728a32c9ee3b0b2e6715d8cd885',1,'Wedstrijd']]],
+  ['get_5fnummer_16',['get_nummer',['../class_licentie.html#a31f86232e0e2f4563e5e1cfe55dfd8b2',1,'Licentie']]],
+  ['get_5ftijd_5ffiets_17',['get_tijd_fiets',['../class_deelnemer.html#ada0c2bf703495831f3984e342fff1c24',1,'Deelnemer']]],
+  ['get_5ftijd_5floop_18',['get_tijd_loop',['../class_deelnemer.html#ae062ad6a53eff69f66c63b3dc3c74983',1,'Deelnemer']]],
+  ['get_5ftijd_5fzwem_19',['get_tijd_zwem',['../class_deelnemer.html#a0f3d954f7d18ff0da79219de3fa3b10b',1,'Deelnemer']]],
+  ['get_5ftype_20',['get_type',['../class_licentie.html#afaa063d74e4310f6cd3d09406a9a580d',1,'Licentie']]],
+  ['get_5fvereniging_21',['get_vereniging',['../class_licentie.html#afe477fa1c4ca5b2ffd6840aa3dea4a03',1,'Licentie']]],
+  ['get_5fvoornaam_22',['get_voornaam',['../class_atleet.html#aeb01e9fc35913d7cb748eb36c34ec3fc',1,'Atleet']]],
+  ['get_5fwisseltijd1_23',['get_wisseltijd1',['../class_deelnemer.html#a156d75dbfacdade8317adb609129fc38',1,'Deelnemer']]],
+  ['get_5fwisseltijd2_24',['get_wisseltijd2',['../class_deelnemer.html#ac1ae9ae15f6db583d74b0db9828b4171',1,'Deelnemer']]]
+];

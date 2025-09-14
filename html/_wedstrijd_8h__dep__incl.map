@@ -1,0 +1,7 @@
+<map id="Wedstrijd.h" name="Wedstrijd.h">
+<area shape="rect" id="Node000001" title="Bevat informatie en deelnemers van een wedstrijd." alt="" coords="115,5,202,32"/>
+<area shape="rect" id="Node000002" href="$_eindopdracht___triathlon___v3_8cpp.html" title="Hoofdbestand met de main&#45;functie van het programma." alt="" coords="5,80,160,123"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="138,45,104,82,100,78,134,42"/>
+<area shape="rect" id="Node000003" href="$_wedstrijd_8cpp.html" title="Implementatie van de Wedstrijd klasse." alt="" coords="184,88,285,115"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="183,41,225,86,221,90,179,45"/>
+</map>

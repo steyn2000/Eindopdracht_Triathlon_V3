@@ -91,47 +91,169 @@ $(function(){initNavTree('class_deelnemer.html','','class_deelnemer-members'); }
   <div class="headertitle"><div class="title">Deelnemer Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>Een deelnemer met tijden voor alle onderdelen.  
+ <a href="#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="_deelnemer_8h_source.html">Deelnemer.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a3d02afb61582483f05fd4daad781003b" id="r_a3d02afb61582483f05fd4daad781003b"><td class="memItemLeft" align="right" valign="top"><a id="a3d02afb61582483f05fd4daad781003b" name="a3d02afb61582483f05fd4daad781003b"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>Deelnemer</b> (int index_atleet, int tijd_zwem, int tijd_fiets, int tijd_loop)</td></tr>
-<tr class="memitem:a4484a0d201a176d6c082a0ce3da04efe" id="r_a4484a0d201a176d6c082a0ce3da04efe"><td class="memItemLeft" align="right" valign="top"><a id="a4484a0d201a176d6c082a0ce3da04efe" name="a4484a0d201a176d6c082a0ce3da04efe"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>Deelnemer</b> (int index_atleet, int tijd_zwem, int tijd_fiets, int tijd_loop, int tijd_wissel1, int tijd_wissel2)</td></tr>
+<tr class="memitem:a1523926c4163e327af1679f737c04d59" id="r_a1523926c4163e327af1679f737c04d59"><td class="memItemLeft" align="right" valign="top"><a id="a1523926c4163e327af1679f737c04d59" name="a1523926c4163e327af1679f737c04d59"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>Deelnemer</b> ()=default</td></tr>
+<tr class="memdesc:a1523926c4163e327af1679f737c04d59"><td class="mdescLeft">&#160;</td><td class="mdescRight">Standaardconstructor. <br /></td></tr>
+<tr class="memitem:a3d02afb61582483f05fd4daad781003b" id="r_a3d02afb61582483f05fd4daad781003b"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a3d02afb61582483f05fd4daad781003b">Deelnemer</a> (int index_atleet, int tijd_zwem, int tijd_fiets, int tijd_loop)</td></tr>
+<tr class="memdesc:a3d02afb61582483f05fd4daad781003b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Maak een deelnemer zonder wisseltijden.  <br /></td></tr>
+<tr class="memitem:a4484a0d201a176d6c082a0ce3da04efe" id="r_a4484a0d201a176d6c082a0ce3da04efe"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a4484a0d201a176d6c082a0ce3da04efe">Deelnemer</a> (int index_atleet, int tijd_zwem, int tijd_fiets, int tijd_loop, int tijd_wissel1, int tijd_wissel2)</td></tr>
+<tr class="memdesc:a4484a0d201a176d6c082a0ce3da04efe"><td class="mdescLeft">&#160;</td><td class="mdescRight">Maak een deelnemer met wisseltijden.  <br /></td></tr>
 <tr class="memitem:a554fd7d1b3e984be2658882b3d28dca9" id="r_a554fd7d1b3e984be2658882b3d28dca9"><td class="memItemLeft" align="right" valign="top"><a id="a554fd7d1b3e984be2658882b3d28dca9" name="a554fd7d1b3e984be2658882b3d28dca9"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>set_tijd_zwem</b> (int nieuwe_tijd_zwem)</td></tr>
+<tr class="memdesc:a554fd7d1b3e984be2658882b3d28dca9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Zet de zwemtijd. <br /></td></tr>
 <tr class="memitem:a9c29fef1dd4015faf41660a401a7e2b7" id="r_a9c29fef1dd4015faf41660a401a7e2b7"><td class="memItemLeft" align="right" valign="top"><a id="a9c29fef1dd4015faf41660a401a7e2b7" name="a9c29fef1dd4015faf41660a401a7e2b7"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>set_tijd_fiets</b> (int nieuwe_tijd_fiets)</td></tr>
+<tr class="memdesc:a9c29fef1dd4015faf41660a401a7e2b7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Zet de fietstijd. <br /></td></tr>
 <tr class="memitem:aa885bd0ce9c50c7e0a4d04f35db789c8" id="r_aa885bd0ce9c50c7e0a4d04f35db789c8"><td class="memItemLeft" align="right" valign="top"><a id="aa885bd0ce9c50c7e0a4d04f35db789c8" name="aa885bd0ce9c50c7e0a4d04f35db789c8"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>set_tijd_loop</b> (int nieuwe_tijd_loop)</td></tr>
+<tr class="memdesc:aa885bd0ce9c50c7e0a4d04f35db789c8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Zet de looptijd. <br /></td></tr>
 <tr class="memitem:a5b2d8e0adb4706b78ce8b1516d5949f5" id="r_a5b2d8e0adb4706b78ce8b1516d5949f5"><td class="memItemLeft" align="right" valign="top"><a id="a5b2d8e0adb4706b78ce8b1516d5949f5" name="a5b2d8e0adb4706b78ce8b1516d5949f5"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>set_wisseltijd1</b> (int tijd_wissel1)</td></tr>
+<tr class="memdesc:a5b2d8e0adb4706b78ce8b1516d5949f5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Zet de eerste wisseltijd en markeer deze als aanwezig. <br /></td></tr>
 <tr class="memitem:a841fe2105f0e3e8b459870db8043b84f" id="r_a841fe2105f0e3e8b459870db8043b84f"><td class="memItemLeft" align="right" valign="top"><a id="a841fe2105f0e3e8b459870db8043b84f" name="a841fe2105f0e3e8b459870db8043b84f"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>set_wisseltijd2</b> (int tijd_wissel2)</td></tr>
+<tr class="memdesc:a841fe2105f0e3e8b459870db8043b84f"><td class="mdescLeft">&#160;</td><td class="mdescRight">Zet de tweede wisseltijd en markeer deze als aanwezig. <br /></td></tr>
 <tr class="memitem:ade0c1d0ad5153000789c6a16fb03b4f8" id="r_ade0c1d0ad5153000789c6a16fb03b4f8"><td class="memItemLeft" align="right" valign="top"><a id="ade0c1d0ad5153000789c6a16fb03b4f8" name="ade0c1d0ad5153000789c6a16fb03b4f8"></a>
 const <a class="el" href="class_atleet.html">Atleet</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>get_atleet</b> () const</td></tr>
+<tr class="memdesc:ade0c1d0ad5153000789c6a16fb03b4f8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Geeft de gekoppelde atleet terug. <br /></td></tr>
 <tr class="memitem:a937835114dd1d5503deb21ff85a1cd48" id="r_a937835114dd1d5503deb21ff85a1cd48"><td class="memItemLeft" align="right" valign="top"><a id="a937835114dd1d5503deb21ff85a1cd48" name="a937835114dd1d5503deb21ff85a1cd48"></a>
 int&#160;</td><td class="memItemRight" valign="bottom"><b>get_index_atleet</b> () const</td></tr>
+<tr class="memdesc:a937835114dd1d5503deb21ff85a1cd48"><td class="mdescLeft">&#160;</td><td class="mdescRight">Geeft de index van de atleet terug. <br /></td></tr>
 <tr class="memitem:a0f3d954f7d18ff0da79219de3fa3b10b" id="r_a0f3d954f7d18ff0da79219de3fa3b10b"><td class="memItemLeft" align="right" valign="top"><a id="a0f3d954f7d18ff0da79219de3fa3b10b" name="a0f3d954f7d18ff0da79219de3fa3b10b"></a>
 int&#160;</td><td class="memItemRight" valign="bottom"><b>get_tijd_zwem</b> () const</td></tr>
+<tr class="memdesc:a0f3d954f7d18ff0da79219de3fa3b10b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Geeft de zwemtijd terug. <br /></td></tr>
 <tr class="memitem:ada0c2bf703495831f3984e342fff1c24" id="r_ada0c2bf703495831f3984e342fff1c24"><td class="memItemLeft" align="right" valign="top"><a id="ada0c2bf703495831f3984e342fff1c24" name="ada0c2bf703495831f3984e342fff1c24"></a>
 int&#160;</td><td class="memItemRight" valign="bottom"><b>get_tijd_fiets</b> () const</td></tr>
+<tr class="memdesc:ada0c2bf703495831f3984e342fff1c24"><td class="mdescLeft">&#160;</td><td class="mdescRight">Geeft de fietstijd terug. <br /></td></tr>
 <tr class="memitem:ae062ad6a53eff69f66c63b3dc3c74983" id="r_ae062ad6a53eff69f66c63b3dc3c74983"><td class="memItemLeft" align="right" valign="top"><a id="ae062ad6a53eff69f66c63b3dc3c74983" name="ae062ad6a53eff69f66c63b3dc3c74983"></a>
 int&#160;</td><td class="memItemRight" valign="bottom"><b>get_tijd_loop</b> () const</td></tr>
+<tr class="memdesc:ae062ad6a53eff69f66c63b3dc3c74983"><td class="mdescLeft">&#160;</td><td class="mdescRight">Geeft de looptijd terug. <br /></td></tr>
 <tr class="memitem:a62f2bf26ffbca604b3bef900b3cdd9b7" id="r_a62f2bf26ffbca604b3bef900b3cdd9b7"><td class="memItemLeft" align="right" valign="top"><a id="a62f2bf26ffbca604b3bef900b3cdd9b7" name="a62f2bf26ffbca604b3bef900b3cdd9b7"></a>
 bool&#160;</td><td class="memItemRight" valign="bottom"><b>get_heeft_wissel1</b> () const</td></tr>
+<tr class="memdesc:a62f2bf26ffbca604b3bef900b3cdd9b7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Is de eerste wissel aanwezig? <br /></td></tr>
 <tr class="memitem:a8292f027fb97844a3d1125cc36c6ab4a" id="r_a8292f027fb97844a3d1125cc36c6ab4a"><td class="memItemLeft" align="right" valign="top"><a id="a8292f027fb97844a3d1125cc36c6ab4a" name="a8292f027fb97844a3d1125cc36c6ab4a"></a>
 bool&#160;</td><td class="memItemRight" valign="bottom"><b>get_heeft_wissel2</b> () const</td></tr>
+<tr class="memdesc:a8292f027fb97844a3d1125cc36c6ab4a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Is de tweede wissel aanwezig? <br /></td></tr>
 <tr class="memitem:a156d75dbfacdade8317adb609129fc38" id="r_a156d75dbfacdade8317adb609129fc38"><td class="memItemLeft" align="right" valign="top"><a id="a156d75dbfacdade8317adb609129fc38" name="a156d75dbfacdade8317adb609129fc38"></a>
 int&#160;</td><td class="memItemRight" valign="bottom"><b>get_wisseltijd1</b> () const</td></tr>
+<tr class="memdesc:a156d75dbfacdade8317adb609129fc38"><td class="mdescLeft">&#160;</td><td class="mdescRight">Geeft de tijd van de eerste wissel terug. <br /></td></tr>
 <tr class="memitem:ac1ae9ae15f6db583d74b0db9828b4171" id="r_ac1ae9ae15f6db583d74b0db9828b4171"><td class="memItemLeft" align="right" valign="top"><a id="ac1ae9ae15f6db583d74b0db9828b4171" name="ac1ae9ae15f6db583d74b0db9828b4171"></a>
 int&#160;</td><td class="memItemRight" valign="bottom"><b>get_wisseltijd2</b> () const</td></tr>
+<tr class="memdesc:ac1ae9ae15f6db583d74b0db9828b4171"><td class="mdescLeft">&#160;</td><td class="mdescRight">Geeft de tijd van de tweede wissel terug. <br /></td></tr>
 <tr class="memitem:a77f9329b072d1ba37e9f36687f3fec68" id="r_a77f9329b072d1ba37e9f36687f3fec68"><td class="memItemLeft" align="right" valign="top"><a id="a77f9329b072d1ba37e9f36687f3fec68" name="a77f9329b072d1ba37e9f36687f3fec68"></a>
 int&#160;</td><td class="memItemRight" valign="bottom"><b>totale_tijd</b> () const</td></tr>
+<tr class="memdesc:a77f9329b072d1ba37e9f36687f3fec68"><td class="mdescLeft">&#160;</td><td class="mdescRight">Totale tijd inclusief wissels. <br /></td></tr>
 </table>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Een deelnemer met tijden voor alle onderdelen. </p>
+</div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="a3d02afb61582483f05fd4daad781003b" name="a3d02afb61582483f05fd4daad781003b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3d02afb61582483f05fd4daad781003b">&#9670;&#160;</a></span>Deelnemer() <span class="overload">[1/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Deelnemer::Deelnemer </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>index_atleet</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>tijd_zwem</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>tijd_fiets</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>tijd_loop</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Maak een deelnemer zonder wisseltijden. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">index_atleet</td><td>Index naar atleet in de globale lijst. </td></tr>
+    <tr><td class="paramname">tijd_zwem</td><td>Zwemtijd in seconden. </td></tr>
+    <tr><td class="paramname">tijd_fiets</td><td>Fietstijd in seconden. </td></tr>
+    <tr><td class="paramname">tijd_loop</td><td>Looptijd in seconden. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a4484a0d201a176d6c082a0ce3da04efe" name="a4484a0d201a176d6c082a0ce3da04efe"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4484a0d201a176d6c082a0ce3da04efe">&#9670;&#160;</a></span>Deelnemer() <span class="overload">[2/2]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Deelnemer::Deelnemer </td>
+          <td>(</td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>index_atleet</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>tijd_zwem</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>tijd_fiets</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>tijd_loop</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>tijd_wissel1</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">int</td>          <td class="paramname"><span class="paramname"><em>tijd_wissel2</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Maak een deelnemer met wisseltijden. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">index_atleet</td><td>Index naar atleet in de globale lijst. </td></tr>
+    <tr><td class="paramname">tijd_zwem</td><td>Zwemtijd in seconden. </td></tr>
+    <tr><td class="paramname">tijd_fiets</td><td>Fietstijd in seconden. </td></tr>
+    <tr><td class="paramname">tijd_loop</td><td>Looptijd in seconden. </td></tr>
+    <tr><td class="paramname">tijd_wissel1</td><td>Tijd voor eerste wissel. </td></tr>
+    <tr><td class="paramname">tijd_wissel2</td><td>Tijd voor tweede wissel. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li><a class="el" href="_deelnemer_8h_source.html">Deelnemer.h</a></li>
-<li><b>Deelnemer.cpp</b></li>
+<li><a class="el" href="_deelnemer_8cpp.html">Deelnemer.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

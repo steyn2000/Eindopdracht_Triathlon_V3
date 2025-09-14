@@ -1,0 +1,22 @@
+<map id="Licentie.h" name="Licentie.h">
+<area shape="rect" id="Node000001" title="Bevat de licentiegegevens van een atleet." alt="" coords="324,5,401,32"/>
+<area shape="rect" id="Node000002" href="$_atleet_8h.html" title="Klasse die alle gegevens van één atleet bijhoudt." alt="" coords="227,80,293,107"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="334,44,280,82,276,77,331,39"/>
+<area shape="rect" id="Node000006" href="$_eindopdracht___triathlon___v3_8cpp.html" title="Hoofdbestand met de main&#45;functie van het programma." alt="" coords="235,304,389,347"/>
+<area shape="poly" id="edge10_Node000001_Node000006" title=" " alt="" coords="361,48,318,304,313,303,356,47"/>
+<area shape="rect" id="Node000009" href="$_licentie_8cpp.html" title="Implementatie van de Licentie klasse." alt="" coords="400,80,491,107"/>
+<area shape="poly" id="edge11_Node000001_Node000009" title=" " alt="" coords="390,40,433,78,429,82,387,45"/>
+<area shape="rect" id="Node000003" href="$_atleet_8cpp.html" title="Implementatie van de Atleet klasse." alt="" coords="74,155,155,181"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="222,116,141,156,139,152,220,111"/>
+<area shape="rect" id="Node000004" href="$_deelnemer_8h.html" title="Houdt de wedstrijdtijden van één atleet bij." alt="" coords="179,155,274,181"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="250,122,235,155,230,153,245,120"/>
+<area shape="poly" id="edge9_Node000002_Node000006" title=" " alt="" coords="276,120,289,154,306,236,313,304,308,304,301,237,284,155,271,122"/>
+<area shape="rect" id="Node000005" href="$_deelnemer_8cpp.html" title="Implementatie van de Deelnemer klasse." alt="" coords="5,229,115,256"/>
+<area shape="poly" id="edge4_Node000004_Node000005" title=" " alt="" coords="185,190,90,231,88,226,183,185"/>
+<area shape="poly" id="edge5_Node000004_Node000006" title=" " alt="" coords="243,194,303,302,298,305,239,196"/>
+<area shape="rect" id="Node000007" href="$_wedstrijd_8h.html" title="Bevat informatie en deelnemers van een wedstrijd." alt="" coords="138,229,224,256"/>
+<area shape="poly" id="edge6_Node000004_Node000007" title=" " alt="" coords="213,196,191,230,187,228,208,193"/>
+<area shape="poly" id="edge7_Node000007_Node000006" title=" " alt="" coords="216,262,280,301,277,306,213,267"/>
+<area shape="rect" id="Node000008" href="$_wedstrijd_8cpp.html" title="Implementatie van de Wedstrijd klasse." alt="" coords="110,312,210,339"/>
+<area shape="poly" id="edge8_Node000007_Node000008" title=" " alt="" coords="177,272,166,313,161,311,172,271"/>
+</map>

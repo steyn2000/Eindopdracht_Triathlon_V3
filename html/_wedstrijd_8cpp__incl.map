@@ -1,0 +1,21 @@
+<map id="Wedstrijd.cpp" name="Wedstrijd.cpp">
+<area shape="rect" id="Node000001" title="Implementatie van de Wedstrijd klasse." alt="" coords="133,5,233,32"/>
+<area shape="rect" id="Node000002" href="$_wedstrijd_8h.html" title="Bevat informatie en deelnemers van een wedstrijd." alt="" coords="88,80,174,107"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="176,34,151,69,147,66,172,31"/>
+<area shape="rect" id="Node000008" title=" " alt="" coords="198,80,272,107"/>
+<area shape="poly" id="edge11_Node000001_Node000008" title=" " alt="" coords="195,31,220,66,215,69,190,34"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="127,379,181,405"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="152,105,175,125,194,153,198,160,204,163,210,167,214,176,211,221,186,331,172,366,167,364,181,330,206,220,209,177,206,170,201,167,195,164,189,156,171,129,148,109"/>
+<area shape="rect" id="Node000004" title=" " alt="" coords="9,379,67,405"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="118,109,95,130,73,156,49,195,32,226,20,260,10,304,8,317,10,330,24,364,19,366,5,331,3,317,5,304,15,258,27,224,44,192,69,153,91,126,114,105"/>
+<area shape="rect" id="Node000005" href="$_deelnemer_8h.html" title="Houdt de wedstrijdtijden van één atleet bij." alt="" coords="84,155,179,181"/>
+<area shape="poly" id="edge4_Node000002_Node000005" title=" " alt="" coords="134,107,134,139,129,139,129,107"/>
+<area shape="poly" id="edge5_Node000005_Node000003" title=" " alt="" coords="141,180,153,202,162,229,167,265,168,302,162,364,156,363,162,301,162,265,157,230,148,204,137,183"/>
+<area shape="rect" id="Node000006" href="$_atleet_8h.html" title="Klasse die alle gegevens van één atleet bijhoudt." alt="" coords="81,229,147,256"/>
+<area shape="poly" id="edge6_Node000005_Node000006" title=" " alt="" coords="131,182,123,215,118,213,126,181"/>
+<area shape="poly" id="edge7_Node000006_Node000003" title=" " alt="" coords="120,256,149,363,144,364,115,257"/>
+<area shape="rect" id="Node000007" href="$_licentie_8h.html" title="Bevat de licentiegegevens van een atleet." alt="" coords="19,304,97,331"/>
+<area shape="poly" id="edge8_Node000006_Node000007" title=" " alt="" coords="106,258,79,293,75,290,102,255"/>
+<area shape="poly" id="edge9_Node000007_Node000003" title=" " alt="" coords="76,329,127,367,124,371,73,333"/>
+<area shape="poly" id="edge10_Node000007_Node000004" title=" " alt="" coords="57,332,48,365,43,363,52,330"/>
+</map>

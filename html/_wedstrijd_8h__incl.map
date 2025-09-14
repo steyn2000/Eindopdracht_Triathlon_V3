@@ -1,0 +1,17 @@
+<map id="Wedstrijd.h" name="Wedstrijd.h">
+<area shape="rect" id="Node000001" title="Bevat informatie en deelnemers van een wedstrijd." alt="" coords="88,5,174,32"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="127,304,181,331"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="152,30,175,51,194,78,198,85,204,88,210,92,214,101,211,146,186,257,172,292,167,290,181,255,206,145,209,102,206,96,201,93,195,89,189,82,171,54,148,34"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="9,304,67,331"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="118,34,95,55,73,82,49,120,32,152,20,185,10,230,8,243,10,255,24,289,19,291,5,257,3,243,5,229,15,184,27,150,44,117,69,78,91,52,114,31"/>
+<area shape="rect" id="Node000004" href="$_deelnemer_8h.html" title="Houdt de wedstrijdtijden van één atleet bij." alt="" coords="84,80,179,107"/>
+<area shape="poly" id="edge3_Node000001_Node000004" title=" " alt="" coords="134,33,134,64,129,64,129,33"/>
+<area shape="poly" id="edge4_Node000004_Node000002" title=" " alt="" coords="141,106,153,128,162,154,167,190,168,227,162,289,156,288,162,227,162,191,157,155,148,130,137,108"/>
+<area shape="rect" id="Node000005" href="$_atleet_8h.html" title="Klasse die alle gegevens van één atleet bijhoudt." alt="" coords="81,155,147,181"/>
+<area shape="poly" id="edge5_Node000004_Node000005" title=" " alt="" coords="131,108,123,140,118,139,126,107"/>
+<area shape="poly" id="edge6_Node000005_Node000002" title=" " alt="" coords="120,181,149,288,144,290,115,183"/>
+<area shape="rect" id="Node000006" href="$_licentie_8h.html" title="Bevat de licentiegegevens van een atleet." alt="" coords="19,229,97,256"/>
+<area shape="poly" id="edge7_Node000005_Node000006" title=" " alt="" coords="106,184,79,219,75,215,102,180"/>
+<area shape="poly" id="edge8_Node000006_Node000002" title=" " alt="" coords="76,254,127,292,124,297,73,259"/>
+<area shape="poly" id="edge9_Node000006_Node000003" title=" " alt="" coords="57,257,48,290,43,288,52,256"/>
+</map>

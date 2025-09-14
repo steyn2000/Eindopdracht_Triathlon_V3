@@ -91,68 +91,97 @@ $(function(){initNavTree('_licentie_8h_source.html','',''); });
   <div class="headertitle"><div class="title">Licentie.h</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#pragma once</span></div>
+<a href="_licentie_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#pragma once</span></div>
 <div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#include &lt;string&gt;</span></div>
 <div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &lt;vector&gt;</span></div>
 <div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span> </div>
 <div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="keyword">using namespace </span>std;</div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span> </div>
-<div class="foldopen" id="foldopen00007" data-start="{" data-end="};">
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno"><a class="line" href="struct_doping_controle.html">    7</a></span><span class="keyword">struct </span><a class="code hl_struct" href="struct_doping_controle.html">DopingControle</a></div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span>{</div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>    <span class="keywordtype">string</span> datum;               <span class="comment">// datum van de controle</span></div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>    <span class="keywordtype">bool</span> doping_geconstateerd;  <span class="comment">// true als er doping is geconstateerd</span></div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>};</div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span></div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span></div>
+<div class="foldopen" id="foldopen00015" data-start="{" data-end="};">
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno"><a class="line" href="struct_doping_controle.html">   15</a></span><span class="keyword">struct </span><a class="code hl_struct" href="struct_doping_controle.html">DopingControle</a></div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>{</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno"><a class="line" href="struct_doping_controle.html#acb43e562f1c479e2549cc8f0853bbbab">   17</a></span>    <span class="keywordtype">string</span> <a class="code hl_variable" href="struct_doping_controle.html#acb43e562f1c479e2549cc8f0853bbbab">datum</a>;              </div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno"><a class="line" href="struct_doping_controle.html#ab6eda864777bd53c21050c1a17d53644">   18</a></span>    <span class="keywordtype">bool</span> <a class="code hl_variable" href="struct_doping_controle.html#ab6eda864777bd53c21050c1a17d53644">doping_geconstateerd</a>; </div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>};</div>
 </div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span> </div>
-<div class="foldopen" id="foldopen00013" data-start="{" data-end="};">
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno"><a class="line" href="class_licentie.html">   13</a></span><span class="keyword">class </span>Licentie</div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span>{</div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="keyword">private</span>:</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    <span class="keywordtype">int</span> licentie_nummer;</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    <span class="keywordtype">string</span> geldig_tot; <span class="comment">// Datum voor waarop de licentie geldig is</span></div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    <span class="keywordtype">string</span> type; <span class="comment">// Daglicentie/ trainingslicentie of wedstrijdlicentie</span></div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    <span class="keywordtype">string</span> vereniging; <span class="comment">// alleen relevant voor trainingslicentie</span></div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    vector&lt;DopingControle&gt; doping_controles; <span class="comment">// alleen voor wedstrijdlicentie</span></div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span> </div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span><span class="keyword">public</span>:</div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    <span class="comment">//Constructor</span></div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    Licentie();</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>    Licentie(<span class="keywordtype">int</span> nummer, <span class="keyword">const</span> <span class="keywordtype">string</span>&amp; geldig_tot, <span class="keyword">const</span> <span class="keywordtype">string</span>&amp; type, <span class="keyword">const</span> <span class="keywordtype">string</span>&amp; vereniging = <span class="stringliteral">&quot;&quot;</span>);</div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span> </div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    <span class="comment">//Getters</span></div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    <span class="keywordtype">int</span> get_nummer() <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    <span class="keywordtype">string</span> get_geldig_tot() <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    <span class="keywordtype">string</span> get_type() <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    <span class="keywordtype">string</span> get_vereniging() <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    <span class="keyword">const</span> vector&lt;DopingControle&gt;&amp; get_doping_controles() <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span> </div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    <span class="comment">// Dopingstatus</span></div>
-<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span>    <span class="keywordtype">bool</span> is_dopingvrij() <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span> </div>
-<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    <span class="comment">// Geldigheid</span></div>
-<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    <span class="keywordtype">bool</span> is_geldig_op(<span class="keyword">const</span> <span class="keywordtype">string</span>&amp; datum) <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span> </div>
-<div class="line"><a id="l00040" name="l00040"></a><span class="lineno">   40</span>    <span class="comment">//Setters</span></div>
-<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    <span class="keywordtype">void</span> set_nummer(<span class="keywordtype">int</span> nummer);</div>
-<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span>    <span class="keywordtype">void</span> set_geldig_tot(<span class="keyword">const</span> <span class="keywordtype">string</span>&amp; geldig_tot);</div>
-<div class="line"><a id="l00043" name="l00043"></a><span class="lineno">   43</span>    <span class="keywordtype">void</span> set_type(<span class="keyword">const</span> <span class="keywordtype">string</span>&amp; nieuw_type);</div>
-<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    <span class="keywordtype">void</span> set_vereniging(<span class="keyword">const</span> <span class="keywordtype">string</span>&amp; vereniging);</div>
-<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span>    <span class="keywordtype">void</span> voeg_dopingcontrole_toe(<span class="keyword">const</span> <a class="code hl_struct" href="struct_doping_controle.html">DopingControle</a>&amp; controle);</div>
-<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span> </div>
-<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>};</div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span></div>
+<div class="foldopen" id="foldopen00024" data-start="{" data-end="};">
+<div class="line"><a id="l00024" name="l00024"></a><span class="lineno"><a class="line" href="class_licentie.html">   24</a></span><span class="keyword">class </span><a class="code hl_function" href="class_licentie.html#aec3cba68b26bd36e09fa1f18f98d2162">Licentie</a></div>
+<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span>{</div>
+<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    <span class="keywordtype">int</span> licentie_nummer;              </div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    <span class="keywordtype">string</span> geldig_tot;                </div>
+<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    <span class="keywordtype">string</span> type;                      </div>
+<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    <span class="keywordtype">string</span> vereniging;                </div>
+<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    vector&lt;DopingControle&gt; doping_controles; </div>
+<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span> </div>
+<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span>    <span class="comment">// Constructoren</span></div>
+<div class="line"><a id="l00035" name="l00035"></a><span class="lineno">   35</span></div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span>    <a class="code hl_function" href="class_licentie.html#aec3cba68b26bd36e09fa1f18f98d2162">Licentie</a>();</div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span></div>
+<div class="line"><a id="l00046" name="l00046"></a><span class="lineno">   46</span>    <a class="code hl_function" href="class_licentie.html#aec3cba68b26bd36e09fa1f18f98d2162">Licentie</a>(<span class="keywordtype">int</span> nummer, <span class="keyword">const</span> <span class="keywordtype">string</span>&amp; geldig_tot, <span class="keyword">const</span> <span class="keywordtype">string</span>&amp; type, <span class="keyword">const</span> <span class="keywordtype">string</span>&amp; vereniging = <span class="stringliteral">&quot;&quot;</span>);</div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span> </div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span>    <span class="comment">// Getters</span></div>
+<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span></div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span>    <span class="keywordtype">int</span> <a class="code hl_function" href="class_licentie.html#a31f86232e0e2f4563e5e1cfe55dfd8b2">get_nummer</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00052" name="l00052"></a><span class="lineno">   52</span></div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span>    <span class="keywordtype">string</span> <a class="code hl_function" href="class_licentie.html#a85d2c2958e91775f2e5f031343af08d8">get_geldig_tot</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span></div>
+<div class="line"><a id="l00057" name="l00057"></a><span class="lineno">   57</span>    <span class="keywordtype">string</span> <a class="code hl_function" href="class_licentie.html#afaa063d74e4310f6cd3d09406a9a580d">get_type</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span></div>
+<div class="line"><a id="l00060" name="l00060"></a><span class="lineno">   60</span>    <span class="keywordtype">string</span> <a class="code hl_function" href="class_licentie.html#afe477fa1c4ca5b2ffd6840aa3dea4a03">get_vereniging</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span></div>
+<div class="line"><a id="l00063" name="l00063"></a><span class="lineno">   63</span>    <span class="keyword">const</span> vector&lt;DopingControle&gt;&amp; <a class="code hl_function" href="class_licentie.html#ade645e0a3417a3810668ebc02718b6d3">get_doping_controles</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span> </div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span>    <span class="comment">// Dopingstatus</span></div>
+<div class="line"><a id="l00066" name="l00066"></a><span class="lineno">   66</span></div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="class_licentie.html#aa3cf1a0a908c6ff969855db1b02d5771">is_dopingvrij</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00069" name="l00069"></a><span class="lineno">   69</span> </div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>    <span class="comment">// Geldigheid</span></div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span></div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>    <span class="keywordtype">bool</span> <a class="code hl_function" href="class_licentie.html#a85aaff1c469248bf2835bf677bae1581">is_geldig_op</a>(<span class="keyword">const</span> <span class="keywordtype">string</span>&amp; datum) <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span> </div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span>    <span class="comment">// Setters</span></div>
+<div class="line"><a id="l00076" name="l00076"></a><span class="lineno">   76</span></div>
+<div class="line"><a id="l00078" name="l00078"></a><span class="lineno">   78</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_licentie.html#a17ac3d27c5fd286a0a315b45a395e444">set_nummer</a>(<span class="keywordtype">int</span> nummer);</div>
+<div class="line"><a id="l00079" name="l00079"></a><span class="lineno">   79</span></div>
+<div class="line"><a id="l00081" name="l00081"></a><span class="lineno">   81</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_licentie.html#adef06ddd37228b5984c5ee7060ded0d7">set_geldig_tot</a>(<span class="keyword">const</span> <span class="keywordtype">string</span>&amp; geldig_tot);</div>
+<div class="line"><a id="l00082" name="l00082"></a><span class="lineno">   82</span></div>
+<div class="line"><a id="l00084" name="l00084"></a><span class="lineno">   84</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_licentie.html#a61477df28937b1d53ad087e0bd26a3cd">set_type</a>(<span class="keyword">const</span> <span class="keywordtype">string</span>&amp; nieuw_type);</div>
+<div class="line"><a id="l00085" name="l00085"></a><span class="lineno">   85</span></div>
+<div class="line"><a id="l00087" name="l00087"></a><span class="lineno">   87</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_licentie.html#afdafa55d63e94e1e52da59f42ba92244">set_vereniging</a>(<span class="keyword">const</span> <span class="keywordtype">string</span>&amp; vereniging);</div>
+<div class="line"><a id="l00088" name="l00088"></a><span class="lineno">   88</span></div>
+<div class="line"><a id="l00090" name="l00090"></a><span class="lineno">   90</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_licentie.html#ac87a86e40581dc61b40bb51d9ff90252">voeg_dopingcontrole_toe</a>(<span class="keyword">const</span> <a class="code hl_struct" href="struct_doping_controle.html">DopingControle</a>&amp; controle);</div>
+<div class="line"><a id="l00091" name="l00091"></a><span class="lineno">   91</span>};</div>
 </div>
-<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span> </div>
-<div class="line"><a id="l00049" name="l00049"></a><span class="lineno">   49</span> </div>
-<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span> </div>
-<div class="ttc" id="astruct_doping_controle_html"><div class="ttname"><a href="struct_doping_controle.html">DopingControle</a></div><div class="ttdef"><b>Definition</b> Licentie.h:8</div></div>
+<div class="line"><a id="l00092" name="l00092"></a><span class="lineno">   92</span> </div>
+<div class="line"><a id="l00093" name="l00093"></a><span class="lineno">   93</span> </div>
+<div class="line"><a id="l00094" name="l00094"></a><span class="lineno">   94</span> </div>
+<div class="ttc" id="aclass_licentie_html_a17ac3d27c5fd286a0a315b45a395e444"><div class="ttname"><a href="class_licentie.html#a17ac3d27c5fd286a0a315b45a395e444">Licentie::set_nummer</a></div><div class="ttdeci">void set_nummer(int nummer)</div><div class="ttdoc">Zet het licentienummer.</div><div class="ttdef"><b>Definition</b> Licentie.cpp:71</div></div>
+<div class="ttc" id="aclass_licentie_html_a31f86232e0e2f4563e5e1cfe55dfd8b2"><div class="ttname"><a href="class_licentie.html#a31f86232e0e2f4563e5e1cfe55dfd8b2">Licentie::get_nummer</a></div><div class="ttdeci">int get_nummer() const</div><div class="ttdoc">Geeft het licentienummer terug.</div><div class="ttdef"><b>Definition</b> Licentie.cpp:15</div></div>
+<div class="ttc" id="aclass_licentie_html_a61477df28937b1d53ad087e0bd26a3cd"><div class="ttname"><a href="class_licentie.html#a61477df28937b1d53ad087e0bd26a3cd">Licentie::set_type</a></div><div class="ttdeci">void set_type(const string &amp;nieuw_type)</div><div class="ttdoc">Zet het type licentie.</div><div class="ttdef"><b>Definition</b> Licentie.cpp:81</div></div>
+<div class="ttc" id="aclass_licentie_html_a85aaff1c469248bf2835bf677bae1581"><div class="ttname"><a href="class_licentie.html#a85aaff1c469248bf2835bf677bae1581">Licentie::is_geldig_op</a></div><div class="ttdeci">bool is_geldig_op(const string &amp;datum) const</div><div class="ttdoc">Controleert of de licentie geldig is op een datum.</div><div class="ttdef"><b>Definition</b> Licentie.cpp:53</div></div>
+<div class="ttc" id="aclass_licentie_html_a85d2c2958e91775f2e5f031343af08d8"><div class="ttname"><a href="class_licentie.html#a85d2c2958e91775f2e5f031343af08d8">Licentie::get_geldig_tot</a></div><div class="ttdeci">string get_geldig_tot() const</div><div class="ttdoc">Geeft de geldigheidsdatum terug.</div><div class="ttdef"><b>Definition</b> Licentie.cpp:20</div></div>
+<div class="ttc" id="aclass_licentie_html_aa3cf1a0a908c6ff969855db1b02d5771"><div class="ttname"><a href="class_licentie.html#aa3cf1a0a908c6ff969855db1b02d5771">Licentie::is_dopingvrij</a></div><div class="ttdeci">bool is_dopingvrij() const</div><div class="ttdoc">Controleert of er nooit doping is gevonden.</div><div class="ttdef"><b>Definition</b> Licentie.cpp:40</div></div>
+<div class="ttc" id="aclass_licentie_html_ac87a86e40581dc61b40bb51d9ff90252"><div class="ttname"><a href="class_licentie.html#ac87a86e40581dc61b40bb51d9ff90252">Licentie::voeg_dopingcontrole_toe</a></div><div class="ttdeci">void voeg_dopingcontrole_toe(const DopingControle &amp;controle)</div><div class="ttdoc">Voeg een dopingcontrole toe.</div><div class="ttdef"><b>Definition</b> Licentie.cpp:91</div></div>
+<div class="ttc" id="aclass_licentie_html_ade645e0a3417a3810668ebc02718b6d3"><div class="ttname"><a href="class_licentie.html#ade645e0a3417a3810668ebc02718b6d3">Licentie::get_doping_controles</a></div><div class="ttdeci">const vector&lt; DopingControle &gt; &amp; get_doping_controles() const</div><div class="ttdoc">Geeft de lijst met dopingcontroles terug.</div><div class="ttdef"><b>Definition</b> Licentie.cpp:35</div></div>
+<div class="ttc" id="aclass_licentie_html_adef06ddd37228b5984c5ee7060ded0d7"><div class="ttname"><a href="class_licentie.html#adef06ddd37228b5984c5ee7060ded0d7">Licentie::set_geldig_tot</a></div><div class="ttdeci">void set_geldig_tot(const string &amp;geldig_tot)</div><div class="ttdoc">Zet de geldigheidsdatum.</div><div class="ttdef"><b>Definition</b> Licentie.cpp:76</div></div>
+<div class="ttc" id="aclass_licentie_html_aec3cba68b26bd36e09fa1f18f98d2162"><div class="ttname"><a href="class_licentie.html#aec3cba68b26bd36e09fa1f18f98d2162">Licentie::Licentie</a></div><div class="ttdeci">Licentie()</div><div class="ttdoc">Standaardconstructor.</div><div class="ttdef"><b>Definition</b> Licentie.cpp:10</div></div>
+<div class="ttc" id="aclass_licentie_html_afaa063d74e4310f6cd3d09406a9a580d"><div class="ttname"><a href="class_licentie.html#afaa063d74e4310f6cd3d09406a9a580d">Licentie::get_type</a></div><div class="ttdeci">string get_type() const</div><div class="ttdoc">Geeft het type licentie terug.</div><div class="ttdef"><b>Definition</b> Licentie.cpp:25</div></div>
+<div class="ttc" id="aclass_licentie_html_afdafa55d63e94e1e52da59f42ba92244"><div class="ttname"><a href="class_licentie.html#afdafa55d63e94e1e52da59f42ba92244">Licentie::set_vereniging</a></div><div class="ttdeci">void set_vereniging(const string &amp;vereniging)</div><div class="ttdoc">Zet de vereniging.</div><div class="ttdef"><b>Definition</b> Licentie.cpp:86</div></div>
+<div class="ttc" id="aclass_licentie_html_afe477fa1c4ca5b2ffd6840aa3dea4a03"><div class="ttname"><a href="class_licentie.html#afe477fa1c4ca5b2ffd6840aa3dea4a03">Licentie::get_vereniging</a></div><div class="ttdeci">string get_vereniging() const</div><div class="ttdoc">Geeft de vereniging terug.</div><div class="ttdef"><b>Definition</b> Licentie.cpp:30</div></div>
+<div class="ttc" id="astruct_doping_controle_html"><div class="ttname"><a href="struct_doping_controle.html">DopingControle</a></div><div class="ttdoc">Resultaat van een dopingcontrole.</div><div class="ttdef"><b>Definition</b> Licentie.h:16</div></div>
+<div class="ttc" id="astruct_doping_controle_html_ab6eda864777bd53c21050c1a17d53644"><div class="ttname"><a href="struct_doping_controle.html#ab6eda864777bd53c21050c1a17d53644">DopingControle::doping_geconstateerd</a></div><div class="ttdeci">bool doping_geconstateerd</div><div class="ttdoc">true als er doping is geconstateerd.</div><div class="ttdef"><b>Definition</b> Licentie.h:18</div></div>
+<div class="ttc" id="astruct_doping_controle_html_acb43e562f1c479e2549cc8f0853bbbab"><div class="ttname"><a href="struct_doping_controle.html#acb43e562f1c479e2549cc8f0853bbbab">DopingControle::datum</a></div><div class="ttdeci">string datum</div><div class="ttdoc">Datum van de controle.</div><div class="ttdef"><b>Definition</b> Licentie.h:17</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 </div><!-- container -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><b>Licentie.h</b></li>
+    <li class="navelem"><a href="_licentie_8h.html">Licentie.h</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.14.0 </li>
   </ul>
 </div>

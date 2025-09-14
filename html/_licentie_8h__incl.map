@@ -1,0 +1,7 @@
+<map id="Licentie.h" name="Licentie.h">
+<area shape="rect" id="Node000001" title="Bevat de licentiegegevens van een atleet." alt="" coords="33,5,111,32"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="5,80,59,107"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="67,34,49,68,44,65,63,31"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="83,80,141,107"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="81,31,100,65,95,68,77,34"/>
+</map>

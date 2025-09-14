@@ -91,50 +91,77 @@ $(function(){initNavTree('_atleet_8h_source.html','',''); });
   <div class="headertitle"><div class="title">Atleet.h</div></div>
 </div><!--header-->
 <div class="contents">
-<div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span><span class="preprocessor">#pragma once</span></div>
-<div class="line"><a id="l00002" name="l00002"></a><span class="lineno">    2</span><span class="preprocessor">#include &lt;string&gt;</span></div>
-<div class="line"><a id="l00003" name="l00003"></a><span class="lineno">    3</span><span class="preprocessor">#include &quot;Licentie.h&quot;</span></div>
-<div class="line"><a id="l00004" name="l00004"></a><span class="lineno">    4</span> </div>
-<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span><span class="keyword">using namespace </span>std;</div>
-<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span> </div>
-<div class="foldopen" id="foldopen00007" data-start="{" data-end="};">
-<div class="line"><a id="l00007" name="l00007"></a><span class="lineno"><a class="line" href="class_atleet.html">    7</a></span><span class="keyword">class </span>Atleet {</div>
-<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="keyword">private</span>:</div>
-<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span>    <span class="keywordtype">string</span> voornaam;</div>
-<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span>    <span class="keywordtype">string</span> achternaam;</div>
-<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span>    <span class="keywordtype">string</span> geboortedatum;</div>
-<div class="line"><a id="l00012" name="l00012"></a><span class="lineno">   12</span>    <span class="keywordtype">char</span> geslacht;</div>
-<div class="line"><a id="l00013" name="l00013"></a><span class="lineno">   13</span>    <a class="code hl_class" href="class_licentie.html">Licentie</a> licentie{ 0, <span class="stringliteral">&quot;&quot;</span>, <span class="stringliteral">&quot;&quot;</span>, <span class="stringliteral">&quot;&quot;</span> }; <span class="comment">// atleet start zonder ingevulde licentie</span></div>
-<div class="line"><a id="l00014" name="l00014"></a><span class="lineno">   14</span> </div>
-<div class="line"><a id="l00015" name="l00015"></a><span class="lineno">   15</span><span class="keyword">public</span>:</div>
-<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span>    Atleet();</div>
-<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    Atleet(<span class="keywordtype">string</span> voornaam, <span class="keywordtype">string</span> achternaam, <span class="keywordtype">string</span> geboortedatum, <span class="keywordtype">char</span> geslacht);</div>
-<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span> </div>
-<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    <span class="comment">//setters</span></div>
-<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    <span class="keywordtype">void</span> set_voornaam(<span class="keywordtype">string</span> nieuwe_voornaam);</div>
-<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    <span class="keywordtype">void</span> set_achternaam(<span class="keywordtype">string</span> nieuwe_achternaam);</div>
-<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span>    <span class="keywordtype">void</span> set_geboortedatum(<span class="keywordtype">string</span> nieuwe_geboortedatum);</div>
-<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span>    <span class="keywordtype">void</span> set_geslacht(<span class="keywordtype">char</span> nieuw_geslacht);</div>
-<div class="line"><a id="l00024" name="l00024"></a><span class="lineno">   24</span>    <span class="keywordtype">void</span> set_licentie(<span class="keyword">const</span> <a class="code hl_class" href="class_licentie.html">Licentie</a>&amp; nieuwe_licentie);</div>
-<div class="line"><a id="l00025" name="l00025"></a><span class="lineno">   25</span> </div>
-<div class="line"><a id="l00026" name="l00026"></a><span class="lineno">   26</span>    <span class="comment">//getters</span></div>
-<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    <span class="keywordtype">string</span> get_voornaam() <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span>    <span class="keywordtype">string</span> get_achternaam() <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00029" name="l00029"></a><span class="lineno">   29</span>    <span class="keywordtype">string</span> get_geboortedatum() <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00030" name="l00030"></a><span class="lineno">   30</span>    <span class="keywordtype">char</span> get_geslacht() <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00031" name="l00031"></a><span class="lineno">   31</span>    <a class="code hl_class" href="class_licentie.html">Licentie</a> get_licentie() <span class="keyword">const</span>;</div>
-<div class="line"><a id="l00032" name="l00032"></a><span class="lineno">   32</span>    <a class="code hl_class" href="class_licentie.html">Licentie</a>&amp; get_licentie_ref();</div>
-<div class="line"><a id="l00033" name="l00033"></a><span class="lineno">   33</span>};</div>
+<a href="_atleet_8h.html">Go to the documentation of this file.</a><div class="fragment"><div class="line"><a id="l00001" name="l00001"></a><span class="lineno">    1</span></div>
+<div class="line"><a id="l00005" name="l00005"></a><span class="lineno">    5</span> </div>
+<div class="line"><a id="l00006" name="l00006"></a><span class="lineno">    6</span><span class="preprocessor">#pragma once</span></div>
+<div class="line"><a id="l00007" name="l00007"></a><span class="lineno">    7</span><span class="preprocessor">#include &lt;string&gt;</span></div>
+<div class="line"><a id="l00008" name="l00008"></a><span class="lineno">    8</span><span class="preprocessor">#include &quot;<a class="code" href="_licentie_8h.html">Licentie.h</a>&quot;</span></div>
+<div class="line"><a id="l00009" name="l00009"></a><span class="lineno">    9</span> </div>
+<div class="line"><a id="l00010" name="l00010"></a><span class="lineno">   10</span><span class="keyword">using namespace </span>std;</div>
+<div class="line"><a id="l00011" name="l00011"></a><span class="lineno">   11</span></div>
+<div class="foldopen" id="foldopen00015" data-start="{" data-end="};">
+<div class="line"><a id="l00015" name="l00015"></a><span class="lineno"><a class="line" href="class_atleet.html">   15</a></span><span class="keyword">class </span><a class="code hl_function" href="class_atleet.html#ad34439c99d0dcab6f1632ee2763726bd">Atleet</a> {</div>
+<div class="line"><a id="l00016" name="l00016"></a><span class="lineno">   16</span><span class="keyword">private</span>:</div>
+<div class="line"><a id="l00017" name="l00017"></a><span class="lineno">   17</span>    <span class="keywordtype">string</span> voornaam;             </div>
+<div class="line"><a id="l00018" name="l00018"></a><span class="lineno">   18</span>    <span class="keywordtype">string</span> achternaam;           </div>
+<div class="line"><a id="l00019" name="l00019"></a><span class="lineno">   19</span>    <span class="keywordtype">string</span> geboortedatum;        </div>
+<div class="line"><a id="l00020" name="l00020"></a><span class="lineno">   20</span>    <span class="keywordtype">char</span> geslacht;               </div>
+<div class="line"><a id="l00021" name="l00021"></a><span class="lineno">   21</span>    <a class="code hl_class" href="class_licentie.html">Licentie</a> licentie{ 0, <span class="stringliteral">&quot;&quot;</span>, <span class="stringliteral">&quot;&quot;</span>, <span class="stringliteral">&quot;&quot;</span> }; </div>
+<div class="line"><a id="l00022" name="l00022"></a><span class="lineno">   22</span> </div>
+<div class="line"><a id="l00023" name="l00023"></a><span class="lineno">   23</span><span class="keyword">public</span>:</div>
+<div class="line"><a id="l00027" name="l00027"></a><span class="lineno">   27</span>    <a class="code hl_function" href="class_atleet.html#ad34439c99d0dcab6f1632ee2763726bd">Atleet</a>();</div>
+<div class="line"><a id="l00028" name="l00028"></a><span class="lineno">   28</span></div>
+<div class="line"><a id="l00036" name="l00036"></a><span class="lineno">   36</span>    <a class="code hl_function" href="class_atleet.html#ad34439c99d0dcab6f1632ee2763726bd">Atleet</a>(<span class="keywordtype">string</span> voornaam, <span class="keywordtype">string</span> achternaam, <span class="keywordtype">string</span> geboortedatum, <span class="keywordtype">char</span> geslacht);</div>
+<div class="line"><a id="l00037" name="l00037"></a><span class="lineno">   37</span> </div>
+<div class="line"><a id="l00038" name="l00038"></a><span class="lineno">   38</span>    <span class="comment">// setters</span></div>
+<div class="line"><a id="l00039" name="l00039"></a><span class="lineno">   39</span></div>
+<div class="line"><a id="l00041" name="l00041"></a><span class="lineno">   41</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_atleet.html#aea2f768b0b182ec05241575fa224088e">set_voornaam</a>(<span class="keywordtype">string</span> nieuwe_voornaam);</div>
+<div class="line"><a id="l00042" name="l00042"></a><span class="lineno">   42</span></div>
+<div class="line"><a id="l00044" name="l00044"></a><span class="lineno">   44</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_atleet.html#a5b2c0b7af16971453aa022681b562418">set_achternaam</a>(<span class="keywordtype">string</span> nieuwe_achternaam);</div>
+<div class="line"><a id="l00045" name="l00045"></a><span class="lineno">   45</span></div>
+<div class="line"><a id="l00047" name="l00047"></a><span class="lineno">   47</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_atleet.html#a14729fd47d9d4a043e91326d5d1cd8df">set_geboortedatum</a>(<span class="keywordtype">string</span> nieuwe_geboortedatum);</div>
+<div class="line"><a id="l00048" name="l00048"></a><span class="lineno">   48</span></div>
+<div class="line"><a id="l00050" name="l00050"></a><span class="lineno">   50</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_atleet.html#a3fe15c3f0c9fca862089c7357bcfed80">set_geslacht</a>(<span class="keywordtype">char</span> nieuw_geslacht);</div>
+<div class="line"><a id="l00051" name="l00051"></a><span class="lineno">   51</span></div>
+<div class="line"><a id="l00053" name="l00053"></a><span class="lineno">   53</span>    <span class="keywordtype">void</span> <a class="code hl_function" href="class_atleet.html#a8eaac0d2090c0f7f18d3996139fac02a">set_licentie</a>(<span class="keyword">const</span> <a class="code hl_class" href="class_licentie.html">Licentie</a>&amp; nieuwe_licentie);</div>
+<div class="line"><a id="l00054" name="l00054"></a><span class="lineno">   54</span> </div>
+<div class="line"><a id="l00055" name="l00055"></a><span class="lineno">   55</span>    <span class="comment">// getters</span></div>
+<div class="line"><a id="l00056" name="l00056"></a><span class="lineno">   56</span></div>
+<div class="line"><a id="l00058" name="l00058"></a><span class="lineno">   58</span>    <span class="keywordtype">string</span> <a class="code hl_function" href="class_atleet.html#aeb01e9fc35913d7cb748eb36c34ec3fc">get_voornaam</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00059" name="l00059"></a><span class="lineno">   59</span></div>
+<div class="line"><a id="l00061" name="l00061"></a><span class="lineno">   61</span>    <span class="keywordtype">string</span> <a class="code hl_function" href="class_atleet.html#a236677ebb3d6a44d8497460cdad8c7cf">get_achternaam</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00062" name="l00062"></a><span class="lineno">   62</span></div>
+<div class="line"><a id="l00064" name="l00064"></a><span class="lineno">   64</span>    <span class="keywordtype">string</span> <a class="code hl_function" href="class_atleet.html#a3dfd5a91c69416a6ba659b4e358250d0">get_geboortedatum</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00065" name="l00065"></a><span class="lineno">   65</span></div>
+<div class="line"><a id="l00067" name="l00067"></a><span class="lineno">   67</span>    <span class="keywordtype">char</span> <a class="code hl_function" href="class_atleet.html#a7ae11405a6d8e93a52e8d2a5d83cb799">get_geslacht</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00068" name="l00068"></a><span class="lineno">   68</span></div>
+<div class="line"><a id="l00070" name="l00070"></a><span class="lineno">   70</span>    <a class="code hl_class" href="class_licentie.html">Licentie</a> <a class="code hl_function" href="class_atleet.html#a21006ab6c400bfe64f8f9d3242474460">get_licentie</a>() <span class="keyword">const</span>;</div>
+<div class="line"><a id="l00071" name="l00071"></a><span class="lineno">   71</span></div>
+<div class="line"><a id="l00073" name="l00073"></a><span class="lineno">   73</span>    <a class="code hl_class" href="class_licentie.html">Licentie</a>&amp; <a class="code hl_function" href="class_atleet.html#a0873aecc86b702fd4c0aa5ae8587117f">get_licentie_ref</a>();</div>
+<div class="line"><a id="l00074" name="l00074"></a><span class="lineno">   74</span>};</div>
 </div>
-<div class="line"><a id="l00034" name="l00034"></a><span class="lineno">   34</span> </div>
-<div class="ttc" id="aclass_licentie_html"><div class="ttname"><a href="class_licentie.html">Licentie</a></div><div class="ttdef"><b>Definition</b> Licentie.h:14</div></div>
+<div class="line"><a id="l00075" name="l00075"></a><span class="lineno">   75</span> </div>
+<div class="ttc" id="a_licentie_8h_html"><div class="ttname"><a href="_licentie_8h.html">Licentie.h</a></div><div class="ttdoc">Bevat de licentiegegevens van een atleet.</div></div>
+<div class="ttc" id="aclass_atleet_html_a0873aecc86b702fd4c0aa5ae8587117f"><div class="ttname"><a href="class_atleet.html#a0873aecc86b702fd4c0aa5ae8587117f">Atleet::get_licentie_ref</a></div><div class="ttdeci">Licentie &amp; get_licentie_ref()</div><div class="ttdoc">Geeft een verwijzing naar de licentie terug.</div><div class="ttdef"><b>Definition</b> Atleet.cpp:66</div></div>
+<div class="ttc" id="aclass_atleet_html_a14729fd47d9d4a043e91326d5d1cd8df"><div class="ttname"><a href="class_atleet.html#a14729fd47d9d4a043e91326d5d1cd8df">Atleet::set_geboortedatum</a></div><div class="ttdeci">void set_geboortedatum(string nieuwe_geboortedatum)</div><div class="ttdoc">Zet een nieuwe geboortedatum.</div><div class="ttdef"><b>Definition</b> Atleet.cpp:25</div></div>
+<div class="ttc" id="aclass_atleet_html_a21006ab6c400bfe64f8f9d3242474460"><div class="ttname"><a href="class_atleet.html#a21006ab6c400bfe64f8f9d3242474460">Atleet::get_licentie</a></div><div class="ttdeci">Licentie get_licentie() const</div><div class="ttdoc">Geeft een kopie van de licentie terug.</div><div class="ttdef"><b>Definition</b> Atleet.cpp:61</div></div>
+<div class="ttc" id="aclass_atleet_html_a236677ebb3d6a44d8497460cdad8c7cf"><div class="ttname"><a href="class_atleet.html#a236677ebb3d6a44d8497460cdad8c7cf">Atleet::get_achternaam</a></div><div class="ttdeci">string get_achternaam() const</div><div class="ttdoc">Geeft de achternaam terug.</div><div class="ttdef"><b>Definition</b> Atleet.cpp:46</div></div>
+<div class="ttc" id="aclass_atleet_html_a3dfd5a91c69416a6ba659b4e358250d0"><div class="ttname"><a href="class_atleet.html#a3dfd5a91c69416a6ba659b4e358250d0">Atleet::get_geboortedatum</a></div><div class="ttdeci">string get_geboortedatum() const</div><div class="ttdoc">Geeft de geboortedatum terug.</div><div class="ttdef"><b>Definition</b> Atleet.cpp:51</div></div>
+<div class="ttc" id="aclass_atleet_html_a3fe15c3f0c9fca862089c7357bcfed80"><div class="ttname"><a href="class_atleet.html#a3fe15c3f0c9fca862089c7357bcfed80">Atleet::set_geslacht</a></div><div class="ttdeci">void set_geslacht(char nieuw_geslacht)</div><div class="ttdoc">Zet het geslacht.</div><div class="ttdef"><b>Definition</b> Atleet.cpp:30</div></div>
+<div class="ttc" id="aclass_atleet_html_a5b2c0b7af16971453aa022681b562418"><div class="ttname"><a href="class_atleet.html#a5b2c0b7af16971453aa022681b562418">Atleet::set_achternaam</a></div><div class="ttdeci">void set_achternaam(string nieuwe_achternaam)</div><div class="ttdoc">Zet een nieuwe achternaam.</div><div class="ttdef"><b>Definition</b> Atleet.cpp:20</div></div>
+<div class="ttc" id="aclass_atleet_html_a7ae11405a6d8e93a52e8d2a5d83cb799"><div class="ttname"><a href="class_atleet.html#a7ae11405a6d8e93a52e8d2a5d83cb799">Atleet::get_geslacht</a></div><div class="ttdeci">char get_geslacht() const</div><div class="ttdoc">Geeft het geslacht terug.</div><div class="ttdef"><b>Definition</b> Atleet.cpp:56</div></div>
+<div class="ttc" id="aclass_atleet_html_a8eaac0d2090c0f7f18d3996139fac02a"><div class="ttname"><a href="class_atleet.html#a8eaac0d2090c0f7f18d3996139fac02a">Atleet::set_licentie</a></div><div class="ttdeci">void set_licentie(const Licentie &amp;nieuwe_licentie)</div><div class="ttdoc">Koppel een licentie aan de atleet.</div><div class="ttdef"><b>Definition</b> Atleet.cpp:35</div></div>
+<div class="ttc" id="aclass_atleet_html_ad34439c99d0dcab6f1632ee2763726bd"><div class="ttname"><a href="class_atleet.html#ad34439c99d0dcab6f1632ee2763726bd">Atleet::Atleet</a></div><div class="ttdeci">Atleet()</div><div class="ttdoc">Standaardconstructor.</div><div class="ttdef"><b>Definition</b> Atleet.cpp:9</div></div>
+<div class="ttc" id="aclass_atleet_html_aea2f768b0b182ec05241575fa224088e"><div class="ttname"><a href="class_atleet.html#aea2f768b0b182ec05241575fa224088e">Atleet::set_voornaam</a></div><div class="ttdeci">void set_voornaam(string nieuwe_voornaam)</div><div class="ttdoc">Zet een nieuwe voornaam.</div><div class="ttdef"><b>Definition</b> Atleet.cpp:15</div></div>
+<div class="ttc" id="aclass_atleet_html_aeb01e9fc35913d7cb748eb36c34ec3fc"><div class="ttname"><a href="class_atleet.html#aeb01e9fc35913d7cb748eb36c34ec3fc">Atleet::get_voornaam</a></div><div class="ttdeci">string get_voornaam() const</div><div class="ttdoc">Geeft de voornaam terug.</div><div class="ttdef"><b>Definition</b> Atleet.cpp:41</div></div>
+<div class="ttc" id="aclass_licentie_html"><div class="ttname"><a href="class_licentie.html">Licentie</a></div><div class="ttdoc">Klasse die een licentie voor een atleet voorstelt.</div><div class="ttdef"><b>Definition</b> Licentie.h:25</div></div>
 </div><!-- fragment --></div><!-- contents -->
 </div><!-- doc-content -->
 </div><!-- container -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><b>Atleet.h</b></li>
+    <li class="navelem"><a href="_atleet_8h.html">Atleet.h</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.14.0 </li>
   </ul>
 </div>

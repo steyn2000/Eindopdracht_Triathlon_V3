@@ -1,0 +1,18 @@
+<map id="Deelnemer.cpp" name="Deelnemer.cpp">
+<area shape="rect" id="Node000001" title="Implementatie van de Deelnemer klasse." alt="" coords="129,5,239,32"/>
+<area shape="rect" id="Node000002" href="$_deelnemer_8h.html" title="Houdt de wedstrijdtijden van één atleet bij." alt="" coords="28,80,124,107"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="167,35,109,73,106,69,164,30"/>
+<area shape="rect" id="Node000006" title=" " alt="" coords="119,304,177,331"/>
+<area shape="poly" id="edge8_Node000001_Node000006" title=" " alt="" coords="186,33,177,126,161,256,156,289,151,288,156,256,172,125,180,32"/>
+<area shape="rect" id="Node000007" title=" " alt="" coords="222,80,293,107"/>
+<area shape="poly" id="edge9_Node000001_Node000007" title=" " alt="" coords="199,31,236,67,232,71,195,34"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="5,304,59,331"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="65,109,47,129,33,156,26,190,24,226,29,288,24,289,18,226,20,190,28,154,43,126,61,105"/>
+<area shape="rect" id="Node000004" href="$_atleet_8h.html" title="Klasse die alle gegevens van één atleet bijhoudt." alt="" coords="43,155,109,181"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="79,107,79,139,73,139,73,107"/>
+<area shape="poly" id="edge4_Node000004_Node000003" title=" " alt="" coords="75,183,60,230,42,290,37,288,55,229,70,181"/>
+<area shape="rect" id="Node000005" href="$_licentie_8h.html" title="Bevat de licentiegegevens van een atleet." alt="" coords="69,229,147,256"/>
+<area shape="poly" id="edge5_Node000004_Node000005" title=" " alt="" coords="84,181,99,214,94,216,79,183"/>
+<area shape="poly" id="edge6_Node000005_Node000003" title=" " alt="" coords="97,258,58,295,54,291,93,255"/>
+<area shape="poly" id="edge7_Node000005_Node000006" title=" " alt="" coords="117,255,136,289,131,292,113,258"/>
+</map>

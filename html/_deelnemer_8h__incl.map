@@ -1,0 +1,13 @@
+<map id="Deelnemer.h" name="Deelnemer.h">
+<area shape="rect" id="Node000001" title="Houdt de wedstrijdtijden van één atleet bij." alt="" coords="5,5,101,32"/>
+<area shape="rect" id="Node000002" title=" " alt="" coords="40,229,93,256"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="53,33,46,80,46,116,50,153,62,214,56,215,44,153,41,117,41,80,48,32"/>
+<area shape="rect" id="Node000003" href="$_atleet_8h.html" title="Klasse die alle gegevens van één atleet bijhoudt." alt="" coords="56,80,122,107"/>
+<area shape="poly" id="edge2_Node000001_Node000003" title=" " alt="" coords="62,31,78,65,74,67,57,34"/>
+<area shape="poly" id="edge3_Node000003_Node000002" title=" " alt="" coords="90,108,73,214,68,213,84,107"/>
+<area shape="rect" id="Node000004" href="$_licentie_8h.html" title="Bevat de licentiegegevens van een atleet." alt="" coords="106,155,184,181"/>
+<area shape="poly" id="edge4_Node000003_Node000004" title=" " alt="" coords="101,106,128,141,124,144,97,109"/>
+<area shape="poly" id="edge5_Node000004_Node000002" title=" " alt="" coords="133,184,93,221,89,217,129,180"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="118,229,175,256"/>
+<area shape="poly" id="edge6_Node000004_Node000005" title=" " alt="" coords="148,182,148,214,143,214,143,182"/>
+</map>

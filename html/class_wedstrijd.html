@@ -91,31 +91,92 @@ $(function(){initNavTree('class_wedstrijd.html','','class_wedstrijd-members'); }
   <div class="headertitle"><div class="title">Wedstrijd Class Reference</div></div>
 </div><!--header-->
 <div class="contents">
+
+<p>Een wedstrijd met een lijst van deelnemers.  
+ <a href="#details">More...</a></p>
+
+<p><code>#include &lt;<a class="el" href="_wedstrijd_8h_source.html">Wedstrijd.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 id="header-pub-methods" class="groupheader"><a id="pub-methods" name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:ad57b359a422e14edd71a13100bf465d0" id="r_ad57b359a422e14edd71a13100bf465d0"><td class="memItemLeft" align="right" valign="top"><a id="ad57b359a422e14edd71a13100bf465d0" name="ad57b359a422e14edd71a13100bf465d0"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>Wedstrijd</b> (string wedstrijd_naam, string wedstrijd_datum, bool is_nederlands_kampioenschap, bool heeft_wissels)</td></tr>
+<tr class="memitem:a3761d34075327b8a6cce0a29411c46e7" id="r_a3761d34075327b8a6cce0a29411c46e7"><td class="memItemLeft" align="right" valign="top"><a id="a3761d34075327b8a6cce0a29411c46e7" name="a3761d34075327b8a6cce0a29411c46e7"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>Wedstrijd</b> ()=default</td></tr>
+<tr class="memdesc:a3761d34075327b8a6cce0a29411c46e7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Standaardconstructor. <br /></td></tr>
+<tr class="memitem:ad57b359a422e14edd71a13100bf465d0" id="r_ad57b359a422e14edd71a13100bf465d0"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ad57b359a422e14edd71a13100bf465d0">Wedstrijd</a> (string wedstrijd_naam, string wedstrijd_datum, bool is_nederlands_kampioenschap, bool heeft_wissels)</td></tr>
+<tr class="memdesc:ad57b359a422e14edd71a13100bf465d0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Maak een nieuwe wedstrijd.  <br /></td></tr>
 <tr class="memitem:a5e2ac2bda1245190d5cff4b47d6f58be" id="r_a5e2ac2bda1245190d5cff4b47d6f58be"><td class="memItemLeft" align="right" valign="top"><a id="a5e2ac2bda1245190d5cff4b47d6f58be" name="a5e2ac2bda1245190d5cff4b47d6f58be"></a>
 void&#160;</td><td class="memItemRight" valign="bottom"><b>voeg_deelnemer_toe</b> (const <a class="el" href="class_deelnemer.html">Deelnemer</a> &amp;nieuwe_deelnemer)</td></tr>
+<tr class="memdesc:a5e2ac2bda1245190d5cff4b47d6f58be"><td class="mdescLeft">&#160;</td><td class="mdescRight">Voeg een deelnemer toe als deze nog niet bestaat. <br /></td></tr>
 <tr class="memitem:a75ee2086c53604378087e92be55fbf25" id="r_a75ee2086c53604378087e92be55fbf25"><td class="memItemLeft" align="right" valign="top"><a id="a75ee2086c53604378087e92be55fbf25" name="a75ee2086c53604378087e92be55fbf25"></a>
 int&#160;</td><td class="memItemRight" valign="bottom"><b>aantal_deelnemers</b> () const</td></tr>
+<tr class="memdesc:a75ee2086c53604378087e92be55fbf25"><td class="mdescLeft">&#160;</td><td class="mdescRight">Geeft het aantal deelnemers terug. <br /></td></tr>
 <tr class="memitem:a9379a6a52621cb6131ade23461cd03cf" id="r_a9379a6a52621cb6131ade23461cd03cf"><td class="memItemLeft" align="right" valign="top"><a id="a9379a6a52621cb6131ade23461cd03cf" name="a9379a6a52621cb6131ade23461cd03cf"></a>
 const vector&lt; <a class="el" href="class_deelnemer.html">Deelnemer</a> &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>get_deelnemers</b> () const</td></tr>
+<tr class="memdesc:a9379a6a52621cb6131ade23461cd03cf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Geeft de lijst met deelnemers terug. <br /></td></tr>
 <tr class="memitem:a503b19bc5463180f242a100f6b591d8e" id="r_a503b19bc5463180f242a100f6b591d8e"><td class="memItemLeft" align="right" valign="top"><a id="a503b19bc5463180f242a100f6b591d8e" name="a503b19bc5463180f242a100f6b591d8e"></a>
 vector&lt; <a class="el" href="class_deelnemer.html">Deelnemer</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>deelnemer_lijst_gesorteerd</b> () const</td></tr>
+<tr class="memdesc:a503b19bc5463180f242a100f6b591d8e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Geeft een gesorteerde kopie van de deelnemerslijst. <br /></td></tr>
 <tr class="memitem:a877b6728a32c9ee3b0b2e6715d8cd885" id="r_a877b6728a32c9ee3b0b2e6715d8cd885"><td class="memItemLeft" align="right" valign="top"><a id="a877b6728a32c9ee3b0b2e6715d8cd885" name="a877b6728a32c9ee3b0b2e6715d8cd885"></a>
 string&#160;</td><td class="memItemRight" valign="bottom"><b>get_naam</b> () const</td></tr>
+<tr class="memdesc:a877b6728a32c9ee3b0b2e6715d8cd885"><td class="mdescLeft">&#160;</td><td class="mdescRight">Geeft de naam van de wedstrijd terug. <br /></td></tr>
 <tr class="memitem:ab4f132c8d2f006b82756314405f1a651" id="r_ab4f132c8d2f006b82756314405f1a651"><td class="memItemLeft" align="right" valign="top"><a id="ab4f132c8d2f006b82756314405f1a651" name="ab4f132c8d2f006b82756314405f1a651"></a>
 string&#160;</td><td class="memItemRight" valign="bottom"><b>get_datum</b> () const</td></tr>
+<tr class="memdesc:ab4f132c8d2f006b82756314405f1a651"><td class="mdescLeft">&#160;</td><td class="mdescRight">Geeft de datum van de wedstrijd terug. <br /></td></tr>
 <tr class="memitem:a6afa20eabad8800cded73265e03dc11e" id="r_a6afa20eabad8800cded73265e03dc11e"><td class="memItemLeft" align="right" valign="top"><a id="a6afa20eabad8800cded73265e03dc11e" name="a6afa20eabad8800cded73265e03dc11e"></a>
 bool&#160;</td><td class="memItemRight" valign="bottom"><b>get_met_wissels</b> () const</td></tr>
+<tr class="memdesc:a6afa20eabad8800cded73265e03dc11e"><td class="mdescLeft">&#160;</td><td class="mdescRight">Geeft aan of wisseltijden aanwezig zijn. <br /></td></tr>
 <tr class="memitem:a736ef6ba55e60c31ee315d444d28d158" id="r_a736ef6ba55e60c31ee315d444d28d158"><td class="memItemLeft" align="right" valign="top"><a id="a736ef6ba55e60c31ee315d444d28d158" name="a736ef6ba55e60c31ee315d444d28d158"></a>
 bool&#160;</td><td class="memItemRight" valign="bottom"><b>get_is_nederlands_kampioenschap</b> () const</td></tr>
+<tr class="memdesc:a736ef6ba55e60c31ee315d444d28d158"><td class="mdescLeft">&#160;</td><td class="mdescRight">Geeft aan of het een Nederlands kampioenschap is. <br /></td></tr>
 </table>
+<a name="details" id="details"></a><h2 id="header-details" class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Een wedstrijd met een lijst van deelnemers. </p>
+</div><a name="doc-constructors" id="doc-constructors"></a><h2 id="header-doc-constructors" class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="ad57b359a422e14edd71a13100bf465d0" name="ad57b359a422e14edd71a13100bf465d0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad57b359a422e14edd71a13100bf465d0">&#9670;&#160;</a></span>Wedstrijd()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">Wedstrijd::Wedstrijd </td>
+          <td>(</td>
+          <td class="paramtype">string</td>          <td class="paramname"><span class="paramname"><em>wedstrijd_naam</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">string</td>          <td class="paramname"><span class="paramname"><em>wedstrijd_datum</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>is_nederlands_kampioenschap</em></span>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">bool</td>          <td class="paramname"><span class="paramname"><em>heeft_wissels</em></span>&#160;)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>Maak een nieuwe wedstrijd. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">wedstrijd_naam</td><td>Naam van de wedstrijd. </td></tr>
+    <tr><td class="paramname">wedstrijd_datum</td><td>Datum van de wedstrijd. </td></tr>
+    <tr><td class="paramname">is_nederlands_kampioenschap</td><td>Is het een Nederlands kampioenschap? </td></tr>
+    <tr><td class="paramname">heeft_wissels</td><td>Zijn er wisseltijden? </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <hr/>The documentation for this class was generated from the following files:<ul>
 <li><a class="el" href="_wedstrijd_8h_source.html">Wedstrijd.h</a></li>
-<li><b>Wedstrijd.cpp</b></li>
+<li><a class="el" href="_wedstrijd_8cpp.html">Wedstrijd.cpp</a></li>
 </ul>
 </div><!-- contents -->
 </div><!-- doc-content -->

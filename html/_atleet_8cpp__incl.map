@@ -1,0 +1,12 @@
+<map id="Atleet.cpp" name="Atleet.cpp">
+<area shape="rect" id="Node000001" title="Implementatie van de Atleet klasse." alt="" coords="29,5,110,32"/>
+<area shape="rect" id="Node000002" href="$_atleet_8h.html" title="Klasse die alle gegevens van één atleet bijhoudt." alt="" coords="36,80,102,107"/>
+<area shape="poly" id="edge1_Node000001_Node000002" title=" " alt="" coords="72,33,72,64,67,64,67,33"/>
+<area shape="rect" id="Node000003" title=" " alt="" coords="5,229,59,256"/>
+<area shape="poly" id="edge2_Node000002_Node000003" title=" " alt="" coords="69,108,41,215,36,214,64,107"/>
+<area shape="rect" id="Node000004" href="$_licentie_8h.html" title="Bevat de licentiegegevens van een atleet." alt="" coords="69,155,147,181"/>
+<area shape="poly" id="edge3_Node000002_Node000004" title=" " alt="" coords="78,106,97,140,92,142,74,108"/>
+<area shape="poly" id="edge4_Node000004_Node000003" title=" " alt="" coords="97,184,58,221,54,217,93,180"/>
+<area shape="rect" id="Node000005" title=" " alt="" coords="83,229,141,256"/>
+<area shape="poly" id="edge5_Node000004_Node000005" title=" " alt="" coords="111,182,113,214,108,214,106,182"/>
+</map>
