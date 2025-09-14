@@ -251,24 +251,43 @@ int lees_int(const string& prompt)
 {
     while (true)
     {
-        try
-        {
-            string input;
-            cout << prompt;
-            if (!(cin >> input))
-                throw runtime_error("fout");
-            int value = stoi(input);
-            if (value >= 0)
-            {
-                return value;
-            }
-        }
-        catch (...)
+        string input;
+        cout << prompt;
+        if (!(cin >> input))
         {
             cout << "Ongeldige invoer. Voer een niet-negatief getal in.\n";
             cin.clear();
             cin.ignore(numeric_limits<streamsize>::max(), '\n');
+            continue;
         }
+
+        bool ok = !input.empty();
+        int value = 0;
+        for (char c : input)
+        {
+            if (c < '0' || c > '9')
+            {
+                ok = false;
+                break;
+            }
+
+            int digit = c - '0';
+            if (value > (numeric_limits<int>::max() - digit) / 10)
+            {
+                ok = false;
+                break;
+            }
+            value = value * 10 + digit;
+        }
+
+        if (ok)
+        {
+            return value;
+        }
+
+        cout << "Ongeldige invoer. Voer een niet-negatief getal in.\n";
+        cin.clear();
+        cin.ignore(numeric_limits<streamsize>::max(), '\n');
     }
 }
 
