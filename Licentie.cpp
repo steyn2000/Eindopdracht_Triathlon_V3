@@ -51,7 +51,11 @@ bool Licentie::is_geldig_op(const string& datum) const
         return false; // ongeldige datumformaten
 
     auto datum_naar_int = [](const string& d) {
-        return stoi(d.substr(6, 4) + d.substr(3, 2) + d.substr(0, 2));
+        int jaar = (d[6]-'0') * 1000 + (d[7]-'0') * 100 +
+                   (d[8]-'0') * 10 + (d[9]-'0');
+        int maand = (d[3]-'0') * 10 + (d[4]-'0');
+        int dag = (d[0]-'0') * 10 + (d[1]-'0');
+        return jaar * 10000 + maand * 100 + dag;
     };
 
     int datum_als_int = datum_naar_int(datum);
