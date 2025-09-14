@@ -17,11 +17,14 @@
 
 using namespace std;
 
-vector<Atleet> atleten;
-vector<Wedstrijd> wedstrijden;
+vector<Atleet> atleten;      ///< Lijst met alle atleten.
+vector<Wedstrijd> wedstrijden; ///< Lijst met alle wedstrijden.
 
-const string DATA_BESTAND = "triathlon_data.txt";
+const string DATA_BESTAND = "triathlon_data.txt"; ///< Bestandsnaam voor persistente opslag.
 
+/**
+ * @brief Slaat alle triathlongegevens op in een bestand.
+ */
 void save_data()
 {
     ofstream bestand(DATA_BESTAND);
@@ -72,6 +75,9 @@ void save_data()
     }
 }
 
+/**
+ * @brief Laadt alle triathlongegevens uit het opslagbestand.
+ */
 void load_data()
 {
     ifstream in(DATA_BESTAND);
@@ -151,11 +157,17 @@ void load_data()
     }
 }
 
+/**
+ * @brief Toont een welkomstbericht.
+ */
 void print_welkom()
 {
     cout << "~~ Welkom bij het Triathlon organisatiesysteem! ~~\n";
 }
 
+/**
+ * @brief Toont het hoofdmenu met beschikbare acties.
+ */
 void print_keuzemenu()
 {
     cout << "\nMaak een keuze:\n";
@@ -171,6 +183,11 @@ void print_keuzemenu()
     cout << "10. Stoppen\n"; // De terminal bleef zwart, menu niet zichtbaar terwijl de code wel leek te werken
 }
 
+/**
+ * @brief Controleert of een datum in het formaat dd-mm-jjjj geldig is.
+ * @param datum Te controleren datumstring.
+ * @return True als de datum geldig is, anders false.
+ */
 bool valide_datum(const string& datum)
 {
     if (datum.size() != 10 || datum[2] != '-' || datum[5] != '-')
@@ -204,19 +221,42 @@ bool valide_datum(const string& datum)
 }
 
 // datum helpers voor "dd-mm-jjjj"
+/**
+ * @brief Haalt de dag uit een datumstring (dd-mm-jjjj).
+ * @param datum Datumstring.
+ * @return Dag van de maand.
+ */
 static int get_dag(const string& datum)
 {
     return (datum[0] - '0') * 10 + (datum[1] - '0');
 }
+
+/**
+ * @brief Haalt de maand uit een datumstring (dd-mm-jjjj).
+ * @param datum Datumstring.
+ * @return Maandnummer.
+ */
 static int get_maand(const string& datum)
 {
     return (datum[3] - '0') * 10 + (datum[4] - '0');
 }
+
+/**
+ * @brief Haalt het jaar uit een datumstring (dd-mm-jjjj).
+ * @param datum Datumstring.
+ * @return Jaartal.
+ */
 static int get_jaar(const string& datum)
 {
     return (datum[6] - '0') * 1000 + (datum[7] - '0') * 100 + (datum[8] - '0') * 10 + (datum[9] - '0');
 }
 
+/**
+ * @brief Berekent de leeftijd op een specifieke datum.
+ * @param geboortedatum Geboortedatum van de atleet.
+ * @param datum Referentiedatum.
+ * @return Leeftijd in jaren.
+ */
 int leeftijd_op_datum(const string& geboortedatum, const string& datum)
 {
     int geboortedatum_dag = get_dag(geboortedatum), geboortedatum_maand = get_maand(geboortedatum), geboortedatum_jaar = get_jaar(geboortedatum);
@@ -227,6 +267,11 @@ int leeftijd_op_datum(const string& geboortedatum, const string& datum)
 }
 
 // categorieën volgens jouw eisen
+/**
+ * @brief Geeft de leeftijdscategorie voor een gegeven leeftijd.
+ * @param leeftijd Leeftijd in jaren.
+ * @return Naam van de categorie.
+ */
 string categorie_van_leeftijd(int leeftijd)
 {
     if (leeftijd < 13)
@@ -245,11 +290,22 @@ string categorie_van_leeftijd(int leeftijd)
         return "66+";
 }
 
+/**
+ * @brief Bepaalt de categorie van een atleet op een wedstrijddatum.
+ * @param atleet De atleet waarvan de categorie wordt bepaald.
+ * @param wedstrijddatum Datum van de wedstrijd.
+ * @return Naam van de categorie.
+ */
 string categorie_van(const Atleet& atleet, const string& wedstrijddatum)
 {
     return categorie_van_leeftijd(leeftijd_op_datum(atleet.get_geboortedatum(), wedstrijddatum));
 }
 
+/**
+ * @brief Leest een niet-negatief geheel getal van de gebruiker.
+ * @param prompt Tekst die als vraag wordt weergegeven.
+ * @return Het ingevoerde getal.
+ */
 int lees_int(const string& prompt)
 {
     while (true)
@@ -294,6 +350,12 @@ int lees_int(const string& prompt)
     }
 }
 
+/**
+ * @brief Vraagt de gebruiker om een index binnen het bereik.
+ * @param max_index Bovengrens exclusief voor de index.
+ * @param prompt Tekst die als vraag wordt weergegeven.
+ * @return Gekozen index of -1 bij ongeldige invoer.
+ */
 int kies_index(int max_index, const string& prompt)
 {
     int index = lees_int(prompt);
@@ -305,6 +367,11 @@ int kies_index(int max_index, const string& prompt)
     return index;
 }
 
+/**
+ * @brief Leest een regel tekst van de gebruiker.
+ * @param prompt Tekst die als vraag wordt weergegeven.
+ * @return De ingevoerde tekst.
+ */
 string lees_tekst(const string& prompt)
 {
     string input;
@@ -320,6 +387,10 @@ string lees_tekst(const string& prompt)
     }
 }
 
+/**
+ * @brief Toont een overzicht van atleten.
+ * @param lijst_atleten Te tonen lijst met atleten.
+ */
 void lijst_atleten(const vector<Atleet>& lijst_atleten)
 {
     if (lijst_atleten.empty())
@@ -337,6 +408,10 @@ void lijst_atleten(const vector<Atleet>& lijst_atleten)
     }
 }
 
+/**
+ * @brief Toont een overzicht van wedstrijden.
+ * @param lijst_wedstrijden Te tonen lijst met wedstrijden.
+ */
 void lijst_wedstrijden(const vector<Wedstrijd>& lijst_wedstrijden)
 {
     if (lijst_wedstrijden.empty())
@@ -351,6 +426,10 @@ void lijst_wedstrijden(const vector<Wedstrijd>& lijst_wedstrijden)
     }
 }
 
+/**
+ * @brief Vraagt gegevens van een nieuwe atleet op.
+ * @return De aangemaakte atleet.
+ */
 Atleet invoer_atleet()
 {
     string voornaam = lees_tekst("Voornaam: ");
@@ -366,6 +445,11 @@ Atleet invoer_atleet()
     return Atleet(voornaam, achternaam, geboortedatum, geslacht);
 }
 // functie voor het formatteren van de tijd
+/**
+ * @brief Formatteert een aantal seconden naar "Hu Mm Ss".
+ * @param seconden Aantal seconden.
+ * @return Geformatteerde tijdstring.
+ */
 string format_tijd(int seconden)
 {
     int uren = seconden / 3600;
@@ -375,6 +459,10 @@ string format_tijd(int seconden)
 }
 
 // Functie voor het tonen van de uitslagen
+/**
+ * @brief Toont de uitslag van een door de gebruiker gekozen wedstrijd.
+ * @param wedstrijden Lijst met beschikbare wedstrijden.
+ */
 void toon_uitslag_van_wedstrijd(const vector<Wedstrijd>& wedstrijden)
 {
     if (wedstrijden.empty())
@@ -543,6 +631,10 @@ void toon_uitslag_van_wedstrijd(const vector<Wedstrijd>& wedstrijden)
     cout << endl;
 }
 
+/**
+ * @brief Startpunt van het programma.
+ * @return 0 bij succesvol afsluiten.
+ */
 int main() {
     load_data();
     print_welkom();
