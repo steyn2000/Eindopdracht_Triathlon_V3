@@ -1,5 +1,10 @@
 #include "Licentie.h"
 
+/**
+ * @file Licentie.cpp
+ * @brief Implementatie van de Licentie klasse.
+ */
+
 using namespace std;
 
 Licentie::Licentie() : licentie_nummer(0), geldig_tot(""), type(""), vereniging(""), doping_controles({}) {}

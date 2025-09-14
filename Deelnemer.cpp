@@ -2,6 +2,11 @@
 #include <vector>
 #include <iostream>
 
+/**
+ * @file Deelnemer.cpp
+ * @brief Implementatie van de Deelnemer klasse.
+ */
+
 // Externe lijst met atleten (gedeeld tussen modules)
 using namespace std;
 extern vector<Atleet> atleten;
