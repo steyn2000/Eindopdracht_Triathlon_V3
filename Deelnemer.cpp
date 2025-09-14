@@ -1,5 +1,6 @@
 #include "Deelnemer.h"
 #include <vector>
+#include <iostream>
 
 // Externe lijst met atleten (gedeeld tussen modules)
 using namespace std;
@@ -55,7 +56,14 @@ void Deelnemer::set_wisseltijd2(int nieuwe_tijd_wissel2)
 // getters
 const Atleet& Deelnemer::get_atleet() const
 {
-    return atleten[index_atleet];
+    if (index_atleet >= 0 && index_atleet < static_cast<int>(atleten.size()))
+    {
+        return atleten[index_atleet];
+    }
+
+    cerr << "Ongeldige atleetindex: " << index_atleet << endl;
+    static Atleet standaard_atleet{};
+    return standaard_atleet;
 }
 
 int Deelnemer::get_index_atleet() const
