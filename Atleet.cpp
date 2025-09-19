@@ -5,13 +5,14 @@
  * @brief Implementatie van de Atleet klasse.
  */
 
-// constructors
+ // Constructor: maakt een lege atleet zonder ingevulde gegevens.
 Atleet::Atleet() : geslacht(' '), licentie(Licentie(0, "", "", "")) {}
 
+// Constructor: vult alle basisgegevens van de atleet in.
 Atleet::Atleet(string voornaam, string achternaam, string geboortedatum, char geslacht)
     : voornaam(voornaam), achternaam(achternaam), geboortedatum(geboortedatum), geslacht(geslacht), licentie(Licentie(0, "", "", "")) {}
 
-//Setters
+//Setters:
 void Atleet::set_voornaam(string nieuwe_voornaam)
 {
     voornaam = nieuwe_voornaam;
@@ -37,7 +38,7 @@ void Atleet::set_licentie(const Licentie& nieuwe_licentie)
     licentie = nieuwe_licentie;
 }
 
-//Getters
+//Getters:
 string Atleet::get_voornaam() const
 {
     return voornaam;
