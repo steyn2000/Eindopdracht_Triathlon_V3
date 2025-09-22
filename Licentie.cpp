@@ -7,11 +7,14 @@
 
 using namespace std;
 
+// Constructor: maakt een lege licentie zonder gegevens.
 Licentie::Licentie() : licentie_nummer(0), geldig_tot(""), type(""), vereniging(""), doping_controles({}) {}
 
+// Constructor: maakt een licentie met alle basisgegevens.
 Licentie::Licentie(int nummer, const string& geldig_tot, const string& type, const string& vereniging)
     : licentie_nummer(nummer), geldig_tot(geldig_tot), type(type), vereniging(vereniging), doping_controles({}) {}
 
+//Getters
 int Licentie::get_nummer() const
 {
     return licentie_nummer;
@@ -37,6 +40,7 @@ const vector<DopingControle>& Licentie::get_doping_controles() const
     return doping_controles;
 }
 
+// Functie: controleert of er nooit doping is gevonden.
 bool Licentie::is_dopingvrij() const
 {
     for (const auto& controle : doping_controles)
@@ -49,7 +53,7 @@ bool Licentie::is_dopingvrij() const
     return true;
 }
 
-// Controleer of licentie geldig is op gegeven datum ("dd-mm-jjjj")
+// Controleert of licentie geldig is op gegeven datum ("dd-mm-jjjj")
 bool Licentie::is_geldig_op(const string& datum) const
 {
     if (geldig_tot.size() != 10 || datum.size() != 10)
@@ -68,6 +72,7 @@ bool Licentie::is_geldig_op(const string& datum) const
     return datum_als_int <= geldig_tot_als_int;
 }
 
+//Setters
 void Licentie::set_nummer(int nummer)
 {
     licentie_nummer = nummer;

@@ -11,7 +11,7 @@
 using namespace std;
 extern vector<Atleet> atleten;
 
-// constructors
+// Constructor: maakt een deelnemer zonder wisseltijden.
 Deelnemer::Deelnemer(int index_atleet, int tijd_zwem, int tijd_fiets, int tijd_loop)
     : index_atleet(index_atleet),
     tijd_zwem(tijd_zwem),
@@ -22,6 +22,7 @@ Deelnemer::Deelnemer(int index_atleet, int tijd_zwem, int tijd_fiets, int tijd_l
     tijd_wissel1(0),
     tijd_wissel2(0) {}
 
+// Constructor: maakt een deelnemer inclusief wisseltijden.
 Deelnemer::Deelnemer(int index_atleet, int tijd_zwem, int tijd_fiets, int tijd_loop, int tijd_wissel1, int tijd_wissel2)
     : index_atleet(index_atleet),
     tijd_zwem(tijd_zwem),
@@ -32,7 +33,7 @@ Deelnemer::Deelnemer(int index_atleet, int tijd_zwem, int tijd_fiets, int tijd_l
     tijd_wissel1(tijd_wissel1),
     tijd_wissel2(tijd_wissel2) {}
 
-// setters
+//Setters:
 void Deelnemer::set_tijd_zwem(int nieuwe_tijd_zwem)
 {
     tijd_zwem = nieuwe_tijd_zwem;
@@ -58,7 +59,7 @@ void Deelnemer::set_wisseltijd2(int nieuwe_tijd_wissel2)
     tijd_wissel2 = nieuwe_tijd_wissel2; heeft_wissel2 = true;
 }
 
-// getters
+//Getters:
 const Atleet& Deelnemer::get_atleet() const
 {
     if (index_atleet >= 0 && index_atleet < static_cast<int>(atleten.size()))
@@ -111,7 +112,7 @@ int Deelnemer::get_wisseltijd2() const
     return tijd_wissel2;
 }
 
-// berekening
+// Berekening: totale tijd inclusief eventuele wissels.
 int Deelnemer::totale_tijd() const
 {
     int totaal = tijd_zwem + tijd_fiets + tijd_loop;
