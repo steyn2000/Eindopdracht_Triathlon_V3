@@ -1,5 +1,5 @@
 #include "pch.h"
-#include "../Licentie.h"
+#include "Licentie.h"
 
 // Basistests voor Licentie::is_geldig_op volgens de opgegeven tabel.
 
