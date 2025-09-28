@@ -3,7 +3,6 @@
 #include "Atleet.h"
 #include "Deelnemer.h"
 #include "Wedstrijd.h"
-
 #include <vector>
 
 using namespace std;
