@@ -4,6 +4,13 @@
 #include "Deelnemer.h"
 #include "Wedstrijd.h"
 
+#include <vector>
+
+using namespace std;
+
+// Zorg voor een eenvoudige lijst met atleten zodat Deelnemer zijn index kan gebruiken.
+vector<Atleet> atleten = { Atleet{} };
+
 // Basistests voor Licentie::is_geldig_op volgens de opgegeven tabel.
 
 TEST(LicentieIsGeldigOpTest, DaglicentieOpZelfdeDagGeldig)
@@ -81,4 +88,41 @@ TEST(LicentieIsDopingvrijTest, PositieveControleOpWedstrijddag)
     licentie.voeg_dopingcontrole_toe({"20-07-2024", true});
 
     EXPECT_FALSE(licentie.is_dopingvrij());
+}
+
+// Basistests voor Deelnemer::totale_tijd volgens de opgegeven tabel.
+
+TEST(DeelnemerTotaleTijdTest, OptellingZonderWissels)
+{
+    Deelnemer deelnemer(0, 900, 3600, 1800);
+
+    EXPECT_EQ(deelnemer.totale_tijd(), 6300);
+}
+
+TEST(DeelnemerTotaleTijdTest, OptellingMetWissels)
+{
+    Deelnemer deelnemer(0, 900, 3600, 1800, 90, 40);
+
+    EXPECT_EQ(deelnemer.totale_tijd(), 6430);
+}
+
+TEST(DeelnemerTotaleTijdTest, SegmentMetNulTijd)
+{
+    Deelnemer deelnemer(0, 900, 3600, 0);
+
+    EXPECT_EQ(deelnemer.totale_tijd(), 4500);
+}
+
+TEST(DeelnemerTotaleTijdTest, GroteWaardenZonderOverflow)
+{
+    Deelnemer deelnemer(0, 900000, 3600000, 1800000);
+
+    EXPECT_EQ(deelnemer.totale_tijd(), 6300000);
+}
+
+TEST(DeelnemerTotaleTijdTest, WisseltijdenVanNul)
+{
+    Deelnemer deelnemer(0, 900, 3600, 1800, 0, 0);
+
+    EXPECT_EQ(deelnemer.totale_tijd(), 6300);
 }
