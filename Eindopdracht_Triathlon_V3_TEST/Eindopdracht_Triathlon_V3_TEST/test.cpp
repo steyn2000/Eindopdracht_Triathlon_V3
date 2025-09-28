@@ -44,3 +44,38 @@ TEST(LicentieIsGeldigOpTest, OngeldigeDatum)
     Licentie licentie(3, "31-12-2025", "Wedstrijdlicentie");
     EXPECT_FALSE(licentie.is_geldig_op("29-02-2023"));
 }
+
+// Basistests voor Licentie::is_dopingvrij volgens de opgegeven tabel.
+
+TEST(LicentieIsDopingvrijTest, GeenDopingcontroles)
+{
+    Licentie licentie;
+    EXPECT_TRUE(licentie.is_dopingvrij());
+}
+
+TEST(LicentieIsDopingvrijTest, AlleenNegatieveControles)
+{
+    Licentie licentie;
+    licentie.voeg_dopingcontrole_toe({"01-01-2024", false});
+    licentie.voeg_dopingcontrole_toe({"01-06-2024", false});
+
+    EXPECT_TRUE(licentie.is_dopingvrij());
+}
+
+TEST(LicentieIsDopingvrijTest, PositieveControleTussenNegatieve)
+{
+    Licentie licentie;
+    licentie.voeg_dopingcontrole_toe({"01-01-2024", false});
+    licentie.voeg_dopingcontrole_toe({"15-03-2024", true});
+    licentie.voeg_dopingcontrole_toe({"01-06-2024", false});
+
+    EXPECT_FALSE(licentie.is_dopingvrij());
+}
+
+TEST(LicentieIsDopingvrijTest, PositieveControleOpWedstrijddag)
+{
+    Licentie licentie;
+    licentie.voeg_dopingcontrole_toe({"20-07-2024", true});
+
+    EXPECT_FALSE(licentie.is_dopingvrij());
+}
