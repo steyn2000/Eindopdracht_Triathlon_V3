@@ -12,25 +12,25 @@ vector<Atleet> atleten = { Atleet{} };
 
 namespace
 {
-    Licentie MaakLicentie(const string& type, const string& geldig_tot, bool dopingvrij)
+    Licentie maak_licentie(const string& licentie_type, const string& geldig_tot, bool is_dopingvrij)
     {
         static int nummer_teller = 1;
-        Licentie licentie(nummer_teller++, geldig_tot, type);
-        if (!dopingvrij)
+        Licentie licentie(nummer_teller++, geldig_tot, licentie_type);
+        if (!is_dopingvrij)
         {
             licentie.voeg_dopingcontrole_toe({ "01-01-2024", true });
         }
         return licentie;
     }
 
-    void ZetEnigeAtleetMetLicentie(const Licentie& licentie)
+    void zet_enige_atleet_met_licentie(const Licentie& licentie)
     {
         Atleet atleet;
         atleet.set_licentie(licentie);
         atleten = { atleet };
     }
 
-    Deelnemer MaakStandaardDeelnemer()
+    Deelnemer maak_standaard_deelnemer()
     {
         return Deelnemer(0, 100, 200, 300);
     }
@@ -38,43 +38,43 @@ namespace
 
 // Basistests voor Licentie::is_geldig_op volgens de opgegeven tabel.
 
-TEST(LicentieIsGeldigOpTest, DaglicentieOpZelfdeDagGeldig)
+TEST(licentie_is_geldig_op_test, daglicentie_op_zelfde_dag_geldig)
 {
     Licentie licentie(1, "15-03-2025", "Daglicentie");
     EXPECT_TRUE(licentie.is_geldig_op("15-03-2025"));
 }
 
-TEST(LicentieIsGeldigOpTest, DaglicentieVoorDagOngeldig)
+TEST(licentie_is_geldig_op_test, daglicentie_voor_dag_ongeldig)
 {
     Licentie licentie(1, "15-03-2025", "Daglicentie");
     EXPECT_FALSE(licentie.is_geldig_op("14-03-2025"));
 }
 
-TEST(LicentieIsGeldigOpTest, DaglicentieNaDagOngeldig)
+TEST(licentie_is_geldig_op_test, daglicentie_na_dag_ongeldig)
 {
     Licentie licentie(1, "15-03-2025", "Daglicentie");
     EXPECT_FALSE(licentie.is_geldig_op("16-03-2025"));
 }
 
-TEST(LicentieIsGeldigOpTest, WedstrijdlicentieBeginDagGeldig)
+TEST(licentie_is_geldig_op_test, wedstrijdlicentie_begin_dag_geldig)
 {
     Licentie licentie(2, "31-12-2025", "Wedstrijdlicentie");
     EXPECT_TRUE(licentie.is_geldig_op("01-01-2025"));
 }
 
-TEST(LicentieIsGeldigOpTest, WedstrijdlicentieEindDagGeldig)
+TEST(licentie_is_geldig_op_test, wedstrijdlicentie_eind_dag_geldig)
 {
     Licentie licentie(2, "31-12-2025", "Wedstrijdlicentie");
     EXPECT_TRUE(licentie.is_geldig_op("31-12-2025"));
 }
 
-TEST(LicentieIsGeldigOpTest, WedstrijdlicentieNaEindDatumOngeldig)
+TEST(licentie_is_geldig_op_test, wedstrijdlicentie_na_eind_datum_ongeldig)
 {
     Licentie licentie(2, "31-12-2025", "Wedstrijdlicentie");
     EXPECT_FALSE(licentie.is_geldig_op("01-01-2026"));
 }
 
-TEST(LicentieIsGeldigOpTest, OngeldigeDatum)
+TEST(licentie_is_geldig_op_test, ongeldige_datum)
 {
     Licentie licentie(3, "31-12-2025", "Wedstrijdlicentie");
     EXPECT_FALSE(licentie.is_geldig_op("29-02-2023"));
@@ -82,13 +82,13 @@ TEST(LicentieIsGeldigOpTest, OngeldigeDatum)
 
 // Basistests voor Licentie::is_dopingvrij volgens de opgegeven tabel.
 
-TEST(LicentieIsDopingvrijTest, GeenDopingcontroles)
+TEST(licentie_is_dopingvrij_test, geen_dopingcontroles)
 {
     Licentie licentie;
     EXPECT_TRUE(licentie.is_dopingvrij());
 }
 
-TEST(LicentieIsDopingvrijTest, AlleenNegatieveControles)
+TEST(licentie_is_dopingvrij_test, alleen_negatieve_controles)
 {
     Licentie licentie;
     licentie.voeg_dopingcontrole_toe({"01-01-2024", false});
@@ -97,7 +97,7 @@ TEST(LicentieIsDopingvrijTest, AlleenNegatieveControles)
     EXPECT_TRUE(licentie.is_dopingvrij());
 }
 
-TEST(LicentieIsDopingvrijTest, PositieveControleTussenNegatieve)
+TEST(licentie_is_dopingvrij_test, positieve_controle_tussen_negatieve)
 {
     Licentie licentie;
     licentie.voeg_dopingcontrole_toe({"01-01-2024", false});
@@ -107,7 +107,7 @@ TEST(LicentieIsDopingvrijTest, PositieveControleTussenNegatieve)
     EXPECT_FALSE(licentie.is_dopingvrij());
 }
 
-TEST(LicentieIsDopingvrijTest, PositieveControleOpWedstrijddag)
+TEST(licentie_is_dopingvrij_test, positieve_controle_op_wedstrijddag)
 {
     Licentie licentie;
     licentie.voeg_dopingcontrole_toe({"20-07-2024", true});
@@ -117,35 +117,35 @@ TEST(LicentieIsDopingvrijTest, PositieveControleOpWedstrijddag)
 
 // Basistests voor Deelnemer::totale_tijd volgens de opgegeven tabel.
 
-TEST(DeelnemerTotaleTijdTest, OptellingZonderWissels)
+TEST(deelnemer_totale_tijd_test, optelling_zonder_wissels)
 {
     Deelnemer deelnemer(0, 900, 3600, 1800);
 
     EXPECT_EQ(deelnemer.totale_tijd(), 6300);
 }
 
-TEST(DeelnemerTotaleTijdTest, OptellingMetWissels)
+TEST(deelnemer_totale_tijd_test, optelling_met_wissels)
 {
     Deelnemer deelnemer(0, 900, 3600, 1800, 90, 40);
 
     EXPECT_EQ(deelnemer.totale_tijd(), 6430);
 }
 
-TEST(DeelnemerTotaleTijdTest, SegmentMetNulTijd)
+TEST(deelnemer_totale_tijd_test, segment_met_nul_tijd)
 {
     Deelnemer deelnemer(0, 900, 3600, 0);
 
     EXPECT_EQ(deelnemer.totale_tijd(), 4500);
 }
 
-TEST(DeelnemerTotaleTijdTest, GroteWaardenZonderOverflow)
+TEST(deelnemer_totale_tijd_test, grote_waarden_zonder_overflow)
 {
     Deelnemer deelnemer(0, 900000, 3600000, 1800000);
 
     EXPECT_EQ(deelnemer.totale_tijd(), 6300000);
 }
 
-TEST(DeelnemerTotaleTijdTest, WisseltijdenVanNul)
+TEST(deelnemer_totale_tijd_test, wisseltijden_van_nul)
 {
     Deelnemer deelnemer(0, 900, 3600, 1800, 0, 0);
 
@@ -154,96 +154,96 @@ TEST(DeelnemerTotaleTijdTest, WisseltijdenVanNul)
 
 // Basistests voor Wedstrijd::voeg_deelnemer_toe volgens de opgegeven tabel.
 
-TEST(WedstrijdVoegDeelnemerToeTest, NkWedstrijdlicentieGeldigEnDopingvrij)
+TEST(wedstrijd_voeg_deelnemer_toe_test, nk_wedstrijdlicentie_geldig_en_dopingvrij)
 {
-    ZetEnigeAtleetMetLicentie(MaakLicentie("Wedstrijdlicentie", "20-07-2025", true));
+    zet_enige_atleet_met_licentie(maak_licentie("Wedstrijdlicentie", "20-07-2025", true));
 
     Wedstrijd wedstrijd("NK Triathlon", "20-07-2025", true, false);
-    Deelnemer deelnemer = MaakStandaardDeelnemer();
+    Deelnemer deelnemer = maak_standaard_deelnemer();
 
     wedstrijd.voeg_deelnemer_toe(deelnemer);
 
     EXPECT_EQ(wedstrijd.aantal_deelnemers(), 1);
 }
 
-TEST(WedstrijdVoegDeelnemerToeTest, NietNkDaglicentieGeldigEnDopingvrij)
+TEST(wedstrijd_voeg_deelnemer_toe_test, niet_nk_daglicentie_geldig_en_dopingvrij)
 {
-    ZetEnigeAtleetMetLicentie(MaakLicentie("Daglicentie", "20-07-2025", true));
+    zet_enige_atleet_met_licentie(maak_licentie("Daglicentie", "20-07-2025", true));
 
     Wedstrijd wedstrijd("Zomertriathlon", "20-07-2025", false, false);
-    Deelnemer deelnemer = MaakStandaardDeelnemer();
+    Deelnemer deelnemer = maak_standaard_deelnemer();
 
     wedstrijd.voeg_deelnemer_toe(deelnemer);
 
     EXPECT_EQ(wedstrijd.aantal_deelnemers(), 1);
 }
 
-TEST(WedstrijdVoegDeelnemerToeTest, NkWedstrijdlicentieMetDopingWordtGeweigerd)
+TEST(wedstrijd_voeg_deelnemer_toe_test, nk_wedstrijdlicentie_met_doping_wordt_geweigerd)
 {
-    ZetEnigeAtleetMetLicentie(MaakLicentie("Wedstrijdlicentie", "20-07-2025", false));
+    zet_enige_atleet_met_licentie(maak_licentie("Wedstrijdlicentie", "20-07-2025", false));
 
     Wedstrijd wedstrijd("NK Triathlon", "20-07-2025", true, false);
-    Deelnemer deelnemer = MaakStandaardDeelnemer();
+    Deelnemer deelnemer = maak_standaard_deelnemer();
 
     wedstrijd.voeg_deelnemer_toe(deelnemer);
 
     EXPECT_EQ(wedstrijd.aantal_deelnemers(), 0);
 }
 
-TEST(WedstrijdVoegDeelnemerToeTest, NkWedstrijdlicentieNietGeldigWordtGeweigerd)
+TEST(wedstrijd_voeg_deelnemer_toe_test, nk_wedstrijdlicentie_niet_geldig_wordt_geweigerd)
 {
-    ZetEnigeAtleetMetLicentie(MaakLicentie("Wedstrijdlicentie", "19-07-2025", true));
+    zet_enige_atleet_met_licentie(maak_licentie("Wedstrijdlicentie", "19-07-2025", true));
 
     Wedstrijd wedstrijd("NK Triathlon", "20-07-2025", true, false);
-    Deelnemer deelnemer = MaakStandaardDeelnemer();
+    Deelnemer deelnemer = maak_standaard_deelnemer();
 
     wedstrijd.voeg_deelnemer_toe(deelnemer);
 
     EXPECT_EQ(wedstrijd.aantal_deelnemers(), 0);
 }
 
-TEST(WedstrijdVoegDeelnemerToeTest, NietNkWedstrijdlicentieNietGeldigWordtGeweigerd)
+TEST(wedstrijd_voeg_deelnemer_toe_test, niet_nk_wedstrijdlicentie_niet_geldig_wordt_geweigerd)
 {
-    ZetEnigeAtleetMetLicentie(MaakLicentie("Wedstrijdlicentie", "19-07-2025", true));
+    zet_enige_atleet_met_licentie(maak_licentie("Wedstrijdlicentie", "19-07-2025", true));
 
     Wedstrijd wedstrijd("Regionale triathlon", "20-07-2025", false, false);
-    Deelnemer deelnemer = MaakStandaardDeelnemer();
+    Deelnemer deelnemer = maak_standaard_deelnemer();
 
     wedstrijd.voeg_deelnemer_toe(deelnemer);
 
     EXPECT_EQ(wedstrijd.aantal_deelnemers(), 0);
 }
 
-TEST(WedstrijdVoegDeelnemerToeTest, NietNkWedstrijdlicentieMetDopingWordtGeweigerd)
+TEST(wedstrijd_voeg_deelnemer_toe_test, niet_nk_wedstrijdlicentie_met_doping_wordt_geweigerd)
 {
-    ZetEnigeAtleetMetLicentie(MaakLicentie("Wedstrijdlicentie", "20-07-2025", false));
+    zet_enige_atleet_met_licentie(maak_licentie("Wedstrijdlicentie", "20-07-2025", false));
 
     Wedstrijd wedstrijd("Regionale triathlon", "20-07-2025", false, false);
-    Deelnemer deelnemer = MaakStandaardDeelnemer();
+    Deelnemer deelnemer = maak_standaard_deelnemer();
 
     wedstrijd.voeg_deelnemer_toe(deelnemer);
 
     EXPECT_EQ(wedstrijd.aantal_deelnemers(), 0);
 }
 
-TEST(WedstrijdVoegDeelnemerToeTest, NkDagOfTrainingslicentieWordtGeweigerd)
+TEST(wedstrijd_voeg_deelnemer_toe_test, nk_dag_of_trainingslicentie_wordt_geweigerd)
 {
-    ZetEnigeAtleetMetLicentie(MaakLicentie("Daglicentie", "20-07-2025", true));
+    zet_enige_atleet_met_licentie(maak_licentie("Daglicentie", "20-07-2025", true));
 
     Wedstrijd wedstrijd("NK Triathlon", "20-07-2025", true, false);
-    Deelnemer deelnemer = MaakStandaardDeelnemer();
+    Deelnemer deelnemer = maak_standaard_deelnemer();
 
     wedstrijd.voeg_deelnemer_toe(deelnemer);
 
     EXPECT_EQ(wedstrijd.aantal_deelnemers(), 0);
 }
 
-TEST(WedstrijdVoegDeelnemerToeTest, DubbeleInschrijvingWordtGenegeerd)
+TEST(wedstrijd_voeg_deelnemer_toe_test, dubbele_inschrijving_wordt_genegeerd)
 {
-    ZetEnigeAtleetMetLicentie(MaakLicentie("Wedstrijdlicentie", "20-07-2025", true));
+    zet_enige_atleet_met_licentie(maak_licentie("Wedstrijdlicentie", "20-07-2025", true));
 
     Wedstrijd wedstrijd("NK Triathlon", "20-07-2025", true, false);
-    Deelnemer deelnemer = MaakStandaardDeelnemer();
+    Deelnemer deelnemer = maak_standaard_deelnemer();
 
     wedstrijd.voeg_deelnemer_toe(deelnemer);
     wedstrijd.voeg_deelnemer_toe(deelnemer);
