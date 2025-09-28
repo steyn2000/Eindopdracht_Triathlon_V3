@@ -10,7 +10,7 @@ using namespace std;
 // Zorg voor een eenvoudige lijst met atleten zodat Deelnemer zijn index kan gebruiken.
 vector<Atleet> atleten = { Atleet{} };
 
-namespace
+namespace test_helpers
 {
     Licentie maak_licentie(const string& licentie_type, const string& geldig_tot, bool is_dopingvrij)
     {
@@ -156,10 +156,10 @@ TEST(deelnemer_totale_tijd_test, wisseltijden_van_nul)
 
 TEST(wedstrijd_voeg_deelnemer_toe_test, nk_wedstrijdlicentie_geldig_en_dopingvrij)
 {
-    zet_enige_atleet_met_licentie(maak_licentie("Wedstrijdlicentie", "20-07-2025", true));
+    test_helpers::zet_enige_atleet_met_licentie(test_helpers::maak_licentie("Wedstrijdlicentie", "20-07-2025", true));
 
     Wedstrijd wedstrijd("NK Triathlon", "20-07-2025", true, false);
-    Deelnemer deelnemer = maak_standaard_deelnemer();
+    Deelnemer deelnemer = test_helpers::maak_standaard_deelnemer();
 
     wedstrijd.voeg_deelnemer_toe(deelnemer);
 
@@ -168,10 +168,10 @@ TEST(wedstrijd_voeg_deelnemer_toe_test, nk_wedstrijdlicentie_geldig_en_dopingvri
 
 TEST(wedstrijd_voeg_deelnemer_toe_test, niet_nk_daglicentie_geldig_en_dopingvrij)
 {
-    zet_enige_atleet_met_licentie(maak_licentie("Daglicentie", "20-07-2025", true));
+    test_helpers::zet_enige_atleet_met_licentie(test_helpers::maak_licentie("Daglicentie", "20-07-2025", true));
 
     Wedstrijd wedstrijd("Zomertriathlon", "20-07-2025", false, false);
-    Deelnemer deelnemer = maak_standaard_deelnemer();
+    Deelnemer deelnemer = test_helpers::maak_standaard_deelnemer();
 
     wedstrijd.voeg_deelnemer_toe(deelnemer);
 
@@ -180,10 +180,10 @@ TEST(wedstrijd_voeg_deelnemer_toe_test, niet_nk_daglicentie_geldig_en_dopingvrij
 
 TEST(wedstrijd_voeg_deelnemer_toe_test, nk_wedstrijdlicentie_met_doping_wordt_geweigerd)
 {
-    zet_enige_atleet_met_licentie(maak_licentie("Wedstrijdlicentie", "20-07-2025", false));
+    test_helpers::zet_enige_atleet_met_licentie(test_helpers::maak_licentie("Wedstrijdlicentie", "20-07-2025", false));
 
     Wedstrijd wedstrijd("NK Triathlon", "20-07-2025", true, false);
-    Deelnemer deelnemer = maak_standaard_deelnemer();
+    Deelnemer deelnemer = test_helpers::maak_standaard_deelnemer();
 
     wedstrijd.voeg_deelnemer_toe(deelnemer);
 
@@ -192,10 +192,10 @@ TEST(wedstrijd_voeg_deelnemer_toe_test, nk_wedstrijdlicentie_met_doping_wordt_ge
 
 TEST(wedstrijd_voeg_deelnemer_toe_test, nk_wedstrijdlicentie_niet_geldig_wordt_geweigerd)
 {
-    zet_enige_atleet_met_licentie(maak_licentie("Wedstrijdlicentie", "19-07-2025", true));
+    test_helpers::zet_enige_atleet_met_licentie(test_helpers::maak_licentie("Wedstrijdlicentie", "19-07-2025", true));
 
     Wedstrijd wedstrijd("NK Triathlon", "20-07-2025", true, false);
-    Deelnemer deelnemer = maak_standaard_deelnemer();
+    Deelnemer deelnemer = test_helpers::maak_standaard_deelnemer();
 
     wedstrijd.voeg_deelnemer_toe(deelnemer);
 
@@ -204,10 +204,10 @@ TEST(wedstrijd_voeg_deelnemer_toe_test, nk_wedstrijdlicentie_niet_geldig_wordt_g
 
 TEST(wedstrijd_voeg_deelnemer_toe_test, niet_nk_wedstrijdlicentie_niet_geldig_wordt_geweigerd)
 {
-    zet_enige_atleet_met_licentie(maak_licentie("Wedstrijdlicentie", "19-07-2025", true));
+    test_helpers::zet_enige_atleet_met_licentie(test_helpers::maak_licentie("Wedstrijdlicentie", "19-07-2025", true));
 
     Wedstrijd wedstrijd("Regionale triathlon", "20-07-2025", false, false);
-    Deelnemer deelnemer = maak_standaard_deelnemer();
+    Deelnemer deelnemer = test_helpers::maak_standaard_deelnemer();
 
     wedstrijd.voeg_deelnemer_toe(deelnemer);
 
@@ -216,10 +216,10 @@ TEST(wedstrijd_voeg_deelnemer_toe_test, niet_nk_wedstrijdlicentie_niet_geldig_wo
 
 TEST(wedstrijd_voeg_deelnemer_toe_test, niet_nk_wedstrijdlicentie_met_doping_wordt_geweigerd)
 {
-    zet_enige_atleet_met_licentie(maak_licentie("Wedstrijdlicentie", "20-07-2025", false));
+    test_helpers::zet_enige_atleet_met_licentie(test_helpers::maak_licentie("Wedstrijdlicentie", "20-07-2025", false));
 
     Wedstrijd wedstrijd("Regionale triathlon", "20-07-2025", false, false);
-    Deelnemer deelnemer = maak_standaard_deelnemer();
+    Deelnemer deelnemer = test_helpers::maak_standaard_deelnemer();
 
     wedstrijd.voeg_deelnemer_toe(deelnemer);
 
@@ -228,10 +228,10 @@ TEST(wedstrijd_voeg_deelnemer_toe_test, niet_nk_wedstrijdlicentie_met_doping_wor
 
 TEST(wedstrijd_voeg_deelnemer_toe_test, nk_dag_of_trainingslicentie_wordt_geweigerd)
 {
-    zet_enige_atleet_met_licentie(maak_licentie("Daglicentie", "20-07-2025", true));
+    test_helpers::zet_enige_atleet_met_licentie(test_helpers::maak_licentie("Daglicentie", "20-07-2025", true));
 
     Wedstrijd wedstrijd("NK Triathlon", "20-07-2025", true, false);
-    Deelnemer deelnemer = maak_standaard_deelnemer();
+    Deelnemer deelnemer = test_helpers::maak_standaard_deelnemer();
 
     wedstrijd.voeg_deelnemer_toe(deelnemer);
 
@@ -240,10 +240,10 @@ TEST(wedstrijd_voeg_deelnemer_toe_test, nk_dag_of_trainingslicentie_wordt_geweig
 
 TEST(wedstrijd_voeg_deelnemer_toe_test, dubbele_inschrijving_wordt_genegeerd)
 {
-    zet_enige_atleet_met_licentie(maak_licentie("Wedstrijdlicentie", "20-07-2025", true));
+    test_helpers::zet_enige_atleet_met_licentie(test_helpers::maak_licentie("Wedstrijdlicentie", "20-07-2025", true));
 
     Wedstrijd wedstrijd("NK Triathlon", "20-07-2025", true, false);
-    Deelnemer deelnemer = maak_standaard_deelnemer();
+    Deelnemer deelnemer = test_helpers::maak_standaard_deelnemer();
 
     wedstrijd.voeg_deelnemer_toe(deelnemer);
     wedstrijd.voeg_deelnemer_toe(deelnemer);
