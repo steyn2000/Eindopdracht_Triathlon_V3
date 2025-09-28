@@ -1,5 +1,8 @@
 #include "pch.h"
 #include "Licentie.h"
+#include "Atleet.h"
+#include "Deelnemer.h"
+#include "Wedstrijd.h"
 
 // Basistests voor Licentie::is_geldig_op volgens de opgegeven tabel.
 
