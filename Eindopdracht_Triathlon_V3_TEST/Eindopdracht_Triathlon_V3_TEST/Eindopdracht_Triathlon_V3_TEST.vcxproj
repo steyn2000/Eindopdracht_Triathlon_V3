@@ -97,6 +97,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClInclude Include="Atleet.h" />
+    <ClInclude Include="categorie_van_leeftijd.h" />
     <ClInclude Include="Deelnemer.h" />
     <ClInclude Include="leeftijd_op_datum.h" />
     <ClInclude Include="Licentie.h" />
@@ -106,6 +107,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Atleet.cpp" />
+    <ClCompile Include="categorie_van_leeftijd.cpp" />
     <ClCompile Include="Deelnemer.cpp" />
     <ClCompile Include="Eindopdracht_Triathlon_V3.cpp" />
     <ClCompile Include="leeftijd_op_datum.cpp" />

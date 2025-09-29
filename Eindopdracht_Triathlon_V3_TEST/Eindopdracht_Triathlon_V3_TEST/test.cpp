@@ -6,6 +6,7 @@
 #include <vector>
 #include "valide_datum.h"
 #include "leeftijd_op_datum.h"
+#include "categorie_van_leeftijd.h"
 
 using namespace std;
 
@@ -374,4 +375,77 @@ TEST(wedstrijd_voeg_deelnemer_toe_test, dubbele_inschrijving_wordt_genegeerd)
     wedstrijd.voeg_deelnemer_toe(deelnemer);
 
     EXPECT_EQ(wedstrijd.aantal_deelnemers(), 1);
+}
+
+
+// Statement coverage tests voor categorie_van_leeftijd (C1 t/m C7 uit de tabel).
+TEST(categorie_van_leeftijd_statement_coverage, C1_leeftijd_minder_dan_13)
+{
+    EXPECT_EQ("<13", categorie_van_leeftijd(12));
+}
+
+TEST(categorie_van_leeftijd_statement_coverage, C2_leeftijd_tussen_13_en_17)
+{
+    EXPECT_EQ("13-17", categorie_van_leeftijd(13));
+}
+
+TEST(categorie_van_leeftijd_statement_coverage, C3_leeftijd_tot_en_met_35)
+{
+    EXPECT_EQ("18-35", categorie_van_leeftijd(18));
+}
+
+TEST(categorie_van_leeftijd_statement_coverage, C4_leeftijd_tot_en_met_45)
+{
+    EXPECT_EQ("36-45", categorie_van_leeftijd(40));
+}
+
+TEST(categorie_van_leeftijd_statement_coverage, C5_leeftijd_tot_en_met_55)
+{
+    EXPECT_EQ("46-55", categorie_van_leeftijd(50));
+}
+
+TEST(categorie_van_leeftijd_statement_coverage, C6_leeftijd_tot_en_met_65)
+{
+    EXPECT_EQ("56-65", categorie_van_leeftijd(60));
+}
+
+TEST(categorie_van_leeftijd_statement_coverage, C7_leeftijd_vanaf_66)
+{
+    EXPECT_EQ("66+", categorie_van_leeftijd(70));
+}
+
+// Decision coverage tests voor categorie_van_leeftijd (D1 t/m D7 uit de tabel).
+TEST(categorie_van_leeftijd_branch_coverage, D1_pad_minder_dan_13)
+{
+    EXPECT_EQ("<13", categorie_van_leeftijd(12));
+}
+
+TEST(categorie_van_leeftijd_branch_coverage, D2_pad_tweede_categorie)
+{
+    EXPECT_EQ("13-17", categorie_van_leeftijd(15));
+}
+
+TEST(categorie_van_leeftijd_branch_coverage, D3_pad_derde_categorie)
+{
+    EXPECT_EQ("18-35", categorie_van_leeftijd(30));
+}
+
+TEST(categorie_van_leeftijd_branch_coverage, D4_pad_vierde_categorie)
+{
+    EXPECT_EQ("36-45", categorie_van_leeftijd(40));
+}
+
+TEST(categorie_van_leeftijd_branch_coverage, D5_pad_vijfde_categorie)
+{
+    EXPECT_EQ("46-55", categorie_van_leeftijd(50));
+}
+
+TEST(categorie_van_leeftijd_branch_coverage, D6_pad_zesde_categorie)
+{
+    EXPECT_EQ("56-65", categorie_van_leeftijd(60));
+}
+
+TEST(categorie_van_leeftijd_branch_coverage, D7_pad_zevende_categorie)
+{
+    EXPECT_EQ("66+", categorie_van_leeftijd(70));
 }
