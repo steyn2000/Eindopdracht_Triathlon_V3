@@ -4,6 +4,7 @@
 #include "Deelnemer.h"
 #include "Wedstrijd.h"
 #include <vector>
+#include "valide_datum.h"
 
 using namespace std;
 
