@@ -105,6 +105,7 @@
   <ItemGroup>
     <ClCompile Include="Atleet.cpp" />
     <ClCompile Include="Deelnemer.cpp" />
+    <ClCompile Include="Eindopdracht_Triathlon_V3.cpp" />
     <ClCompile Include="Licentie.cpp" />
     <ClCompile Include="test.cpp" />
     <ClCompile Include="pch.cpp">
