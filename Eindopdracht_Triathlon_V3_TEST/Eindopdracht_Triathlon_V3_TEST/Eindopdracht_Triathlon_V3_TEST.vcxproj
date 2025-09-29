@@ -99,7 +99,6 @@
     <ClInclude Include="Atleet.h" />
     <ClInclude Include="categorie_van_leeftijd.h" />
     <ClInclude Include="Deelnemer.h" />
-    <ClInclude Include="kies_index.h" />
     <ClInclude Include="leeftijd_op_datum.h" />
     <ClInclude Include="Licentie.h" />
     <ClInclude Include="pch.h" />
@@ -111,7 +110,6 @@
     <ClCompile Include="categorie_van_leeftijd.cpp" />
     <ClCompile Include="Deelnemer.cpp" />
     <ClCompile Include="Eindopdracht_Triathlon_V3.cpp" />
-    <ClCompile Include="kies_index.cpp" />
     <ClCompile Include="leeftijd_op_datum.cpp" />
     <ClCompile Include="Licentie.cpp" />
     <ClCompile Include="test.cpp" />

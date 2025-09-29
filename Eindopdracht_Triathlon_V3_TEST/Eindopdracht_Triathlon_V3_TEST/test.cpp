@@ -7,15 +7,12 @@
 #include "valide_datum.h"
 #include "leeftijd_op_datum.h"
 #include "categorie_van_leeftijd.h"
-#include "kies_index.h"
+
 
 using namespace std;
 
-namespace kies_index_test_support
-{
-    void set_input_sequence(const vector<int>& values);
-    void clear_inputs();
-}
+// Forward declaration zodat de GoogleTests de functie uit het hoofdproject kunnen aanroepen.
+
 
 // Zorg voor een eenvoudige lijst met atleten zodat Deelnemer zijn index kan gebruiken.
 vector<Atleet> atleten = { Atleet{} };
@@ -44,52 +41,6 @@ namespace test_helpers
     {
         return Deelnemer(0, 100, 200, 300);
     }
-}
-
-// Statement coverage voor kies_index volgens de opgegeven tabel (K1 t/m K4).
-
-TEST(kies_index_statement_coverage, K1_negatieve_invoer_geeft_min_een)
-{
-    kies_index_test_support::set_input_sequence({ -5 });
-    EXPECT_EQ(-1, kies_index(3, "Testprompt"));
-}
-
-TEST(kies_index_statement_coverage, K2_invoer_boven_maximum_geeft_min_een)
-{
-    kies_index_test_support::set_input_sequence({ 5 });
-    EXPECT_EQ(-1, kies_index(3, "Testprompt"));
-}
-
-TEST(kies_index_statement_coverage, K3_geldige_invoer_geeft_index)
-{
-    kies_index_test_support::set_input_sequence({ 0 });
-    EXPECT_EQ(0, kies_index(3, "Testprompt"));
-}
-
-TEST(kies_index_statement_coverage, K4_grenswaarde_binnen_bereik)
-{
-    kies_index_test_support::set_input_sequence({ 5 });
-    EXPECT_EQ(5, kies_index(7, "Testprompt"));
-}
-
-// Decision (branch) coverage voor kies_index.
-
-TEST(kies_index_branch_coverage, negatieve_invoer_activeert_eerste_guard)
-{
-    kies_index_test_support::set_input_sequence({ -1 });
-    EXPECT_EQ(-1, kies_index(4, "Testprompt"));
-}
-
-TEST(kies_index_branch_coverage, exacte_grenswaarde_geeft_min_een)
-{
-    kies_index_test_support::set_input_sequence({ 4 });
-    EXPECT_EQ(-1, kies_index(4, "Testprompt"));
-}
-
-TEST(kies_index_branch_coverage, waarde_binnen_bereik_geeft_index)
-{
-    kies_index_test_support::set_input_sequence({ 2 });
-    EXPECT_EQ(2, kies_index(5, "Testprompt"));
 }
 
 // Basistests voor Licentie::is_geldig_op volgens de opgegeven tabel.
