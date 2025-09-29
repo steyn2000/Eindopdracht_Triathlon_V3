@@ -109,7 +109,6 @@
     <ClCompile Include="Atleet.cpp" />
     <ClCompile Include="categorie_van_leeftijd.cpp" />
     <ClCompile Include="Deelnemer.cpp" />
-    <ClCompile Include="Eindopdracht_Triathlon_V3.cpp" />
     <ClCompile Include="leeftijd_op_datum.cpp" />
     <ClCompile Include="Licentie.cpp" />
     <ClCompile Include="test.cpp" />
