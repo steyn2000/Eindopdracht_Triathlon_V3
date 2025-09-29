@@ -9,7 +9,7 @@
 using namespace std;
 
 // Forward declaration zodat de GoogleTests de functie uit het hoofdproject kunnen aanroepen.
-//bool valide_datum(const string& datum);
+int leeftijd_op_datum(const string& geboortedatum, const string& datum);
 
 // Zorg voor een eenvoudige lijst met atleten zodat Deelnemer zijn index kan gebruiken.
 vector<Atleet> atleten = { Atleet{} };
@@ -178,6 +178,30 @@ TEST(valide_datum_branch_coverage, T10_jaar_te_klein)
 TEST(valide_datum_branch_coverage, T11_jaar_te_groot)
 {
     EXPECT_FALSE(valide_datum("12-12-2101"));
+}
+
+// Statement coverage voor leeftijd_op_datum (L1 en L2 uit de tabel).
+
+TEST(leeftijd_op_datum_statement_coverage, L1_verjaardag_geweest)
+{
+    EXPECT_EQ(leeftijd_op_datum("01-01-2000", "01-07-2020"), 20);
+}
+
+TEST(leeftijd_op_datum_statement_coverage, L2_verjaardag_niet_geweest)
+{
+    EXPECT_EQ(leeftijd_op_datum("01-10-2000", "01-07-2020"), 19);
+}
+
+// Decision (branch) coverage voor leeftijd_op_datum (L1 en L2 dekken beide paden).
+
+TEST(leeftijd_op_datum_branch_coverage, L1_pad_verjaardag_geweest)
+{
+    EXPECT_EQ(leeftijd_op_datum("01-01-2000", "01-07-2020"), 20);
+}
+
+TEST(leeftijd_op_datum_branch_coverage, L2_pad_verjaardag_niet_geweest)
+{
+    EXPECT_EQ(leeftijd_op_datum("01-10-2000", "01-07-2020"), 19);
 }
 
 // Basistests voor Licentie::is_dopingvrij volgens de opgegeven tabel.
