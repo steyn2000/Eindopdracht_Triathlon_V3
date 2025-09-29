@@ -100,6 +100,7 @@
     <ClInclude Include="Deelnemer.h" />
     <ClInclude Include="Licentie.h" />
     <ClInclude Include="pch.h" />
+    <ClInclude Include="valide_datum.h" />
     <ClInclude Include="Wedstrijd.h" />
   </ItemGroup>
   <ItemGroup>
@@ -114,6 +115,7 @@
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Create</PrecompiledHeader>
       <PrecompiledHeader Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Create</PrecompiledHeader>
     </ClCompile>
+    <ClCompile Include="valide_datum.cpp" />
     <ClCompile Include="Wedstrijd.cpp" />
   </ItemGroup>
   <ItemGroup>

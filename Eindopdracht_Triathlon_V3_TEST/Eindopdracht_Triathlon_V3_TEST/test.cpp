@@ -9,7 +9,7 @@
 using namespace std;
 
 // Forward declaration zodat de GoogleTests de functie uit het hoofdproject kunnen aanroepen.
-bool valide_datum(const string& datum);
+//bool valide_datum(const string& datum);
 
 // Zorg voor een eenvoudige lijst met atleten zodat Deelnemer zijn index kan gebruiken.
 vector<Atleet> atleten = { Atleet{} };
