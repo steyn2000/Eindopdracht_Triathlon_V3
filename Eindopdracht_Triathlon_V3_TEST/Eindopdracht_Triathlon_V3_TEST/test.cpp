@@ -8,11 +8,7 @@
 #include "leeftijd_op_datum.h"
 #include "categorie_van_leeftijd.h"
 
-
 using namespace std;
-
-// Forward declaration zodat de GoogleTests de functie uit het hoofdproject kunnen aanroepen.
-
 
 // Zorg voor een eenvoudige lijst met atleten zodat Deelnemer zijn index kan gebruiken.
 vector<Atleet> atleten = { Atleet{} };
