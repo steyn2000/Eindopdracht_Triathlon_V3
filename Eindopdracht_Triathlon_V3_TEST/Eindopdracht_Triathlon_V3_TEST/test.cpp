@@ -4,6 +4,7 @@
 #include "Deelnemer.h"
 #include "Wedstrijd.h"
 #include <vector>
+#include "valide_datum.h"
 
 using namespace std;
 
@@ -78,6 +79,102 @@ TEST(licentie_is_geldig_op_test, ongeldige_datum)
 {
     Licentie licentie(3, "31-12-2025", "Wedstrijdlicentie");
     EXPECT_FALSE(licentie.is_geldig_op("29-02-2023"));
+}
+
+// Coverage tests voor valide_datum (statement en decision coverage).
+
+// Statement coverage scenario's (T1 t/m T7 uit de tabel).
+
+TEST(valide_datum_statement_coverage, T1_basispad_geldige_datum)
+{
+    EXPECT_TRUE(valide_datum("15-07-2023"));
+}
+
+TEST(valide_datum_statement_coverage, T2_ongeldige_lengte)
+{
+    EXPECT_FALSE(valide_datum("1-7-2023"));
+}
+
+TEST(valide_datum_statement_coverage, T3_teken_geen_cijfer)
+{
+    EXPECT_FALSE(valide_datum("a5-07-2023"));
+}
+
+TEST(valide_datum_statement_coverage, T4_jaar_buiten_bereik)
+{
+    EXPECT_FALSE(valide_datum("10-10-2201"));
+}
+
+TEST(valide_datum_statement_coverage, T5_maand_buiten_bereik)
+{
+    EXPECT_FALSE(valide_datum("10-13-2020"));
+}
+
+TEST(valide_datum_statement_coverage, T6_februari_schrikkeljaar)
+{
+    EXPECT_TRUE(valide_datum("29-02-2020"));
+}
+
+TEST(valide_datum_statement_coverage, T7_februari_geen_schrikkeljaar)
+{
+    EXPECT_FALSE(valide_datum("29-02-2021"));
+}
+
+// Decision (branch) coverage scenario's (T1 t/m T11 uit de tabel).
+
+TEST(valide_datum_branch_coverage, T1_geldige_pad)
+{
+    EXPECT_TRUE(valide_datum("15-07-2023"));
+}
+
+TEST(valide_datum_branch_coverage, T2_teken_kleiner_dan_nul)
+{
+    EXPECT_FALSE(valide_datum("/5-07-2023"));
+}
+
+TEST(valide_datum_branch_coverage, T3_teken_groter_dan_negen)
+{
+    EXPECT_FALSE(valide_datum("a5-07-2023"));
+}
+
+TEST(valide_datum_branch_coverage, T4_schrikkeljaar_true)
+{
+    EXPECT_TRUE(valide_datum("29-02-2020"));
+}
+
+TEST(valide_datum_branch_coverage, T5_schrikkeljaar_false)
+{
+    EXPECT_FALSE(valide_datum("29-02-2021"));
+}
+
+TEST(valide_datum_branch_coverage, T6_maand_ongeldig_hoog)
+{
+    EXPECT_FALSE(valide_datum("22-19-2020"));
+}
+
+TEST(valide_datum_branch_coverage, T7_maand_ongeldig_laag)
+{
+    EXPECT_FALSE(valide_datum("10-00-2019"));
+}
+
+TEST(valide_datum_branch_coverage, T8_dag_boven_maximum)
+{
+    EXPECT_FALSE(valide_datum("32-12-2020"));
+}
+
+TEST(valide_datum_branch_coverage, T9_dag_boven_maximum_in_april)
+{
+    EXPECT_FALSE(valide_datum("31-04-2020"));
+}
+
+TEST(valide_datum_branch_coverage, T10_jaar_te_klein)
+{
+    EXPECT_FALSE(valide_datum("12-12-1899"));
+}
+
+TEST(valide_datum_branch_coverage, T11_jaar_te_groot)
+{
+    EXPECT_FALSE(valide_datum("12-12-2101"));
 }
 
 // Basistests voor Licentie::is_dopingvrij volgens de opgegeven tabel.
