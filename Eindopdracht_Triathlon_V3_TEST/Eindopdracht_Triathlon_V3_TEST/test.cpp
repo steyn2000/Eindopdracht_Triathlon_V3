@@ -5,11 +5,12 @@
 #include "Wedstrijd.h"
 #include <vector>
 #include "valide_datum.h"
+#include "leeftijd_op_datum.h"
 
 using namespace std;
 
 // Forward declaration zodat de GoogleTests de functie uit het hoofdproject kunnen aanroepen.
-int leeftijd_op_datum(const string& geboortedatum, const string& datum);
+
 
 // Zorg voor een eenvoudige lijst met atleten zodat Deelnemer zijn index kan gebruiken.
 vector<Atleet> atleten = { Atleet{} };

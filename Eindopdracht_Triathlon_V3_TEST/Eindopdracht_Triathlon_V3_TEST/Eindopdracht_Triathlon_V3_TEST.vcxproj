@@ -98,6 +98,7 @@
   <ItemGroup>
     <ClInclude Include="Atleet.h" />
     <ClInclude Include="Deelnemer.h" />
+    <ClInclude Include="leeftijd_op_datum.h" />
     <ClInclude Include="Licentie.h" />
     <ClInclude Include="pch.h" />
     <ClInclude Include="valide_datum.h" />
@@ -107,6 +108,7 @@
     <ClCompile Include="Atleet.cpp" />
     <ClCompile Include="Deelnemer.cpp" />
     <ClCompile Include="Eindopdracht_Triathlon_V3.cpp" />
+    <ClCompile Include="leeftijd_op_datum.cpp" />
     <ClCompile Include="Licentie.cpp" />
     <ClCompile Include="test.cpp" />
     <ClCompile Include="pch.cpp">
