@@ -180,7 +180,7 @@ void print_keuzemenu()
     cout << "7. Licentie aan atleet koppelen\n";
     cout << "8. Dopingcontrole toevoegen\n";
     cout << "9. Uitslagen tonen\n";
-    cout << "10. Stoppen\n"; // De terminal bleef zwart, menu niet zichtbaar terwijl de code wel leek te werken
+    cout << "10. Stoppen\n";
 }
 
 /**
@@ -266,7 +266,7 @@ int leeftijd_op_datum(const string& geboortedatum, const string& datum)
     return leeftijd;
 }
 
-// categorieën volgens jouw eisen
+// leeftijds categorieën 
 /**
  * @brief Geeft de leeftijdscategorie voor een gegeven leeftijd.
  * @param leeftijd Leeftijd in jaren.
@@ -665,7 +665,7 @@ int main() {
             bool is_nederlands_kampioenschap = (is_nederlands_kampioenschap_keuze == "ja");
             bool heeft_wissels = (wissels_keuze == "ja");
 
-            // nieuw object maken en toevoegen aan de vector
+            // maakt een nieuw object en voegt het toe aan de vector
             Wedstrijd nieuwe_wedstrijd(naam, datum, is_nederlands_kampioenschap, heeft_wissels);
             wedstrijden.push_back(nieuwe_wedstrijd);
 
@@ -717,7 +717,7 @@ int main() {
                 }
                 else
                 {
-                    // Bepaal licentietype van de atleet
+                    // Bepaalt licentietype van de atleet
                     string licentie_type = atleten[index_atleet].get_licentie().get_type();
 
                         // NK-licentiecontrole
@@ -726,12 +726,12 @@ int main() {
                             if (licentie_type != "Wedstrijdlicentie") {
                                 cout << "Deze wedstrijd is een NK, atleet heeft geen Wedstrijdlicentie.\n";
                                 cout << "Koppel eerst een Wedstrijdlicentie via optie 7 en probeer opnieuw.\n";
-                                continue; // ga terug naar het hoofdmenu (while-loop)
+                                continue; // gaat terug naar het hoofdmenu (while-loop)
                             }
                         }
 
         
-                        // Daglicentie alleen geldig op de dag van de wedstrijd
+                        // Daglicentie is alleen geldig op de dag van de wedstrijd
                         if (licentie_type == "Daglicentie")
                         {
                             string licentie_datum = atleten[index_atleet].get_licentie().get_geldig_tot();
@@ -740,11 +740,11 @@ int main() {
                             {
                                 cout << "Daglicentie is alleen geldig op de dag van de wedstrijd.\n";
                                 cout << "Inschrijving geweigerd.\n";
-                                continue; // ga terug naar het hoofdmenu (while-loop)
+                                continue; // gaat terug naar het hoofdmenu (while-loop)
                             }
                         }
 
-                        // Controleer of licentie nog geldig is ten opzichte van wedstrijddatum
+                        // Controleert of licentie nog geldig is ten opzichte van wedstrijddatum
                         if (!atleten[index_atleet].get_licentie().is_geldig_op(
                             wedstrijden[wedstrijd_index].get_datum()))
                         {
@@ -752,7 +752,7 @@ int main() {
                             continue;
                         }
 
-                    // Controleer op positieve dopingcontroles
+                    // Controleert op positieve dopingcontroles
                     if (!atleten[index_atleet].get_licentie().is_dopingvrij())
                     {
                         cout << "Atleet heeft een positieve dopingcontrole. Inschrijving geweigerd.\n";
